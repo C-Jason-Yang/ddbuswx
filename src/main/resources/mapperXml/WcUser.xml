@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.evcas.ddbuswx.mapper.WcUserMapper">
+
+    <resultMap id="ObjectMap" type="com.evcas.ddbuswx.entity.WcUser">
+        <result column="id" property="id" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+        <result column="create_user_id" property="createUserId" />
+        <result column="update_user_id" property="updateUserId" />
+
+        <result column="wc_name" property="wcName" />
+        <result column="wc_sex" property="wcSex" />
+        <result column="wc_profile_photo" property="wcProfilePhoto" />
+        <result column="wc_openid" property="wcOpenid" />
+        <result column="phone" property="phone" />
+        <result column="bus_card" property="busCard" />
+        <result column="area_code" property="areaCode" />
+
+        <result column="areaName" property="areaName" />
+    </resultMap>
+
+    <select id="page" resultMap="ObjectMap" >
+        select wu.*, a.area_name as areaName
+        from wc_user wu
+        left join area a on a.id = wu.area_code
+        where
+        1 = 1
+        <if test="wcUser != null">
+            <if test="wcUser.wcName != null and wcUser.wcName != ''">
+                and wu.wc_name like concat('%', #{wcUser.wcName}, '%')
+            </if>
+            <if test="wcUser.phone != null and wcUser.phone != ''">
+                and wu.phone like concat('%', #{wcUser.phone}, '%')
+            </if>
+            <if test="wcUser.busCard != null and wcUser.busCard != ''">
+                and wu.bus_card like concat('%', #{wcUser.busCard}, '%')
+            </if>
+            <if test="wcUser.areaCode != null and wcUser.areaCode != ''">
+                and wu.area_code = #{wcUser.areaCode}
+            </if>
+            <if test="wcUser.registerStartDate != null and wcUser.registerStartDate != ''">
+                and DATE_FORMAT(wu.gmt_create,  '%Y-%m-%d') >= #{wcUser.registerStartDate}
+            </if>
+            <if test="wcUser.registerEndDate != null and wcUser.registerEndDate != ''">
+                <![CDATA[ and DATE_FORMAT(wu.gmt_create, '%Y-%m-%d') <= #{wcUser.registerEndDate} ]]>
+            </if>
+        </if>
+        order by wu.gmt_create desc
+        limit #{offset}, #{pageSize}
+    </select>
+
+    <select id="findUserByBusCardNo" resultMap="ObjectMap">
+        select wu.*
+        from wc_user wu
+        where wu.bus_card = #{busCardNo} and wu.area_code = #{areaCode}
+    </select>
+
+    <select id="countTotal" resultType="Integer" >
+        select count(id)
+        from wc_user wu
+        where
+        1 = 1
+        <if test="wcUser != null">
+            <if test="wcUser.wcName != null and wcUser.wcName != ''">
+                and wu.wc_name like concat('%', #{wcUser.wcName}, '%')
+            </if>
+            <if test="wcUser.busCard != null and wcUser.busCard != ''">
+                and wu.bus_card like concat('%', #{wcUser.busCard}, '%')
+            </if>
+            <if test="wcUser.areaCode != null and wcUser.areaCode != ''">
+                and wu.area_code = #{wcUser.areaCode}
+            </if>
+            <if test="wcUser.registerStartDate != null and wcUser.registerStartDate != ''">
+                and DATE_FORMAT(wu.gmt_create,  '%Y-%m-%d') >= #{wcUser.registerStartDate}
+            </if>
+            <if test="wcUser.registerEndDate != null and wcUser.registerEndDate != ''">
+                <![CDATA[ and DATE_FORMAT(wu.gmt_create, '%Y-%m-%d') <= #{wcUser.registerEndDate} ]]>
+            </if>
+            <if test="wcUser.phoneNumIsNull != null and wcUser.phoneNumIsNull == 2">
+                and wu.phone is not null
+            </if>
+            <if test="wcUser.busCardIsNull != null and wcUser.busCardIsNull == 2">
+                and wu.bus_card is not null
+            </if>
+            <if test="wcUser.phone != null and wcUser.phone != ''">
+                and wu.phone like concat('%', #{wcUser.phone}, '%')
+            </if>
+        </if>
+    </select>
+
+    <select id="getWcUserInfoById" resultMap="ObjectMap">
+        select wu.*, a.area_name as areaName
+        from wc_user wu
+        left join area a on a.id = wu.area_code
+        where wu.id = #{id}
+    </select>
+
+    <select id="getWcUserInfoByOpenid" resultMap="ObjectMap">
+        select wu.*, a.area_name as areaName
+        from wc_user wu
+        left join area a on a.id = wu.area_code
+        where wu.wc_openid = #{wcOpenid}
+    </select>
+
+    <update id="removeBusCardBinding" >
+        update wc_user
+        set bus_card = null, area_code = null
+        where wc_openid = #{wcOpenid}
+    </update>
+</mapper>

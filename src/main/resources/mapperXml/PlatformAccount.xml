@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.evcas.ddbuswx.mapper.PlatformAccountMapper">
+
+    <resultMap id="ObjectMap" type="com.evcas.ddbuswx.entity.PlatformAccount">
+        <result column="id" property="id" />
+        <result column="userName" property="userName" />
+        <result column="password" property="password" />
+        <result column="areaMark" property="areaMark" />
+        <result column="areaCode" property="areaCode" />
+    </resultMap>
+    
+    <select id="findAllPlatformAccount" resultMap="ObjectMap" >
+        select * from platform_account
+    </select>
+
+    <select id="findPlatformAccountByAreaCode" resultMap="ObjectMap">
+        select * from platform_account where areaCode = #{areaCode}
+    </select>
+</mapper>

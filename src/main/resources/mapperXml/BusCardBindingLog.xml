@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.evcas.ddbuswx.mapper.BusCardBindingLogMapper">
+
+    <resultMap id="ObjectMap" type="com.evcas.ddbuswx.entity.BusCardBindingLog">
+        <result column="id" property="id" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+        <result column="create_user_id" property="createUserId" />
+        <result column="update_user_id" property="updateUserId" />
+
+        <result column="openid" property="openid" />
+        <result column="operation_type" property="operationType" />
+        <result column="area_code" property="areaCode" />
+        <result column="area_name" property="areaName" />
+        <result column="bus_card_no" property="busCardNo" />
+    </resultMap>
+
+    <insert id="insertBusCardBindingLog">
+        insert bus_card_binding_log
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="busCardBindingLog.id != null and busCardBindingLog.id != ''">
+                id ,
+            </if>
+            <if test="busCardBindingLog.gmtCreate != null">
+                gmt_create ,
+            </if>
+            <if test="busCardBindingLog.gmtModified != null">
+                gmt_modified ,
+            </if>
+            <if test="busCardBindingLog.createUserId != null and busCardBindingLog.createUserId != ''">
+                create_user_id ,
+            </if>
+            <if test="busCardBindingLog.updateUserId != null and busCardBindingLog.updateUserId != ''">
+                update_user_id ,
+            </if>
+
+            <if test="busCardBindingLog.openid != null and busCardBindingLog.openid != ''">
+                openid ,
+            </if>
+            <if test="busCardBindingLog.operationType != null and busCardBindingLog.operationType != ''">
+                operation_type ,
+            </if>
+            <if test="busCardBindingLog.areaCode != null and busCardBindingLog.areaCode != ''">
+                area_code ,
+            </if>
+            <if test="busCardBindingLog.areaName != null and busCardBindingLog.areaName != ''">
+                area_name ,
+            </if>
+            <if test="busCardBindingLog.busCardNo != null and busCardBindingLog.busCardNo != ''">
+                bus_card_no ,
+            </if>
+        </trim>
+
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="busCardBindingLog.id != null and busCardBindingLog.id != ''">
+                #{busCardBindingLog.id},
+            </if>
+            <if test="busCardBindingLog.gmtCreate != null">
+                #{busCardBindingLog.gmtCreate},
+            </if>
+            <if test="busCardBindingLog.gmtModified != null">
+                #{busCardBindingLog.gmtModified},
+            </if>
+            <if test="busCardBindingLog.createUserId != null and busCardBindingLog.createUserId != ''">
+                #{busCardBindingLog.createUserId},
+            </if>
+            <if test="busCardBindingLog.updateUserId != null and busCardBindingLog.updateUserId != ''">
+                #{busCardBindingLog.updateUserId},
+            </if>
+
+            <if test="busCardBindingLog.openid != null and busCardBindingLog.openid != ''">
+                #{busCardBindingLog.openid},
+            </if>
+            <if test="busCardBindingLog.operationType != null and busCardBindingLog.operationType != ''">
+                #{busCardBindingLog.operationType},
+            </if>
+            <if test="busCardBindingLog.areaCode != null and busCardBindingLog.areaCode != ''">
+                #{busCardBindingLog.areaCode} ,
+            </if>
+            <if test="busCardBindingLog.areaName != null and busCardBindingLog.areaName != ''">
+                #{busCardBindingLog.areaName} ,
+            </if>
+            <if test="busCardBindingLog.busCardNo != null and busCardBindingLog.busCardNo != ''">
+                #{busCardBindingLog.busCardNo} ,
+            </if>
+        </trim>
+    </insert>
+
+    <select id="page" resultMap="ObjectMap">
+        select *
+        from bus_card_binding_log
+        where openid = #{wcOpenid}
+        order by gmt_create desc
+        limit #{offset}, #{pageSize}
+    </select>
+
+    <select id="countTotal" resultType="Integer">
+        select count(id)
+        from bus_card_binding_log
+        where openid = #{wcOpenid}
+    </select>
+
+</mapper>

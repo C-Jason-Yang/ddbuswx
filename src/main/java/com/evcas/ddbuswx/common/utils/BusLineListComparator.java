@@ -1,0 +1,55 @@
+package com.evcas.ddbuswx.common.utils;
+
+import com.evcas.ddbuswx.model.BusLine;
+
+import java.util.Comparator;
+
+/**
+ * Created by noxn on 2019/5/29.
+ */
+public class BusLineListComparator implements Comparator<BusLine> {
+
+    @Override
+    public int compare(BusLine busLine1, BusLine busLine2) {
+        String busLine1SortLineName = busLine1.getSortLineName();
+        String busLine2SortLineName = busLine2.getSortLineName();
+        char[] arr1 = busLine1SortLineName.toCharArray();
+        char[] arr2 = busLine2SortLineName.toCharArray();
+        int i = 0, j =0;
+        while( i < arr1.length && j < arr2.length)
+        {
+            if ( Character.isDigit( arr1[i]) && Character.isDigit(arr2[j])) {
+                String s1 = "";
+                String s2 = "";
+                while ( i < arr1.length && Character.isDigit( arr1[i]) ) {
+                    s1 += arr1[i];
+                    i++;
+                }
+                while (j < arr2.length && Character.isDigit(arr2[j])) {
+                    s2 += arr2[j];
+                    j++;
+                }
+                if (Integer.valueOf(s1) > Integer.valueOf(s2)) {
+                    return 1;
+                }
+                if (Integer.valueOf(s1) < Integer.valueOf(s2)) {
+                    return -1;
+                }
+            } else {
+                if (arr1[i] > arr2[j]) {
+                    return 1;
+                }
+                if (arr1[i] < arr2[j]) {
+                    return -1;
+                }
+                i++;
+                j++;
+            }
+        }
+        if (arr1.length == arr2.length) {
+            return 0;
+        } else {
+            return arr1.length > arr2.length? 1: -1;
+        }
+    }
+}

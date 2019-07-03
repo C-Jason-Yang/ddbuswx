@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.evcas.ddbuswx.mapper.RedPacketDetailMapper">
+
+    <resultMap id="ObjectMap" type="com.evcas.ddbuswx.entity.RedPacketDetail">
+        <result column="id" property="id" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+        <result column="create_user_id" property="createUserId" />
+        <result column="update_user_id" property="updateUserId" />
+
+        <result column="openid" property="openid" />
+        <result column="phone" property="phone" />
+        <result column="amount" property="amount" />
+        <result column="bus_card_no" property="busCardNo" />
+        <result column="red_packet_activity_id" property="redPacketActivityId" />
+        <result column="status" property="status" />
+        <result column="mch_billno" property="mchBillno" />
+        <result column="receive" property="receive" />
+        <result column="send_date" property="sendDate" />
+        <result column="receive_date" property="receiveDate" />
+
+        <result column="areaName" property="areaName" />
+        <result column="activityName" property="activityName" />
+    </resultMap>
+
+    <insert id="batchInsertRedPacketDetail">
+        insert into red_packet_detail
+        (id, gmt_create, gmt_modified, create_user_id, update_user_id, openid, phone, amount,
+        bus_card_no, red_packet_activity_id)
+        values
+        <foreach collection="redPacketDetailList" item="redPacketDetail"
+                 index="index" separator=",">
+            (
+            <choose>
+                <when test="redPacketDetail.id != null and redPacketDetail.id != ''">
+                    #{redPacketDetail.id},
+                </when>
+                <otherwise>
+                    null,
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="redPacketDetail.gmtCreate != null">
+                    #{redPacketDetail.gmtCreate},
+                </when>
+                <otherwise>
+                    null,
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="redPacketDetail.gmtModified != null">
+                    #{redPacketDetail.gmtModified},
+                </when>
+                <otherwise>
+                    null,
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="redPacketDetail.createUserId != null and redPacketDetail.createUserId != ''">
+                    #{redPacketDetail.createUserId},
+                </when>
+                <otherwise>
+                    null,
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="redPacketDetail.updateUserId != null and redPacketDetail.updateUserId != ''">
+                    #{redPacketDetail.updateUserId},
+                </when>
+                <otherwise>
+                    null,
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="redPacketDetail.openid != null and redPacketDetail.openid != ''">
+                    #{redPacketDetail.openid},
+                </when>
+                <otherwise>
+                    null,
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="redPacketDetail.phone != null and redPacketDetail.phone != ''">
+                    #{redPacketDetail.phone},
+                </when>
+                <otherwise>
+                    null,
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="redPacketDetail.amount != null and redPacketDetail.amount != ''">
+                    #{redPacketDetail.amount},
+                </when>
+                <otherwise>
+                    null,
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="redPacketDetail.busCardNo != null and redPacketDetail.busCardNo != ''">
+                    #{redPacketDetail.busCardNo},
+                </when>
+                <otherwise>
+                    null,
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="redPacketDetail.redPacketActivityId != null and redPacketDetail.redPacketActivityId != ''">
+                    #{redPacketDetail.redPacketActivityId}
+                </when>
+                <otherwise>
+                    null
+                </otherwise>
+            </choose>
+            )
+        </foreach>
+    </insert>
+
+    <select id="countRedPacketDetailNumByActivityId" resultType="Integer">
+        select count(id)
+        from red_packet_detail
+        where red_packet_activity_id = #{activityId}
+    </select>
+
+    <select id="findRedPacketDetailByActivityId" resultMap="ObjectMap">
+        select *
+        from red_packet_detail
+        where red_packet_activity_id = #{activityId}
+    </select>
+
+    <select id="updateRedPacketDetailActivityId" >
+        update red_packet_detail
+        set red_packet_activity_id = #{activityId}
+        where red_packet_activity_id = #{tempActivityId}
+    </select>
+
+    <update id="updateRedPacketDetailStatusById">
+        update red_packet_detail
+        set status = #{status}
+        where id = #{id}
+    </update>
+
+    <update id="updateRedPacketDetailById">
+        update red_packet_detail
+        set openid = #{redPacketDetail.openid}
+        <if test="redPacketDetail.mchBillno != null and redPacketDetail.mchBillno != ''">
+           , mch_billno = #{redPacketDetail.mchBillno}
+        </if>
+        <if test="redPacketDetail.receive != null and redPacketDetail.receive != ''">
+           , receive = #{redPacketDetail.receive}
+        </if>
+        <if test="redPacketDetail.sendDate != null">
+          , send_date = #{redPacketDetail.sendDate}
+        </if>
+        <if test="redPacketDetail.phone != null and redPacketDetail.phone != ''">
+          , phone = #{redPacketDetail.phone}
+        </if>
+        where id = #{redPacketDetail.id}
+    </update>
+
+    <select id="queryRedPacketAcceptInfo" resultMap="ObjectMap">
+        select *
+        from red_packet_detail
+        where
+        receive = 1
+    </select>
+
+    <update id="updateRedPacketDetailReceiveById">
+        update red_packet_detail
+        set receive = #{receive}
+        where id = #{id}
+    </update>
+
+    <select id="countTotal" resultType="Integer">
+        select count(rpd.id)
+        from red_packet_detail rpd
+        left join red_packet_activity rpa on rpd.red_packet_activity_id = rpa.id
+        left join area a on a.id = rpa.area_code
+        where
+        1 = 1 and rpd.status != 1
+        <if test="redPacketDetail != null">
+            <if test="redPacketDetail.openid != null and redPacketDetail.openid != ''">
+                and rpd.openid = #{redPacketDetail.openid}
+            </if>
+            <if test="redPacketDetail.busCardNo != null and redPacketDetail.busCardNo != ''">
+                and rpd.bus_card_no like concat('%', #{redPacketDetail.busCardNo}, '%')
+            </if>
+            <if test="redPacketDetail.phone != null and redPacketDetail.phone != ''">
+                and rpd.phone like concat('%', #{redPacketDetail.phone}, '%')
+            </if>
+            <if test="redPacketDetail.sendStartDateStr != null and redPacketDetail.sendStartDateStr != ''">
+                and DATE_FORMAT(rpd.send_date,  '%Y-%m-%d') >= #{redPacketDetail.sendStartDateStr}
+            </if>
+            <if test="redPacketDetail.sendEndDateStr != null and redPacketDetail.sendEndDateStr != ''">
+                <![CDATA[ and DATE_FORMAT(rpd.send_date, '%Y-%m-%d') <= #{redPacketDetail.sendEndDateStr} ]]>
+            </if>
+            <if test="redPacketDetail.areaCode != null and redPacketDetail.areaCode != ''">
+                and rpa.area_code = #{redPacketDetail.areaCode}
+            </if>
+            <if test="redPacketDetail.receive != null and redPacketDetail.receive != ''">
+                and rpd.receive = #{redPacketDetail.receive}
+            </if>
+            <if test="redPacketDetail.activityName != null and redPacketDetail.activityName != ''">
+                and rpa.activity_name like concat('%', #{redPacketDetail.activityName}, '%')
+            </if>
+            <if test="redPacketDetail.mchBillno != null and redPacketDetail.mchBillno != ''">
+                and rpd.mch_billno like concat('%', #{redPacketDetail.mchBillno}, '%')
+            </if>
+        </if>
+    </select>
+
+    <select id="page" resultMap="ObjectMap">
+        select rpd.*, a.area_name as areaName, rpa.activity_name as activityName
+        from red_packet_detail rpd
+        left join red_packet_activity rpa on rpd.red_packet_activity_id = rpa.id
+        left join area a on a.id = rpa.area_code
+        where
+        1 = 1 and rpd.status != 1
+        <if test="redPacketDetail != null">
+            <if test="redPacketDetail.openid != null and redPacketDetail.openid != ''">
+                and rpd.openid = #{redPacketDetail.openid}
+            </if>
+            <if test="redPacketDetail.busCardNo != null and redPacketDetail.busCardNo != ''">
+                and rpd.bus_card_no like concat('%', #{redPacketDetail.busCardNo}, '%')
+            </if>
+            <if test="redPacketDetail.phone != null and redPacketDetail.phone != ''">
+                and rpd.phone like concat('%', #{redPacketDetail.phone}, '%')
+            </if>
+            <if test="redPacketDetail.sendStartDateStr != null and redPacketDetail.sendStartDateStr != ''">
+                and DATE_FORMAT(rpd.send_date,  '%Y-%m-%d') >= #{redPacketDetail.sendStartDateStr}
+            </if>
+            <if test="redPacketDetail.sendEndDateStr != null and redPacketDetail.sendEndDateStr != ''">
+                <![CDATA[ and DATE_FORMAT(rpd.send_date, '%Y-%m-%d') <= #{redPacketDetail.sendEndDateStr} ]]>
+            </if>
+            <if test="redPacketDetail.areaCode != null and redPacketDetail.areaCode != ''">
+                and rpa.area_code = #{redPacketDetail.areaCode}
+            </if>
+            <if test="redPacketDetail.receive != null and redPacketDetail.receive != ''">
+                and rpd.receive = #{redPacketDetail.receive}
+            </if>
+            <if test="redPacketDetail.activityName != null and redPacketDetail.activityName != ''">
+                and rpa.activity_name like concat('%', #{redPacketDetail.activityName}, '%')
+            </if>
+            <if test="redPacketDetail.mchBillno != null and redPacketDetail.mchBillno != ''">
+                and rpd.mch_billno like concat('%', #{redPacketDetail.mchBillno}, '%')
+            </if>
+        </if>
+        order by rpd.gmt_create desc
+        <if test="offset != null">
+        limit #{offset}, #{pageSize}
+        </if>
+    </select>
+
+    <update id="update">
+        update red_packet_detail
+        set receive_date = #{redPacketDetail.receiveDate}
+        where id = #{redPacketDetail.id}
+    </update>
+
+    <select id="sumAmount" resultType="String">
+        select sum(amount)
+        from red_packet_detail
+        where
+        1 = 1
+        <if test="redPacketDetail.redPacketActivityId != null and redPacketDetail.redPacketActivityId != ''">
+            and red_packet_activity_id = #{redPacketDetail.redPacketActivityId}
+        </if>
+    </select>
+</mapper>

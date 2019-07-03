@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.evcas.ddbuswx.mapper.RedPacketActivityMapper">
+
+    <resultMap id="ObjectMap" type="com.evcas.ddbuswx.entity.RedPacketActivity">
+        <result column="id" property="id" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+        <result column="create_user_id" property="createUserId" />
+        <result column="update_user_id" property="updateUserId" />
+
+        <result column="area_code" property="areaCode" />
+        <result column="activity_name" property="activityName" />
+        <result column="status" property="status" />
+        <result column="red_packet_num" property="redPacketNum" />
+        <result column="cancel_date" property="cancelDate" />
+        <result column="confirm_date" property="confirmDate" />
+        <result column="send_date" property="sendDate" />
+        <result column="cancel_user_name" property="cancelUserName" />
+        <result column="confirm_user_name" property="confirmUserName" />
+        <result column="send_user_name" property="sendUserName" />
+        <result column="actual_send_redpacket_num" property="actualSendRedpacketNum"/>
+        <result column="plan_send_amount" property="planSendAmount" />
+        <result column="actual_send_amount" property="actualSendAmount" />
+        <result column="red_packet_file_path" property="redPacketFilePath" />
+
+        <result column="areaName" property="areaName" />
+    </resultMap>
+
+    <insert id="insertRedPacketActivity">
+        insert red_packet_activity
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="redPacketActivity.id != null and redPacketActivity.id != ''">
+                id ,
+            </if>
+            <if test="redPacketActivity.gmtCreate != null">
+                gmt_create ,
+            </if>
+            <if test="redPacketActivity.gmtModified != null">
+                gmt_modified ,
+            </if>
+            <if test="redPacketActivity.createUserId != null and redPacketActivity.createUserId != ''">
+                create_user_id ,
+            </if>
+            <if test="redPacketActivity.updateUserId != null and redPacketActivity.updateUserId != ''">
+                update_user_id ,
+            </if>
+
+            <if test="redPacketActivity.areaCode != null and redPacketActivity.areaCode != ''">
+                area_code ,
+            </if>
+            <if test="redPacketActivity.activityName != null and redPacketActivity.activityName != ''">
+                activity_name ,
+            </if>
+            <if test="redPacketActivity.status != null and redPacketActivity.status != ''">
+                status ,
+            </if>
+            <if test="redPacketActivity.redPacketNum != null and redPacketActivity.redPacketNum != ''">
+                red_packet_num ,
+            </if>
+            <if test="redPacketActivity.actualSendRedpacketNum != null and redPacketActivity.actualSendRedpacketNum != ''">
+                actual_send_redpacket_num ,
+            </if>
+            <if test="redPacketActivity.planSendAmount != null and redPacketActivity.actualSendRedpacketNum != ''">
+                plan_send_amount ,
+            </if>
+            <if test="redPacketActivity.actualSendAmount != null and redPacketActivity.actualSendAmount != ''">
+                actual_send_amount ,
+            </if>
+            <if test="redPacketActivity.redPacketFilePath != null and redPacketActivity.redPacketFilePath != ''">
+                red_packet_file_path ,
+            </if>
+        </trim>
+
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="redPacketActivity.id != null and redPacketActivity.id != ''">
+                #{redPacketActivity.id},
+            </if>
+            <if test="redPacketActivity.gmtCreate != null">
+                #{redPacketActivity.gmtCreate},
+            </if>
+            <if test="redPacketActivity.gmtModified != null">
+                #{redPacketActivity.gmtModified},
+            </if>
+            <if test="redPacketActivity.createUserId != null and redPacketActivity.createUserId != ''">
+                #{redPacketActivity.createUserId},
+            </if>
+            <if test="redPacketActivity.updateUserId != null and redPacketActivity.updateUserId != ''">
+                #{redPacketActivity.updateUserId},
+            </if>
+
+            <if test="redPacketActivity.areaCode != null and redPacketActivity.areaCode != ''">
+                #{redPacketActivity.areaCode},
+            </if>
+            <if test="redPacketActivity.activityName != null and redPacketActivity.activityName != ''">
+                #{redPacketActivity.activityName},
+            </if>
+            <if test="redPacketActivity.status != null and redPacketActivity.status != ''">
+                #{redPacketActivity.status},
+            </if>
+            <if test="redPacketActivity.redPacketNum != null and redPacketActivity.redPacketNum != ''">
+                #{redPacketActivity.redPacketNum},
+            </if>
+            <if test="redPacketActivity.actualSendRedpacketNum != null and redPacketActivity.actualSendRedpacketNum != ''">
+                #{redPacketActivity.actualSendRedpacketNum} ,
+            </if>
+            <if test="redPacketActivity.planSendAmount != null and redPacketActivity.actualSendRedpacketNum != ''">
+                #{redPacketActivity.planSendAmount} ,
+            </if>
+            <if test="redPacketActivity.actualSendAmount != null and redPacketActivity.actualSendAmount != ''">
+                #{redPacketActivity.actualSendAmount} ,
+            </if>
+            <if test="redPacketActivity.redPacketFilePath != null and redPacketActivity.redPacketFilePath != ''">
+                #{redPacketActivity.redPacketFilePath} ,
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateRedPacketActivityStatus">
+        update red_packet_activity
+        set status = #{status}
+        <if test="cancelDate != null">
+            ,cancel_date = #{cancelDate}
+            ,cancel_user_name = #{cancelUserName}
+        </if>
+        <if test="confirmDate != null">
+            ,confirm_date = #{confirmDate}
+            ,confirm_user_name = #{confirmUserName}
+        </if>
+        <if test="sendDate != null">
+            ,send_date = #{sendDate}
+            ,send_user_name = #{sendUserName}
+        </if>
+        where id = #{id}
+    </update>
+
+    <update id="update">
+        update red_packet_activity
+        <trim prefix="set" suffixOverrides="," >
+            <if test="redPacketActivity.actualSendRedpacketNum != null">
+                actual_send_redpacket_num = #{redPacketActivity.actualSendRedpacketNum},
+            </if>
+            <if test="redPacketActivity.actualSendAmount != null">
+                actual_send_amount = #{redPacketActivity.actualSendAmount},
+            </if>
+        </trim>
+        where id = #{redPacketActivity.id}
+    </update>
+
+    <select id="countTotal" resultType="Integer">
+        select count(rpa.id)
+        from red_packet_activity rpa
+        where
+        1 = 1
+        <if test="redPacketActivity != null">
+            <if test="redPacketActivity.activityName != null and redPacketActivity.activityName != ''">
+                and rpa.activity_name like concat('%', #{redPacketActivity.activityName}, '%')
+            </if>
+            <if test="redPacketActivity.status != null and redPacketActivity.status != ''">
+                and rpa.status = #{redPacketActivity.status}
+            </if>
+            <if test="redPacketActivity.areaCode != null and redPacketActivity.areaCode != ''">
+                and rpa.area_code = #{redPacketActivity.areaCode}
+            </if>
+            <if test="redPacketActivity.createStartDate != null and redPacketActivity.createStartDate != ''">
+                and DATE_FORMAT(rpa.gmt_create,  '%Y-%m-%d') >= #{redPacketActivity.createStartDate}
+            </if>
+            <if test="redPacketActivity.createEndDate != null and redPacketActivity.createEndDate != ''">
+                <![CDATA[ and DATE_FORMAT(rpa.gmt_create, '%Y-%m-%d') <= #{redPacketActivity.createEndDate} ]]>
+            </if>
+        </if>
+    </select>
+
+    <select id="page" resultMap="ObjectMap">
+        select rpa.*, a.area_name as areaName
+        from red_packet_activity rpa
+        left join area a on a.id = rpa.area_code
+        where
+        1 = 1
+        <if test="redPacketActivity != null">
+            <if test="redPacketActivity.activityName != null and redPacketActivity.activityName != ''">
+                and rpa.activity_name like concat('%', #{redPacketActivity.activityName}, '%')
+            </if>
+            <if test="redPacketActivity.status != null and redPacketActivity.status != ''">
+                and rpa.status = #{redPacketActivity.status}
+            </if>
+            <if test="redPacketActivity.areaCode != null and redPacketActivity.areaCode != ''">
+                and rpa.area_code = #{redPacketActivity.areaCode}
+            </if>
+            <if test="redPacketActivity.createStartDate != null and redPacketActivity.createStartDate != ''">
+                and DATE_FORMAT(rpa.gmt_create,  '%Y-%m-%d') >= #{redPacketActivity.createStartDate}
+            </if>
+            <if test="redPacketActivity.createEndDate != null and redPacketActivity.createEndDate != ''">
+                <![CDATA[ and DATE_FORMAT(rpa.gmt_create, '%Y-%m-%d') <= #{redPacketActivity.createEndDate} ]]>
+            </if>
+        </if>
+        order by rpa.gmt_create desc
+        limit #{offset}, #{pageSize}
+    </select>
+
+    <select id="getById" resultMap="ObjectMap">
+        select rpa.*, a.area_name as areaName
+        from red_packet_activity rpa
+        left join area a on a.id = rpa.area_code
+        where rpa.id = #{id}
+    </select>
+
+</mapper>
