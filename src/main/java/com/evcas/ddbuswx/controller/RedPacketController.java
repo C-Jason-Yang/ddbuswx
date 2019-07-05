@@ -49,14 +49,14 @@ public class RedPacketController {
         Cookie[] cookies = request.getCookies();
         ModelAndView model = new ModelAndView();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
                 model.setViewName("redPacket/addRedPacket");
                 return model;
             }
@@ -71,14 +71,14 @@ public class RedPacketController {
         DwzCallBackResult result = new DwzCallBackResult();
         Cookie[] cookies = request.getCookies();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
                 redPacketActivityService.addRedPacketActivity(redPacketActivity, tempRedPacketActivityId, token.getUserId());
                 result.setStatusCode(200);
                 return JsonTools.gson.toJson(result);
@@ -94,17 +94,17 @@ public class RedPacketController {
         Cookie[] cookies = request.getCookies();
         ModelAndView model = new ModelAndView();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
                 DwzPageModel dwzPageModel = new DwzPageModel();
                 if (pageNum == null) {
-                    pageNum = Long.valueOf(1);
+                    pageNum = 1L;
                 }
                 dwzPageModel.setCurrentPage(pageNum);
                 User user = iUserService.findUserById(token.getUserId());
@@ -125,14 +125,14 @@ public class RedPacketController {
         DwzCallBackResult result = new DwzCallBackResult();
         Cookie[] cookies = request.getCookies();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
                 redPacketActivityService.updateRedPacketActivityStatus(id, status, token.getUserId());
                 result.setStatusCode(200);
                 return JsonTools.gson.toJson(result);
@@ -149,14 +149,14 @@ public class RedPacketController {
         DwzCallBackResult result = new DwzCallBackResult();
         Cookie[] cookies = request.getCookies();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
                 if (!SystemParameter.RED_PACKET_ID_LIST.contains(id)) {
                     SystemParameter.RED_PACKET_ID_LIST.add(id);
                     redPacketActivityService.sendRedPacket(id, token.getUserId());
@@ -178,14 +178,14 @@ public class RedPacketController {
         Cookie[] cookies = request.getCookies();
         ModelAndView model = new ModelAndView();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
                 RedPacketActivity redPacketActivity = redPacketActivityService.getRedPacketInfo(id);
                 model.setViewName("redPacket/info");
                 model.addObject("redPacketActivity", redPacketActivity);

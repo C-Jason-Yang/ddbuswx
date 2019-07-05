@@ -23,7 +23,7 @@ public class LoginServiceImpl implements ILoginService {
         User user = iUserDAO.findUserByUserName(userName);
         Map<String, Object> result = new HashMap<String, Object>();
         if (user != null) {
-            if (user.getPassword() != null && user.getPassword() != "" && user.getPassword().equals(password)) {
+            if (user.getPassword() != null && !user.getPassword().equals("") && user.getPassword().equals(password)) {
                 result.put("userName", userName);
                 result.put("userId", user.getId());
                 result.put("mark", 1);

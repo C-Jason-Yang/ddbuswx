@@ -1,8 +1,10 @@
 package com.evcas.ddbuswx.common.utils;
 
+import lombok.Cleanup;
 import sun.misc.BASE64Decoder;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 
@@ -12,7 +14,6 @@ import java.io.OutputStream;
 public class FileOperation {
 
     /**
-     *
      * @param fileCode
      * @param fileName
      */
@@ -32,8 +33,10 @@ public class FileOperation {
             e.printStackTrace();
         } finally {
             try {
-                out.flush();
-                out.close();
+                if (out != null) {
+                    out.flush();
+                    out.close();
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -42,22 +45,25 @@ public class FileOperation {
 
     /**
      * 二进制数据转换文件存储
+     *
      * @param filebyteArray
      * @param fileName
      */
     public static void saveBtyeArrayToFile(byte[] filebyteArray, String fileName) {
         try {
-            File file =null ;
-            FileOutputStream fos = null;
+            File file;
             file = new File(fileName);
             if (!file.exists()) {
-                file.createNewFile(); // 如果文件不存在，则创建
+                boolean newFile = file.createNewFile();// 如果文件不存在，则创建
+                if (!newFile) {
+                    throw new FileNotFoundException("create new file error");
+                }
             }
-            fos = new FileOutputStream(file);
+            @Cleanup FileOutputStream fos = new FileOutputStream(file);
             if (filebyteArray.length > 0) {
                 fos.write(filebyteArray, 0, filebyteArray.length);
             }
-            fos.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -52,7 +52,7 @@ public class RedPacketDetailController {
     @ResponseBody
     public String importData(String fileBase64Code, String fileName) {
         String tempFilePath = fileUpLoadService.fileBase64UpLoad(fileBase64Code, fileName);
-        DwzCallBackResult result = new DwzCallBackResult();
+        //DwzCallBackResult result = new DwzCallBackResult();
         Map<String, Object> data = new HashMap<>();
         ExcelObject ec = new ExcelObject(tempFilePath);
         List<RedPacketDetail> redPacketDetailList = ec.getFileDataList(RedPacketDetail.class, 0, 1);

@@ -1,7 +1,10 @@
 package com.evcas.ddbuswx.common;
 
+import com.google.common.collect.Lists;
+
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -33,27 +36,27 @@ public class SystemParameter {
 //    public static String WC_BUS_PASSWORD= "123456";
 
     //恒宇系统账号
-    public static String YS_HY_BUS_ACCOUNT = "100001";
-    public static String YS_HY_BUS_PASSWORD = "pbrraarraarrbt";
+    public final static String YS_HY_BUS_ACCOUNT = "100001";
+    public final static String YS_HY_BUS_PASSWORD = "pbrraarraarrbt";
 
     /******************************  ddbus manager system account end  *****************************************/
 
 
-    public static String WE_CHAT_SENDREDPACK = "https://api.mch.weixin.qq.com/mmpaymkttransfers/sendredpack";
+    public final static String WE_CHAT_SENDREDPACK = "https://api.mch.weixin.qq.com/mmpaymkttransfers/sendredpack";
 
-    public static String WC_MERCHANTS_API_SECRET_KEY = "ced9041ed72a4e6ea4c77feda8248e4b";
+    public final static String WC_MERCHANTS_API_SECRET_KEY = "ced9041ed72a4e6ea4c77feda8248e4b";
 
-    public static String WE_CHAT_GETHBINFO = "https://api.mch.weixin.qq.com/mmpaymkttransfers/gethbinfo";
+    public final static String WE_CHAT_GETHBINFO = "https://api.mch.weixin.qq.com/mmpaymkttransfers/gethbinfo";
 
-    public static String WE_CHAT_API_CLIENT_IP = "120.55.62.88";
+    public final static String WE_CHAT_API_CLIENT_IP = "120.55.62.88";
 
-    public static String WE_CHAT_DADAO_APPID = "wxc609948134e10033";
+    public final static String WE_CHAT_DADAO_APPID = "wxc609948134e10033";
 
-//        public static String UPLOAD_FILE_PATH = "D:\\work\\";
-    public static String UPLOAD_FILE_PATH = File.separator + "home" + File.separator + "ddbusstatic" + File.separator;
+    //        public static String UPLOAD_FILE_PATH = "D:\\work\\";
+    public final static String UPLOAD_FILE_PATH = File.separator + "home" + File.separator + "ddbusstatic" + File.separator;
 
-//    public static String PKCS12_FILE_PATH = File.separator + "D:\\work\\apiclient_cert.p12";
-    public static String PKCS12_FILE_PATH = File.separator + "home" + File.separator + "ddbusstatic" + File.separator + "apiclient_cert.p12";
+    //    public static String PKCS12_FILE_PATH = File.separator + "D:\\work\\apiclient_cert.p12";
+    public final static String PKCS12_FILE_PATH = File.separator + "home" + File.separator + "ddbusstatic" + File.separator + "apiclient_cert.p12";
 
-    public static List<String> RED_PACKET_ID_LIST = new ArrayList<String>();
+    public  static List<String> RED_PACKET_ID_LIST = Lists.newArrayList();
 }

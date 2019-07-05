@@ -22,7 +22,7 @@ public class FileUpLoadController {
     @ResponseBody
     @CrossOrigin(origins = "*", maxAge = 3600)
     public String base64UpLoad(String fileBase64Code, String fileName) {
-        String tempFilePath = fileUpLoadService.fileBase64UpLoad(fileBase64Code, fileName);
+       // String tempFilePath = fileUpLoadService.fileBase64UpLoad(fileBase64Code, fileName);
 
         return "ok";
     }

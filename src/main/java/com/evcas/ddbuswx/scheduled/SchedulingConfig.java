@@ -49,7 +49,7 @@ public class SchedulingConfig {
             for (int i = 0; i < rtBusArriveLeaveList.size(); i++) {
                 Calendar cal = Calendar.getInstance();
                 //当数据未更新时间大于5分钟
-                if (Integer.valueOf(String.valueOf(cal.getTimeInMillis()/1000)) - rtBusArriveLeaveList.get(i).getCurrentTime() > 300) {
+                if (Integer.parseInt(String.valueOf(cal.getTimeInMillis()/1000)) - rtBusArriveLeaveList.get(i).getCurrentTime() > 300) {
                     irtBusArriveLeaveDAO.deleteRTBusArriveLeaveByBusTag(rtBusArriveLeaveList.get(i).getAreaid(), rtBusArriveLeaveList.get(i).getFromSys(), rtBusArriveLeaveList.get(i).getBugtag());
                 }
             }

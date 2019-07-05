@@ -199,7 +199,7 @@ public class HyLxServiceImpl implements IHyLxService {
                     String sTime = busLineShiftList.get(i).getPlanBegin();
                     String sHour = sTime.substring(0, 2);
                     String sMin = sTime.substring(2, 4);
-                    busShift.setStime(Integer.valueOf(sHour) * 60 + Integer.valueOf(sMin));
+                    busShift.setStime(Integer.parseInt(sHour) * 60 + Integer.parseInt(sMin));
                     busShiftList.add(busShift);
                 }
                 iBusShiftDAO.addBufShiftList(busShiftList);

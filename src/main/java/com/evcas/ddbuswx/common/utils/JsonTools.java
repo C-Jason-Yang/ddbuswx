@@ -7,5 +7,5 @@ import com.google.gson.Gson;
  */
 public class JsonTools {
 
-    public static Gson gson = new Gson();
+    public final static Gson gson = new Gson();
 }

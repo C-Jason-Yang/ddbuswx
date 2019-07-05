@@ -5,5 +5,5 @@ package com.evcas.ddbuswx.common.rmsys;
  */
 public class ServiceService {
 
-    public static WebServiceClient client = new WebServiceClient();
+    public final static WebServiceClient client = new WebServiceClient();
 }

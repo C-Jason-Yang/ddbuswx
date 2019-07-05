@@ -50,7 +50,7 @@ public class BaiDuMapUtil {
             if (i == 0)
                 coords.append(coordList.get(i));
             else
-                coords.append(";" + coordList.get(i));
+                coords.append(";").append(coordList.get(i));
         }
         String url="http://api.map.baidu.com/geoconv/v1/?coords="+coords+"&output="+outputType+"&ak="+ak+"&from="+from+"&to="+to;
         Map<String,JSONArray> map=new HashMap<String, JSONArray>();
@@ -59,26 +59,22 @@ public class BaiDuMapUtil {
         if(obj.get("status").toString().equals("0")){
             JSONArray result= obj.getJSONArray("result");
             map.put("coords",result);
-        }else{
         }
         return map;
     }
 
-    public static String loadJSON (String url) {
+    private static String loadJSON(String url) {
         StringBuilder json = new StringBuilder();
         try {
             URL oracle = new URL(url);
             URLConnection yc = oracle.openConnection();
-            BufferedReader in = new BufferedReader(new InputStreamReader(
-                    yc.getInputStream()));
-            String inputLine = null;
+            BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
+            String inputLine;
             while ( (inputLine = in.readLine()) != null) {
                 json.append(inputLine);
             }
             in.close();
-        } catch (MalformedURLException e) {
-
-        } catch (IOException e) {
+        } catch (IOException ignored) {
 
         }
         return json.toString();

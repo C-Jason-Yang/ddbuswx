@@ -55,9 +55,9 @@ public class LostAndFoundController {
                 tokenStr = cookies[i].getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
                 iLostAndFoundService.addLostAndFound(lostAndFound, token.getUserId());
                 result.setStatusCode(200);
                 return JsonTools.gson.toJson(result);

@@ -1,7 +1,11 @@
 package com.evcas.ddbuswx.service.impl;
 
+import cn.hutool.core.util.RandomUtil;
 import com.evcas.ddbuswx.common.SystemParameter;
-import com.evcas.ddbuswx.common.utils.*;
+import com.evcas.ddbuswx.common.utils.Md5Util;
+import com.evcas.ddbuswx.common.utils.UuidUtil;
+import com.evcas.ddbuswx.common.utils.WeChatUtil;
+import com.evcas.ddbuswx.common.utils.XmlUtil;
 import com.evcas.ddbuswx.dao.IUserDAO;
 import com.evcas.ddbuswx.entity.RedPacketActivity;
 import com.evcas.ddbuswx.entity.RedPacketDetail;
@@ -11,6 +15,8 @@ import com.evcas.ddbuswx.mapper.RedPacketDetailMapper;
 import com.evcas.ddbuswx.mapper.WcUserMapper;
 import com.evcas.ddbuswx.model.DwzPageModel;
 import com.evcas.ddbuswx.model.User;
+import com.google.common.collect.Maps;
+import lombok.Cleanup;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -100,6 +106,7 @@ public class RedPacketActivityService {
         return dwzPageModel;
     }
 
+    @SuppressWarnings("Duplicates")
     @Async
     public void sendRedPacket(String id, String userId) {
         Integer actualSendRedpacketNum = 0;
@@ -107,20 +114,20 @@ public class RedPacketActivityService {
         RedPacketActivity redPacketActivity = redPacketActivityMapper.getById(id);
         List<RedPacketDetail> redPacketDetailList = redPacketDetailMapper.findRedPacketDetailByActivityId(id);
         if (redPacketDetailList != null) {
-            for (int i = 0; i < redPacketDetailList.size(); i++) {
-                if (redPacketDetailList.get(i).getStatus() != null && redPacketDetailList.get(i).getStatus().equals("2")) {
+            for (RedPacketDetail packetDetail : redPacketDetailList) {
+                if (packetDetail.getStatus() != null && packetDetail.getStatus().equals("2")) {
                     //跳过已成功发放的
                     continue;
                 }
                 //商户订单号
-                String mchBillno = RandomStr.getNumCharUppercaseRandomStr(28);
-                WcUser wcUser = wcUserMapper.findUserByBusCardNo(redPacketDetailList.get(i).getBusCardNo(),
+                String mchBillno = RandomUtil.randomString(28);
+                WcUser wcUser = wcUserMapper.findUserByBusCardNo(packetDetail.getBusCardNo(),
                         redPacketActivity.getAreaCode());
                 if (wcUser == null) {
-                    redPacketDetailMapper.updateRedPacketDetailStatusById(redPacketDetailList.get(i).getId(), "3");
+                    redPacketDetailMapper.updateRedPacketDetailStatusById(packetDetail.getId(), "3");
 
                     RedPacketDetail tempRedPacketDetail = new RedPacketDetail();
-                    tempRedPacketDetail.setId(redPacketDetailList.get(i).getId());
+                    tempRedPacketDetail.setId(packetDetail.getId());
 
                     tempRedPacketDetail.setMchBillno(mchBillno);
                     //发放时间
@@ -135,43 +142,32 @@ public class RedPacketActivityService {
                 } catch (KeyStoreException e) {
                     e.printStackTrace();
                 }
-                FileInputStream instream = null;
+
                 try {
-                    instream = new FileInputStream(new File(SystemParameter.PKCS12_FILE_PATH));
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    keyStore.load(instream, "1508163181".toCharArray());
-                } catch (IOException exp) {
-                    exp.printStackTrace();
-                } catch (NoSuchAlgorithmException ex) {
-                    ex.printStackTrace();
-                } catch (CertificateException e) {
-                    e.printStackTrace();
-                } finally {
-                    try {
-                        instream.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                    @Cleanup FileInputStream instream = new FileInputStream(new File(SystemParameter.PKCS12_FILE_PATH));
+                    if (keyStore == null) {
+                        throw new NullPointerException("keyStore is null ");
                     }
+                    keyStore.load(instream, "1508163181".toCharArray());
+                } catch (IOException | NoSuchAlgorithmException | CertificateException exp) {
+                    exp.printStackTrace();
                 }
                 SSLContext sslcontext = null;
                 try {
                     sslcontext = SSLContexts.custom().loadKeyMaterial(keyStore, "1508163181".toCharArray()).build();
-                } catch (NoSuchAlgorithmException e) {
+                } catch (NoSuchAlgorithmException | KeyStoreException | UnrecoverableKeyException | KeyManagementException e) {
                     e.printStackTrace();
-                } catch (KeyStoreException ke) {
-                    ke.printStackTrace();
-                } catch (UnrecoverableKeyException uke) {
-                    uke.printStackTrace();
-                } catch (KeyManagementException kme) {
-                    kme.printStackTrace();
                 }
+                if (sslcontext == null) {
+                    throw new NullPointerException("sslcontext is null");
+                }
+
                 SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslcontext, new String[]{"TLSv1"},
                         null, SSLConnectionSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
-                CloseableHttpClient httpclient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
+                CloseableHttpClient httpclient = null;
                 try {
+                    httpclient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
+
                     String actName = redPacketActivity.getActivityName();
                     HttpPost httpPost = new HttpPost(SystemParameter.WE_CHAT_SENDREDPACK);
                     System.out.println("executing request" + httpPost.getRequestLine());
@@ -184,7 +180,7 @@ public class RedPacketActivityService {
                     httpPost.addHeader("User-Agent", "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) ");
 
                     String nonceStr = UuidUtil.getUuid();
-                    Double amount = redPacketDetailList.get(i).getAmount().doubleValue();
+                    Double amount = packetDetail.getAmount();
                     Integer tempamount = Integer.valueOf(String.valueOf(amount * 100).split("\\.")[0]);
                     TreeMap signTreeMap = new TreeMap();
                     signTreeMap.put("nonce_str", nonceStr);
@@ -206,115 +202,118 @@ public class RedPacketActivityService {
 
                     StringBuilder xmlSb = new StringBuilder();
                     xmlSb.append("<xml>");
-                    xmlSb.append("     <sign>" + sign + "</sign>");
-                    xmlSb.append("     <mch_billno>" + mchBillno + "</mch_billno>");
+                    xmlSb.append("     <sign>").append(sign).append("</sign>");
+                    xmlSb.append("     <mch_billno>").append(mchBillno).append("</mch_billno>");
                     xmlSb.append("     <mch_id>1508163181</mch_id>");
-                    xmlSb.append("     <wxappid>"+ SystemParameter.WE_CHAT_DADAO_APPID +"</wxappid>");
-                    xmlSb.append("     <send_name>"+ actName +"</send_name>");
-                    xmlSb.append("     <re_openid>"+ wcUser.getWcOpenid() +"</re_openid>");
-                    xmlSb.append("     <total_amount>" + tempamount + "</total_amount>");
+                    xmlSb.append("     <wxappid>").append(SystemParameter.WE_CHAT_DADAO_APPID).append("</wxappid>");
+                    xmlSb.append("     <send_name>").append(actName).append("</send_name>");
+                    xmlSb.append("     <re_openid>").append(wcUser.getWcOpenid()).append("</re_openid>");
+                    xmlSb.append("     <total_amount>").append(tempamount).append("</total_amount>");
                     xmlSb.append("     <total_num>" + 1 + "</total_num>");
                     xmlSb.append("     <wishing>鑫大道公交祝您乘车愉快</wishing>");
-                    xmlSb.append("     <client_ip>"+ SystemParameter.WE_CHAT_API_CLIENT_IP +"</client_ip>");
-                    xmlSb.append("     <act_name>"+ actName +"</act_name>");
+                    xmlSb.append("     <client_ip>").append(SystemParameter.WE_CHAT_API_CLIENT_IP).append("</client_ip>");
+                    xmlSb.append("     <act_name>").append(actName).append("</act_name>");
                     xmlSb.append("     <remark>鑫大道公交</remark>");
-                    xmlSb.append("     <nonce_str>" + nonceStr + "</nonce_str>");
+                    xmlSb.append("     <nonce_str>").append(nonceStr).append("</nonce_str>");
 //                    xmlSb.append("     <scene_id>PRODUCT_2</scene_id>");
                     xmlSb.append("</xml>");
                     httpPost.setEntity(new StringEntity(xmlSb.toString(), "UTF-8"));
-                    CloseableHttpResponse response = null;
+
+                    HttpEntity entity = null;
                     try {
-                        response = httpclient.execute(httpPost);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    try {
-                        HttpEntity entity = response.getEntity();
+                        @Cleanup CloseableHttpResponse response = httpclient.execute(httpPost);
+                        if (response == null) {
+                            throw new NullPointerException("response is null !");
+                        }
+                        entity = response.getEntity();
                         System.out.println("----------------------------------------");
                         System.out.println(response.getStatusLine());
-                        if (entity != null) {
-                            System.out.println("Response content length: " + entity.getContentLength());
-                            BufferedReader bufferedReader = null;
-                            try {
-                                bufferedReader = new BufferedReader(new InputStreamReader(entity.getContent()));
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                            StringBuilder sendResultSb = new StringBuilder();
-                            String text;
-                            try {
-                                while ((text = bufferedReader.readLine()) != null) {
-                                    sendResultSb.append(text);
-                                }
-                            } catch (IOException ex) {
-                                ex.printStackTrace();
-                            }
-                            System.err.println(sendResultSb.toString());
-                            Map<String, String> sendRedPacketResult = XmlUtil.xmlToMap(sendResultSb.toString());
-                            //成功
-                            if (sendRedPacketResult.get("return_code").equals("SUCCESS") && sendRedPacketResult.get("result_code").equals("SUCCESS")) {
-                                redPacketDetailMapper.updateRedPacketDetailStatusById(redPacketDetailList.get(i).getId(), "2");
-                                RedPacketDetail redPacketDetail = new RedPacketDetail();
-                                redPacketDetail.setId(redPacketDetailList.get(i).getId());
-                                if (wcUser.getPhone() != null && !wcUser.getPhone().equals("")) {
-                                    redPacketDetail.setPhone(wcUser.getPhone());
-                                }
-                                redPacketDetail.setOpenid(wcUser.getWcOpenid());
-                                //商户订单号
-                                redPacketDetail.setMchBillno(mchBillno);
-                                //红包状态 未领取
-                                redPacketDetail.setReceive("1");
-                                //发放时间
-                                redPacketDetail.setSendDate(new Date());
-                                redPacketDetailMapper.updateRedPacketDetailById(redPacketDetail);
-                                actualSendRedpacketNum++;
-                                actualSendAmount = actualSendAmount + tempamount;
-                            } else {
-                                //失败
-                                if (sendRedPacketResult.get("err_code").equals("NOTENOUGH")) {
-                                    redPacketDetailMapper.updateRedPacketDetailStatusById(redPacketDetailList.get(i).getId(), "3");
-                                }
-                                if (sendRedPacketResult.get("err_code").equals("SENDNUM_LIMIT")) {
-                                    redPacketDetailMapper.updateRedPacketDetailStatusById(redPacketDetailList.get(i).getId(), "3");
-                                }
-                                RedPacketDetail redPacketDetail = new RedPacketDetail();
-                                redPacketDetail.setId(redPacketDetailList.get(i).getId());
-                                if (wcUser.getPhone() != null && !wcUser.getPhone().equals("")) {
-                                    redPacketDetail.setPhone(wcUser.getPhone());
-                                }
-                                redPacketDetail.setMchBillno(mchBillno);
-                                redPacketDetail.setOpenid(wcUser.getWcOpenid());
-                                //发放时间
-                                redPacketDetail.setSendDate(new Date());
-                                redPacketDetail.setReceive("4");
-                                redPacketDetailMapper.updateRedPacketDetailById(redPacketDetail);
-                            }
-                        }
-                        try {
-                            EntityUtils.consume(entity);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    } finally {
-                        try {
-                            response.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                } finally {
-                    try {
-                        httpclient.close();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+
+
+                    if (entity != null) {
+                        System.out.println("Response content length: " + entity.getContentLength());
+                        Map<String, String> sendRedPacketResult = Maps.newHashMap();
+                        try {
+                            @Cleanup    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(entity.getContent()));
+
+                            StringBuilder sendResultSb = new StringBuilder();
+                            String text;
+                            while ((text = bufferedReader.readLine()) != null) {
+                                sendResultSb.append(text);
+                            }
+                            System.err.println(sendResultSb.toString());
+                            sendRedPacketResult = XmlUtil.xmlToMap(sendResultSb.toString());
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                        }
+
+
+                        //成功
+                        if (sendRedPacketResult == null) {
+                            throw new NullPointerException("sendRedPacketResult is null");
+                        }
+                        if (sendRedPacketResult.get("return_code").equals("SUCCESS") && sendRedPacketResult.get("result_code").equals("SUCCESS")) {
+                            redPacketDetailMapper.updateRedPacketDetailStatusById(packetDetail.getId(), "2");
+                            RedPacketDetail redPacketDetail = new RedPacketDetail();
+                            redPacketDetail.setId(packetDetail.getId());
+                            if (wcUser.getPhone() != null && !wcUser.getPhone().equals("")) {
+                                redPacketDetail.setPhone(wcUser.getPhone());
+                            }
+                            redPacketDetail.setOpenid(wcUser.getWcOpenid());
+                            //商户订单号
+                            redPacketDetail.setMchBillno(mchBillno);
+                            //红包状态 未领取
+                            redPacketDetail.setReceive("1");
+                            //发放时间
+                            redPacketDetail.setSendDate(new Date());
+                            redPacketDetailMapper.updateRedPacketDetailById(redPacketDetail);
+                            actualSendRedpacketNum++;
+                            actualSendAmount = actualSendAmount + tempamount;
+                        } else {
+                            //失败
+                            if (sendRedPacketResult.get("err_code").equals("NOTENOUGH")) {
+                                redPacketDetailMapper.updateRedPacketDetailStatusById(packetDetail.getId(), "3");
+                            }
+                            if (sendRedPacketResult.get("err_code").equals("SENDNUM_LIMIT")) {
+                                redPacketDetailMapper.updateRedPacketDetailStatusById(packetDetail.getId(), "3");
+                            }
+                            RedPacketDetail redPacketDetail = new RedPacketDetail();
+                            redPacketDetail.setId(packetDetail.getId());
+                            if (wcUser.getPhone() != null && !wcUser.getPhone().equals("")) {
+                                redPacketDetail.setPhone(wcUser.getPhone());
+                            }
+                            redPacketDetail.setMchBillno(mchBillno);
+                            redPacketDetail.setOpenid(wcUser.getWcOpenid());
+                            //发放时间
+                            redPacketDetail.setSendDate(new Date());
+                            redPacketDetail.setReceive("4");
+                            redPacketDetailMapper.updateRedPacketDetailById(redPacketDetail);
+                        }
+                    }
+                    try {
+                        EntityUtils.consume(entity);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } finally {
+                    if (httpclient != null) {
+                        try {
+                            httpclient.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
+
             }
             User user = iUserDAO.findUserById(userId);
             RedPacketActivity redPacketActivityUpdateParam = new RedPacketActivity();
             redPacketActivityUpdateParam.setId(id);
             redPacketActivityUpdateParam.setActualSendRedpacketNum(String.valueOf(actualSendRedpacketNum));
-            redPacketActivityUpdateParam.setActualSendAmount(String.valueOf(actualSendAmount/100) + "." + String.valueOf(actualSendAmount%100));
+            redPacketActivityUpdateParam.setActualSendAmount(actualSendAmount / 100 + "." + actualSendAmount % 100);
             redPacketActivityMapper.update(redPacketActivityUpdateParam);
             redPacketActivityMapper.updateRedPacketActivityStatus(id, "3", null,
                     null, new Date(), null, null, user.getUserName());

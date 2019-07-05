@@ -2,12 +2,15 @@ package com.evcas.ddbuswx.common.utils;
 
 import com.evcas.ddbuswx.model.BusLine;
 
+import java.io.Serializable;
 import java.util.Comparator;
 
 /**
  * Created by noxn on 2019/5/29.
  */
-public class BusLineListComparator implements Comparator<BusLine> {
+public class BusLineListComparator implements Comparator<BusLine>, Serializable {
+
+    private static final long serialVersionUID = -2101973113439526342L;
 
     @Override
     public int compare(BusLine busLine1, BusLine busLine2) {
@@ -19,20 +22,22 @@ public class BusLineListComparator implements Comparator<BusLine> {
         while( i < arr1.length && j < arr2.length)
         {
             if ( Character.isDigit( arr1[i]) && Character.isDigit(arr2[j])) {
-                String s1 = "";
-                String s2 = "";
+                StringBuffer sb1 = new StringBuffer();
+                StringBuffer sb2 = new StringBuffer();
                 while ( i < arr1.length && Character.isDigit( arr1[i]) ) {
-                    s1 += arr1[i];
+                    sb1.append(arr1[i]);
                     i++;
                 }
                 while (j < arr2.length && Character.isDigit(arr2[j])) {
-                    s2 += arr2[j];
+                    sb2.append(arr2[j]);
                     j++;
                 }
-                if (Integer.valueOf(s1) > Integer.valueOf(s2)) {
+                String s1 = sb1.toString();
+                String s2 = sb1.toString();
+                if (Integer.parseInt(s1) > Integer.parseInt(s2)) {
                     return 1;
                 }
-                if (Integer.valueOf(s1) < Integer.valueOf(s2)) {
+                if (Integer.parseInt(s1) < Integer.parseInt(s2)) {
                     return -1;
                 }
             } else {

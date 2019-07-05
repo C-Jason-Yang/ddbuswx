@@ -1,9 +1,12 @@
 package com.evcas.ddbuswx.common;
 
+import lombok.Getter;
+
 /**
  * 公交方向（上行，下行）
  * Created by noxn on 2018/8/11.
  */
+@Getter
 public enum BusDirection {
 
     UpLink("上行", "1"),DownLink("下行", "2");
@@ -16,16 +19,4 @@ public enum BusDirection {
         this.value = value;
     }
 
-    public String getKey() {
-        return key;
-    }
-    public void setKey(String key) {
-        this.key = key;
-    }
-    public String getValue() {
-        return value;
-    }
-    public void setValue(String value) {
-        this.value = value;
-    }
 }

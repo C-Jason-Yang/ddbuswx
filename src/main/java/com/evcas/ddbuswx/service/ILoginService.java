@@ -7,5 +7,5 @@ import java.util.Map;
  */
 public interface ILoginService {
 
-    public Map userLogin(String userName, String password);
+     Map userLogin(String userName, String password);
 }

@@ -49,7 +49,7 @@ public class LostAndFoundDAOImpl implements ILostAndFoundDAO {
         query.addCriteria(Criteria.where("areaMark").is(areaId));
 //        dwzPageModel.setEntity(lostAndFound);
 //        dwzPageModel.setTotalCount(mongoTemplate.count(query, LostAndFound.class));
-        query.skip((Integer.valueOf(pageNum) - 1) * 10);
+        query.skip((Integer.parseInt(pageNum) - 1) * 10);
         query.limit(10);
         query.with(new Sort(Sort.Direction.DESC, "releaseTime"));
         return mongoTemplate.find(query, LostAndFound.class);

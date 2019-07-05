@@ -15,6 +15,8 @@ import springfox.documentation.annotations.ApiIgnore;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
+import static java.lang.Long.valueOf;
+
 /**
  * Created by noxn on 2018/9/23.
  */
@@ -39,12 +41,12 @@ public class BusCardBindingLogController {
                 tokenStr = cookies[i].getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null &&  !"".equals(token.getUserId())) {
                 DwzPageModel dwzPageModel = new DwzPageModel();
                 if (pageNum == null) {
-                    pageNum = Long.valueOf(1);
+                    pageNum = 1L;
                 }
                 dwzPageModel.setCurrentPage(pageNum);
 

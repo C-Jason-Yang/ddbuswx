@@ -65,12 +65,12 @@ public class InfoFeedBackController {
                 tokenStr = cookies[i].getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
                 DwzPageModel pageModel = new DwzPageModel();
                 if (pageNum == null) {
-                    pageNum = Long.valueOf(1);
+                    pageNum = 1L;
                 }
                 pageModel.setCurrentPage(pageNum);
                 pageModel = iInfoFeedBackService.findInfoFeedBackList(pageModel, token.getUserId());

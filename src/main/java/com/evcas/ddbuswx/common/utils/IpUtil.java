@@ -11,6 +11,7 @@ public class IpUtil {
 
     /**
      * 从request 获取请求ip
+     *
      * @param request
      * @return
      */
@@ -34,6 +35,10 @@ public class IpUtil {
                     } catch (UnknownHostException e) {
                         e.printStackTrace();
                     }
+                    if (inet == null) {
+                        throw new NullPointerException("inet is null");
+
+                    }
                     ipAddress = inet.getHostAddress();
                 }
             }
@@ -45,7 +50,7 @@ public class IpUtil {
                 }
             }
         } catch (Exception e) {
-            ipAddress="";
+            ipAddress = "";
         }
         // ipAddress = this.getRequest().getRemoteAddr();
         return ipAddress;

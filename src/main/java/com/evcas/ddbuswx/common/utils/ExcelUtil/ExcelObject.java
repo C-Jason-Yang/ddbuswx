@@ -2,24 +2,18 @@ package com.evcas.ddbuswx.common.utils.ExcelUtil;
 
 import com.evcas.ddbuswx.common.utils.ExcelUtil.annotation.ExcelImportField;
 import com.evcas.ddbuswx.common.utils.ExcelUtil.constant.AutoCreateTypeEnum;
-import com.evcas.ddbuswx.common.utils.RandomStr;
 import com.evcas.ddbuswx.common.utils.ReflectUtil;
 import com.evcas.ddbuswx.common.utils.RegularUtil;
 import com.evcas.ddbuswx.common.utils.UuidUtil;
-import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 import java.util.regex.Matcher;

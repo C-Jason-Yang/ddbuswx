@@ -7,7 +7,6 @@ import com.evcas.ddbuswx.common.utils.UuidUtil;
 import com.evcas.ddbuswx.model.Token;
 import com.evcas.ddbuswx.service.ILoginService;
 import com.evcas.ddbuswx.service.ITokenService;
-import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,28 +47,29 @@ public class LoginController {
         return JsonTools.gson.toJson(result);
     }
 
+    @SuppressWarnings("Duplicates")
     @RequestMapping(value = "index", method = RequestMethod.POST)
     public ModelAndView index(String userName, String password, HttpServletRequest request, HttpServletResponse response) {
         ModelAndView model = new ModelAndView();
         Cookie[] cookies = request.getCookies();
-        Map<String, Object> loginResult = null;
+        Map loginResult = null;
         String tokenStr = "";
         if (cookies != null) {
-            for (int i = 0; i < cookies.length; i++) {
-                if (cookies[i].getName().equals("token")) {
-                    tokenStr = cookies[i].getValue();
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("token")) {
+                    tokenStr = cookie.getValue();
                 }
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token == null || token.getToken() == null || token.getToken() == "") {
+            if (token == null || token.getToken() == null || token.getToken().equals("")) {
                 tokenStr = "";
             } else {
                 tokenStr = token.getToken();
             }
         }
-        if (tokenStr == "") {
+        if (tokenStr.equals("")) {
             loginResult = iLoginService.userLogin(userName, password);
             if (loginResult.get("mark").equals(1)) {
                 tokenStr = UuidUtil.getUuid();
@@ -80,10 +80,10 @@ public class LoginController {
                 iTokenService.addToken(token);
             }
         }
-        if (tokenStr != "" || (loginResult != null && loginResult.get("mark").equals(1))) {
+        if (!tokenStr.equals("") || loginResult.get("mark").equals(1)) {
             model.addObject("userName", userName);
             model.setViewName("index");
-        }  else if (loginResult != null && loginResult.get("mark").equals(2)) {
+        } else if (loginResult.get("mark").equals(2)) {
             model.setViewName("loginErrorPage");
             model.addObject("loginError", 1);
         } else {
@@ -101,25 +101,25 @@ public class LoginController {
     @ResponseBody
     public String relogin(String userName, String password, HttpServletRequest request, HttpServletResponse response) {
         Cookie[] cookies = request.getCookies();
-        Map<String, Object> loginResult = null;
+        Map loginResult = null;
         String tokenStr = "";
         if (cookies != null) {
-            for (int i = 0; i < cookies.length; i++) {
-                if (cookies[i].getName().equals("token")) {
-                    tokenStr = cookies[i].getValue();
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("token")) {
+                    tokenStr = cookie.getValue();
                 }
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token == null || token.getToken() == null || token.getToken() == "") {
+            if (token == null || token.getToken() == null || token.getToken().equals("")) {
                 tokenStr = "";
             } else {
                 tokenStr = token.getToken();
             }
         }
         Token token = null;
-        if (tokenStr == "") {
+        if (tokenStr.equals("")) {
             loginResult = iLoginService.userLogin(userName, password);
             if (loginResult.get("mark").equals(1)) {
                 tokenStr = UuidUtil.getUuid();
@@ -131,15 +131,14 @@ public class LoginController {
             }
         }
         DwzCallBackResult result = new DwzCallBackResult();
-        if (tokenStr != "" || (loginResult != null && loginResult.get("mark").equals(1))) {
+        if (!tokenStr.equals("") || loginResult.get("mark").equals(1)) {
             result.setStatusCode(200);
             result.setMessage("登录成功");
             result.setCallbackType("closeCurrent");
+            if (token == null) {
+                throw new NullPointerException("token is null");
+            }
             result.setRel(token.getToken());
-        }  else if (loginResult != null && loginResult.get("mark").equals(2)) {
-            result.setStatusCode(300);
-            result.setMessage("登录失败");
-            result.setCallbackType("closeCurrent");
         } else {
             result.setStatusCode(300);
             result.setMessage("登录失败");

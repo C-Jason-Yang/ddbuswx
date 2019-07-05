@@ -8562,7 +8562,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -8592,7 +8592,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -8736,7 +8736,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -8982,7 +8982,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -9012,7 +9012,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -9156,7 +9156,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -9401,7 +9401,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -9431,7 +9431,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -9575,7 +9575,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -9820,7 +9820,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -9850,7 +9850,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -9994,7 +9994,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -10337,7 +10337,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -10367,7 +10367,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -10511,7 +10511,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -11100,7 +11100,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -11130,7 +11130,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -11274,7 +11274,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -11963,7 +11963,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -11993,7 +11993,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -12137,7 +12137,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -12532,7 +12532,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -12562,7 +12562,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -12706,7 +12706,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -13049,7 +13049,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -13079,7 +13079,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -13223,7 +13223,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -13518,7 +13518,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -13548,7 +13548,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -13692,7 +13692,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    ////currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -13937,7 +13937,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -13967,7 +13967,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -14111,7 +14111,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    ////currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -14503,7 +14503,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -14533,7 +14533,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -14677,7 +14677,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -15095,7 +15095,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -15125,7 +15125,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -15269,7 +15269,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -15662,7 +15662,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -15692,7 +15692,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -15836,7 +15836,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -16278,7 +16278,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -16308,7 +16308,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -16452,7 +16452,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -16773,7 +16773,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -16803,7 +16803,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -16947,7 +16947,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -17201,7 +17201,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -17231,7 +17231,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -17375,7 +17375,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -17620,7 +17620,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -17650,7 +17650,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -17794,7 +17794,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -18039,7 +18039,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -18069,7 +18069,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -18213,7 +18213,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -18460,7 +18460,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -18490,7 +18490,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -18634,7 +18634,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -18880,7 +18880,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -18910,7 +18910,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -19054,7 +19054,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -19495,7 +19495,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -19525,7 +19525,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -19669,7 +19669,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -20014,7 +20014,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -20044,7 +20044,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -20188,7 +20188,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -20433,7 +20433,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -20463,7 +20463,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -20607,7 +20607,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -20852,7 +20852,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -20882,7 +20882,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -21026,7 +21026,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -21271,7 +21271,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -21301,7 +21301,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -21445,7 +21445,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                   // //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -21886,7 +21886,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -21916,7 +21916,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -22060,7 +22060,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -22406,7 +22406,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -22436,7 +22436,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -22580,7 +22580,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -22874,7 +22874,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -22904,7 +22904,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -23048,7 +23048,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -23514,7 +23514,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -23544,7 +23544,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -23688,7 +23688,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -24033,7 +24033,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -24063,7 +24063,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -24207,7 +24207,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -24497,7 +24497,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -24527,7 +24527,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -24670,7 +24670,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -25156,7 +25156,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -25186,7 +25186,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -25330,7 +25330,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -25676,7 +25676,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -25706,7 +25706,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -25850,7 +25850,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -26096,7 +26096,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -26126,7 +26126,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -26270,7 +26270,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -26760,7 +26760,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -26790,7 +26790,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -26934,7 +26934,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -27304,7 +27304,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -27334,7 +27334,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -27478,7 +27478,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -27919,7 +27919,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -27949,7 +27949,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -28093,7 +28093,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -28438,7 +28438,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -28468,7 +28468,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -28611,7 +28611,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -29003,7 +29003,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -29033,7 +29033,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -29177,7 +29177,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -29693,7 +29693,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -29723,7 +29723,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -29867,7 +29867,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    ////currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -30212,7 +30212,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -30242,7 +30242,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -30386,7 +30386,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -30631,7 +30631,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -30661,7 +30661,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -30805,7 +30805,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -31148,7 +31148,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -31178,7 +31178,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -31322,7 +31322,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -31715,7 +31715,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -31745,7 +31745,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -31889,7 +31889,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                   // //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -32380,7 +32380,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -32410,7 +32410,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -32554,7 +32554,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -33046,7 +33046,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -33076,7 +33076,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -33220,7 +33220,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -33736,7 +33736,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -33766,7 +33766,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -33910,7 +33910,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -34451,7 +34451,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -34481,7 +34481,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -34625,7 +34625,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -34970,7 +34970,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -35000,7 +35000,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -35144,7 +35144,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -35585,7 +35585,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -35615,7 +35615,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -35759,7 +35759,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -36104,7 +36104,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -36134,7 +36134,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -36278,7 +36278,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                    //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",
@@ -36768,7 +36768,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -36798,7 +36798,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -36942,7 +36942,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();
 
-                    currentQName = reader.getName();
+                   // //currentQName = reader.getName();
 
                     if (reader.getAttributeValue(
                             "http://www.w3.org/2001/XMLSchema-instance",

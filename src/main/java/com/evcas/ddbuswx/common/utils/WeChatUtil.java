@@ -14,12 +14,11 @@ public class WeChatUtil {
     public static String getSignBeForeEncryption(TreeMap signTreeMap) {
         StringBuilder beforeSign = new StringBuilder();
         Set set = signTreeMap.keySet();
-        Iterator iterator = set.iterator();
-        while (iterator.hasNext()) {
-            String tempKey = (String) iterator.next();
-            beforeSign.append(tempKey + "=" + signTreeMap.get(tempKey) + "&");
+        for (Object o : set) {
+            String tempKey = (String) o;
+            beforeSign.append(tempKey).append("=").append(signTreeMap.get(tempKey)).append("&");
         }
-        beforeSign.append("key=" + SystemParameter.WC_MERCHANTS_API_SECRET_KEY);
+        beforeSign.append("key=").append(SystemParameter.WC_MERCHANTS_API_SECRET_KEY);
         return beforeSign.toString();
     }
 }

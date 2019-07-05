@@ -6,10 +6,10 @@ import com.evcas.ddbuswx.common.utils.UuidUtil;
 import com.evcas.ddbuswx.common.utils.WeChatUtil;
 import com.evcas.ddbuswx.common.utils.XmlUtil;
 import com.evcas.ddbuswx.entity.RedPacketDetail;
-import com.evcas.ddbuswx.entity.WcUser;
 import com.evcas.ddbuswx.mapper.RedPacketDetailMapper;
-import com.evcas.ddbuswx.mapper.WcUserMapper;
 import com.evcas.ddbuswx.model.DwzPageModel;
+import com.google.common.collect.Maps;
+import lombok.Cleanup;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -42,8 +42,6 @@ import java.util.*;
 @Service
 public class RedPacketDetailService {
 
-    @Autowired
-    private WcUserMapper wcUserMapper;
 
     @Autowired
     private RedPacketDetailMapper redPacketDetailMapper;
@@ -67,6 +65,7 @@ public class RedPacketDetailService {
         return null;
     }
 
+    @SuppressWarnings("Duplicates")
     public void queryRedPacketAcceptInfo() {
         Date today = new Date();
         Calendar calBegin = Calendar.getInstance();
@@ -77,50 +76,41 @@ public class RedPacketDetailService {
         Date dayBeforeYesterday = calBegin.getTime();
         List<RedPacketDetail> redPacketDetailList = redPacketDetailMapper.queryRedPacketAcceptInfo(today, yesterday, dayBeforeYesterday);
         if (redPacketDetailList != null) {
-            for (int i = 0; i < redPacketDetailList.size(); i++) {
+            for (RedPacketDetail packetDetail : redPacketDetailList) {
                 KeyStore keyStore = null;
                 try {
                     keyStore = KeyStore.getInstance("PKCS12");
                 } catch (KeyStoreException e) {
                     e.printStackTrace();
                 }
-                FileInputStream instream = null;
                 try {
-                    instream = new FileInputStream(new File(SystemParameter.PKCS12_FILE_PATH));
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    keyStore.load(instream, "1508163181".toCharArray());
-                } catch (IOException exp) {
-                    exp.printStackTrace();
-                } catch (NoSuchAlgorithmException ex) {
-                    ex.printStackTrace();
-                } catch (CertificateException e) {
-                    e.printStackTrace();
-                } finally {
-                    try {
-                        instream.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                    @Cleanup FileInputStream instream = new FileInputStream(new File(SystemParameter.PKCS12_FILE_PATH));
+
+                    if (keyStore == null) {
+                        throw new NullPointerException("keyStore is null");
                     }
+                    keyStore.load(instream, "1508163181".toCharArray());
+                } catch (IOException | NoSuchAlgorithmException | CertificateException exp) {
+                    exp.printStackTrace();
                 }
                 SSLContext sslcontext = null;
                 try {
                     sslcontext = SSLContexts.custom().loadKeyMaterial(keyStore, "1508163181".toCharArray()).build();
-                } catch (NoSuchAlgorithmException e) {
+                } catch (NoSuchAlgorithmException | KeyStoreException | UnrecoverableKeyException | KeyManagementException e) {
                     e.printStackTrace();
-                } catch (KeyStoreException ke) {
-                    ke.printStackTrace();
-                } catch (UnrecoverableKeyException uke) {
-                    uke.printStackTrace();
-                } catch (KeyManagementException kme) {
-                    kme.printStackTrace();
+                }
+
+                if (sslcontext == null) {
+                    throw new NullPointerException("sslcontext is null");
                 }
                 SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslcontext, new String[]{"TLSv1"},
                         null, SSLConnectionSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
-                CloseableHttpClient httpclient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
+
+
+                CloseableHttpClient httpclient = null;
                 try {
+                    httpclient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
+
                     HttpPost httpPost = new HttpPost(SystemParameter.WE_CHAT_GETHBINFO);
                     System.out.println("executing request" + httpPost.getRequestLine());
                     httpPost.addHeader("Connection", "keep-alive");
@@ -132,7 +122,7 @@ public class RedPacketDetailService {
                     httpPost.addHeader("User-Agent", "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) ");
 
                     String nonceStr = UuidUtil.getUuid();
-                    String mchBillno = redPacketDetailList.get(i).getMchBillno();
+                    String mchBillno = packetDetail.getMchBillno();
                     TreeMap signTreeMap = new TreeMap();
                     signTreeMap.put("nonce_str", nonceStr);
                     signTreeMap.put("mch_billno", mchBillno);
@@ -145,48 +135,55 @@ public class RedPacketDetailService {
 
                     StringBuilder xmlSb = new StringBuilder();
                     xmlSb.append("<xml>");
-                    xmlSb.append("     <sign>" + sign + "</sign>");
-                    xmlSb.append("     <mch_billno>" + mchBillno + "</mch_billno>");
+                    xmlSb.append("     <sign>").append(sign).append("</sign>");
+                    xmlSb.append("     <mch_billno>").append(mchBillno).append("</mch_billno>");
                     xmlSb.append("     <mch_id>1508163181</mch_id>");
                     xmlSb.append("     <appid>wxc609948134e10033</appid>");
-                    xmlSb.append("     <nonce_str>" + nonceStr + "</nonce_str>");
+                    xmlSb.append("     <nonce_str>").append(nonceStr).append("</nonce_str>");
                     xmlSb.append("     <bill_type>MCHT</bill_type>");
                     xmlSb.append("</xml>");
                     httpPost.setEntity(new StringEntity(xmlSb.toString(), "UTF-8"));
-                    CloseableHttpResponse response = null;
+
+                    HttpEntity entity = null;
                     try {
-                        response = httpclient.execute(httpPost);
+                        @Cleanup CloseableHttpResponse response = httpclient.execute(httpPost);
+                        if (response == null) {
+                            throw new NullPointerException("response is null");
+                        }
+                        entity = response.getEntity();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    try {
-                        HttpEntity entity = response.getEntity();
-                        if (entity != null) {
-                            BufferedReader bufferedReader = null;
-                            try {
-                                bufferedReader = new BufferedReader(new InputStreamReader(entity.getContent()));
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+
+                    if (entity != null) {
+                        Map<String, String> redPacketResult = Maps.newHashMap();
+                        try {
+                            @Cleanup BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(entity.getContent()));
+
                             StringBuilder sendResultSb = new StringBuilder();
                             String text;
-                            try {
-                                while ((text = bufferedReader.readLine()) != null) {
-                                    sendResultSb.append(text);
-                                }
-                            } catch (IOException ex) {
-                                ex.printStackTrace();
+                            while ((text = bufferedReader.readLine()) != null) {
+                                sendResultSb.append(text);
                             }
                             System.err.println(sendResultSb.toString());
-                            Map<String, String> redPacketResult = XmlUtil.xmlToMap(sendResultSb.toString());
-                            //成功
-                            if (redPacketResult.get("return_code").equals("SUCCESS") && redPacketResult.get("result_code").equals("SUCCESS")) {
-                                if (redPacketResult.get("status").equals("SENT")) {
+                            redPacketResult = XmlUtil.xmlToMap(sendResultSb.toString());
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                        }
 
-                                } else if (redPacketResult.get("status").equals("RECEIVED")) {
-                                    redPacketDetailMapper.updateRedPacketDetailReceiveById(redPacketDetailList.get(i).getId(), "2");
+                        //成功
+                        if (redPacketResult == null) {
+                            throw new NullPointerException("redPacketResult is null");
+                        }
+                        if (redPacketResult.get("return_code").equals("SUCCESS") && redPacketResult.get("result_code").equals("SUCCESS")) {
+                            switch (redPacketResult.get("status")) {
+                                case "SENT":
+
+                                    break;
+                                case "RECEIVED":
+                                    redPacketDetailMapper.updateRedPacketDetailReceiveById(packetDetail.getId(), "2");
                                     RedPacketDetail redPacketDetail = new RedPacketDetail();
-                                    redPacketDetail.setId(redPacketDetailList.get(i).getId());
+                                    redPacketDetail.setId(packetDetail.getId());
                                     DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                                     try {
                                         redPacketDetail.setReceiveDate(df.parse(redPacketResult.get("rcv_time")));
@@ -194,26 +191,23 @@ public class RedPacketDetailService {
                                         e.printStackTrace();
                                     }
                                     redPacketDetailMapper.update(redPacketDetail);
-                                } else if (redPacketResult.get("status").equals("REFUND")) {
-                                    redPacketDetailMapper.updateRedPacketDetailReceiveById(redPacketDetailList.get(i).getId(), "3");
-                                }
+                                    break;
+                                case "REFUND":
+                                    redPacketDetailMapper.updateRedPacketDetailReceiveById(packetDetail.getId(), "3");
+                                    break;
                             }
                         }
-                        try {
-                            EntityUtils.consume(entity);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    } finally {
-                        try {
-                            response.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
                     }
+                    try {
+                        EntityUtils.consume(entity);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
                 } finally {
                     try {
-                        httpclient.close();
+                        if (httpclient != null)
+                            httpclient.close();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -240,10 +234,10 @@ public class RedPacketDetailService {
         HSSFWorkbook workbook = new HSSFWorkbook();                        // 创建工作簿对象
         HSSFSheet sheet = workbook.createSheet("红包明细");
         // 定义所需列数
-        String [] titleNameArr = new String [] {"序号", "活动名称", "用户openid", "手机号", "公交卡号", "所属区县", "交易订单号", "发放时间", "红包金额", "领取状态", "领取时间"};
+        String[] titleNameArr = new String[]{"序号", "活动名称", "用户openid", "手机号", "公交卡号", "所属区县", "交易订单号", "发放时间", "红包金额", "领取状态", "领取时间"};
         int columnNum = titleNameArr.length;
         HSSFRow columnTitleRow = sheet.createRow(0);
-        for(int i = 0; i < columnNum; i++){
+        for (int i = 0; i < columnNum; i++) {
             HSSFCell cellRowName = columnTitleRow.createCell(i);                //创建列头对应个数的单元格
             cellRowName.setCellType(CellType.STRING);                //设置列头单元格的数据类型
             HSSFRichTextString text = new HSSFRichTextString(titleNameArr[i]);
@@ -255,65 +249,92 @@ public class RedPacketDetailService {
                 for (int a = 0; a < columnNum; a++) {
                     HSSFCell dataCell = dataColumnRow.createCell(a);                //创建列头对应个数的单元格
                     dataCell.setCellType(CellType.STRING);                //设置列头单元格的数据类型
-                    if (a == 0) {
-                        HSSFRichTextString text = new HSSFRichTextString(String.valueOf(i + 1));
-                        dataCell.setCellValue(text);
-                    } else if (a == 1) {
-                        HSSFRichTextString text = new HSSFRichTextString(String.valueOf(redPacketDetailList.get(i).getActivityName()));
-                        dataCell.setCellValue(text);
-                    } else if (a == 2) {
-                        if (redPacketDetailList.get(i).getOpenid() != null) {
-                            HSSFRichTextString text = new HSSFRichTextString(String.valueOf(redPacketDetailList.get(i).getOpenid()));
+                    HSSFRichTextString text;
+                    switch (a) {
+                        case 0:
+                            text = new HSSFRichTextString(String.valueOf(i + 1));
                             dataCell.setCellValue(text);
-                        } else {
-                            dataCell.setCellValue("");
-                        }
-                    } else if (a == 3) {
-                        if (redPacketDetailList.get(i).getPhone() != null) {
-                            HSSFRichTextString text = new HSSFRichTextString(String.valueOf(redPacketDetailList.get(i).getPhone()));
+                            break;
+                        case 1:
+                            text = new HSSFRichTextString(String.valueOf(redPacketDetailList.get(i).getActivityName()));
                             dataCell.setCellValue(text);
-                        } else {
-                            dataCell.setCellValue("");
-                        }
-                    } else if (a == 4) {
-                        HSSFRichTextString text = new HSSFRichTextString(String.valueOf(redPacketDetailList.get(i).getBusCardNo()));
-                        dataCell.setCellValue(text);
-                    } else if (a == 5) {
-                        HSSFRichTextString text = new HSSFRichTextString(String.valueOf(redPacketDetailList.get(i).getAreaName()));
-                        dataCell.setCellValue(text);
-                    } else if (a == 6) {
-                        HSSFRichTextString text = new HSSFRichTextString(String.valueOf(redPacketDetailList.get(i).getMchBillno()));
-                        dataCell.setCellValue(text);
-                    } else if (a == 7) {
-                        HSSFRichTextString text = new HSSFRichTextString(DateFormatUtils.format(redPacketDetailList.get(i).getSendDate(), "yyyy-MM-dd HH:mm:ss"));
-                        dataCell.setCellValue(text);
-                    } else if (a == 8) {
-                        DecimalFormat dFormat = new DecimalFormat("#.00");
-                        String tempAmount = dFormat.format(redPacketDetailList.get(i).getAmount());
-                        HSSFRichTextString text = new HSSFRichTextString(tempAmount);
-                        dataCell.setCellValue(text);
-                    } else if (a == 9) {
-                        if (redPacketDetailList.get(i).getReceive().equals("1")) {
-                            HSSFRichTextString text = new HSSFRichTextString(String.valueOf("未领取"));
+                            break;
+                        case 2:
+                            if (redPacketDetailList.get(i).getOpenid() != null) {
+                                text = new HSSFRichTextString(String.valueOf(redPacketDetailList.get(i).getOpenid()));
+                                dataCell.setCellValue(text);
+                            } else {
+                                dataCell.setCellValue("");
+                            }
+                            break;
+
+                        case 3:
+                            if (redPacketDetailList.get(i).getPhone() != null) {
+                                text = new HSSFRichTextString(String.valueOf(redPacketDetailList.get(i).getPhone()));
+                                dataCell.setCellValue(text);
+                            } else {
+                                dataCell.setCellValue("");
+                            }
+                            break;
+                        case 4:
+                            text = new HSSFRichTextString(String.valueOf(redPacketDetailList.get(i).getBusCardNo()));
                             dataCell.setCellValue(text);
-                        } else if (redPacketDetailList.get(i).getReceive().equals("2")){
-                            HSSFRichTextString text = new HSSFRichTextString(String.valueOf("已领取"));
+                            break;
+                        case 5:
+                            text = new HSSFRichTextString(String.valueOf(redPacketDetailList.get(i).getAreaName()));
                             dataCell.setCellValue(text);
-                        } else if (redPacketDetailList.get(i).getReceive().equals("3")){
-                            HSSFRichTextString text = new HSSFRichTextString(String.valueOf("退回"));
+                            break;
+                        case 6:
+                            text = new HSSFRichTextString(String.valueOf(redPacketDetailList.get(i).getMchBillno()));
                             dataCell.setCellValue(text);
-                        } else {
-                            HSSFRichTextString text = new HSSFRichTextString(String.valueOf("发放失败"));
+                            break;
+                        case 7:
+                            text = new HSSFRichTextString(DateFormatUtils.format(redPacketDetailList.get(i).getSendDate(), "yyyy-MM-dd HH:mm:ss"));
                             dataCell.setCellValue(text);
-                        }
-                    } else if (a == 10) {
-                        if (redPacketDetailList.get(i).getReceiveDate() != null) {
-                            HSSFRichTextString text = new HSSFRichTextString(DateFormatUtils.format(redPacketDetailList.get(i).getReceiveDate(), "yyyy-MM-dd HH:mm:ss"));
+                            break;
+                        case 8:
+                            DecimalFormat dFormat = new DecimalFormat("#.00");
+                            String tempAmount = dFormat.format(redPacketDetailList.get(i).getAmount());
+                            text = new HSSFRichTextString(tempAmount);
                             dataCell.setCellValue(text);
-                        } else {
-                            dataCell.setCellValue("");
-                        }
+                            break;
+                        case 9:
+                            switch (redPacketDetailList.get(i).getReceive()) {
+                                case "1": {
+                                    text = new HSSFRichTextString("未领取");
+                                    dataCell.setCellValue(text);
+                                    break;
+                                }
+                                case "2": {
+                                    text = new HSSFRichTextString("已领取");
+                                    dataCell.setCellValue(text);
+                                    break;
+                                }
+                                case "3": {
+                                    text = new HSSFRichTextString("退回");
+                                    dataCell.setCellValue(text);
+                                    break;
+                                }
+                                default: {
+                                    text = new HSSFRichTextString("发放失败");
+                                    dataCell.setCellValue(text);
+                                    break;
+                                }
+                            }
+                            break;
+                        case 10:
+                            if (redPacketDetailList.get(i).getReceiveDate() != null) {
+                                text = new HSSFRichTextString(DateFormatUtils.format(redPacketDetailList.get(i).getReceiveDate(), "yyyy-MM-dd HH:mm:ss"));
+                                dataCell.setCellValue(text);
+                            } else {
+                                dataCell.setCellValue("");
+                            }
+                            break;
+                        default:
+                            break;
                     }
+
+
                 }
             }
         }

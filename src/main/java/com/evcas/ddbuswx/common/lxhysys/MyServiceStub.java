@@ -15,7 +15,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     private javax.xml.namespace.QName[] opNameArray = null;
 
     /**
-     *Constructor that takes in a configContext
+     * Constructor that takes in a configContext
      */
     public MyServiceStub(
             org.apache.axis2.context.ConfigurationContext configurationContext,
@@ -320,8 +320,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys.MyService#selectLineDetail
      * @param selectLineDetail0
+     * @see com.evcas.ddbuswx.common.lxhysys.MyService#selectLineDetail
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectLineDetailResponse selectLineDetail(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectLineDetail selectLineDetail0)
@@ -390,8 +390,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -430,8 +430,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param selectLineDetail0
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startselectLineDetail(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectLineDetail selectLineDetail0,
@@ -509,9 +509,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorselectLineDetail(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -579,8 +579,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com
      * @param getRealNameConsumeInfo2
+     * @see com
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetRealNameConsumeInfoResponse getRealNameConsumeInfo(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetRealNameConsumeInfo getRealNameConsumeInfo2)
@@ -651,8 +651,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -691,8 +691,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getRealNameConsumeInfo2
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startgetRealNameConsumeInfo(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetRealNameConsumeInfo getRealNameConsumeInfo2,
@@ -770,9 +770,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetRealNameConsumeInfo(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -840,8 +840,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com
      * @param driverFirstLastList4
+     * @see com
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.DriverFirstLastListResponse driverFirstLastList(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.DriverFirstLastList driverFirstLastList4)
@@ -910,8 +910,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -950,8 +950,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param driverFirstLastList4
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startdriverFirstLastList(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.DriverFirstLastList driverFirstLastList4,
@@ -1029,9 +1029,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrordriverFirstLastList(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -1099,8 +1099,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getScheduleData6
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetScheduleDataResponse getScheduleData(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetScheduleData getScheduleData6)
@@ -1169,8 +1169,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -1209,8 +1209,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getScheduleData6
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startgetScheduleData(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetScheduleData getScheduleData6,
@@ -1288,9 +1288,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetScheduleData(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -1358,8 +1358,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getBusMileList8
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetBusMileListResponse getBusMileList(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetBusMileList getBusMileList8)
@@ -1428,8 +1428,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -1468,8 +1468,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getBusMileList8
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startgetBusMileList(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetBusMileList getBusMileList8,
@@ -1546,9 +1546,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetBusMileList(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -1616,8 +1616,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param selectDepartment10
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectDepartmentResponse selectDepartment(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectDepartment selectDepartment10)
@@ -1686,8 +1686,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -1726,8 +1726,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param selectDepartment10
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startselectDepartment(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectDepartment selectDepartment10,
@@ -1805,9 +1805,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorselectDepartment(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -1875,8 +1875,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getConsumeInfoByCard12
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetConsumeInfoByCardResponse getConsumeInfoByCard(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetConsumeInfoByCard getConsumeInfoByCard12)
@@ -1945,8 +1945,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -1985,8 +1985,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getConsumeInfoByCard12
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startgetConsumeInfoByCard(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetConsumeInfoByCard getConsumeInfoByCard12,
@@ -2064,9 +2064,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetConsumeInfoByCard(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -2134,8 +2134,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getMileList14
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetMileListResponse getMileList(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetMileList getMileList14)
@@ -2204,8 +2204,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -2244,8 +2244,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getMileList14
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startgetMileList(com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetMileList getMileList14,
                                  final com.evcas.ddbuswx.common.lxhysys.MyServiceCallbackHandler callback)
@@ -2320,9 +2320,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetMileList(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -2390,8 +2390,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param isShow16
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.IsShowResponse isShow(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.IsShow isShow16) throws java.rmi.RemoteException {
@@ -2457,8 +2457,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -2497,8 +2497,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param isShow16
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startisShow(com.evcas.ddbuswx.common.lxhysys.MyServiceStub.IsShow isShow16,
                             final com.evcas.ddbuswx.common.lxhysys.MyServiceCallbackHandler callback)
@@ -2570,9 +2570,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorisShow(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -2640,8 +2640,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getOverSpeedInfo18
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetOverSpeedInfoResponse getOverSpeedInfo(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetOverSpeedInfo getOverSpeedInfo18)
@@ -2710,8 +2710,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -2750,8 +2750,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getOverSpeedInfo18
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startgetOverSpeedInfo(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetOverSpeedInfo getOverSpeedInfo18,
@@ -2829,9 +2829,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetOverSpeedInfo(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -2899,8 +2899,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getPlanRealList20
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetPlanRealListResponse getPlanRealList(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetPlanRealList getPlanRealList20)
@@ -2969,8 +2969,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -3009,8 +3009,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getPlanRealList20
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startgetPlanRealList(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetPlanRealList getPlanRealList20,
@@ -3088,9 +3088,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetPlanRealList(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -3158,8 +3158,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getDriverGpsMile22
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetDriverGpsMileResponse getDriverGpsMile(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetDriverGpsMile getDriverGpsMile22)
@@ -3228,8 +3228,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -3268,8 +3268,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getDriverGpsMile22
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startgetDriverGpsMile(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetDriverGpsMile getDriverGpsMile22,
@@ -3347,9 +3347,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetDriverGpsMile(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -3417,8 +3417,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param selectStation24
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectStationResponse selectStation(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectStation selectStation24)
@@ -3487,8 +3487,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -3527,8 +3527,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param selectStation24
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startselectStation(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectStation selectStation24,
@@ -3604,9 +3604,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorselectStation(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -3674,8 +3674,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getFuelList26
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetFuelListResponse getFuelList(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetFuelList getFuelList26)
@@ -3744,8 +3744,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -3784,8 +3784,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getFuelList26
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startgetFuelList(com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetFuelList getFuelList26,
                                  final com.evcas.ddbuswx.common.lxhysys.MyServiceCallbackHandler callback)
@@ -3860,9 +3860,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetFuelList(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -3930,8 +3930,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param selectCarInfo28
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectCarInfoResponse selectCarInfo(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectCarInfo selectCarInfo28)
@@ -4000,8 +4000,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -4040,8 +4040,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param selectCarInfo28
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startselectCarInfo(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectCarInfo selectCarInfo28,
@@ -4117,9 +4117,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorselectCarInfo(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -4187,8 +4187,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getZDLAll30
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetZDLAllResponse getZDLAll(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetZDLAll getZDLAll30)
@@ -4256,8 +4256,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -4296,8 +4296,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getZDLAll30
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startgetZDLAll(com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetZDLAll getZDLAll30,
                                final com.evcas.ddbuswx.common.lxhysys.MyServiceCallbackHandler callback)
@@ -4369,9 +4369,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetZDLAll(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -4439,8 +4439,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getDriverWorkTime32
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetDriverWorkTimeResponse getDriverWorkTime(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetDriverWorkTime getDriverWorkTime32)
@@ -4509,8 +4509,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -4549,8 +4549,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getDriverWorkTime32
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startgetDriverWorkTime(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetDriverWorkTime getDriverWorkTime32,
@@ -4628,9 +4628,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetDriverWorkTime(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -4698,8 +4698,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getConsumeInfoByDate34
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetConsumeInfoByDateResponse getConsumeInfoByDate(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetConsumeInfoByDate getConsumeInfoByDate34)
@@ -4768,8 +4768,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -4808,8 +4808,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getConsumeInfoByDate34
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startgetConsumeInfoByDate(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetConsumeInfoByDate getConsumeInfoByDate34,
@@ -4887,9 +4887,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetConsumeInfoByDate(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -4957,8 +4957,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com
      * @param getBusTimeList36
+     * @see com
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetBusTimeListResponse getBusTimeList(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetBusTimeList getBusTimeList36)
@@ -5027,8 +5027,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -5067,8 +5067,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com
      * @param getBusTimeList36
+     * @see com
      */
     public void startgetBusTimeList(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetBusTimeList getBusTimeList36,
@@ -5145,9 +5145,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetBusTimeList(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -5215,8 +5215,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com
      * @param getLineFirstLast38
+     * @see com
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetLineFirstLastResponse getLineFirstLast(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetLineFirstLast getLineFirstLast38)
@@ -5285,8 +5285,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -5325,8 +5325,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param getLineFirstLast38
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startgetLineFirstLast(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetLineFirstLast getLineFirstLast38,
@@ -5404,9 +5404,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetLineFirstLast(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -5474,8 +5474,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com
      * @param getBusDriverTrips40
+     * @see com
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetBusDriverTripsResponse getBusDriverTrips(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetBusDriverTrips getBusDriverTrips40)
@@ -5544,8 +5544,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -5584,8 +5584,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com
      * @param getBusDriverTrips40
+     * @see com
      */
     public void startgetBusDriverTrips(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetBusDriverTrips getBusDriverTrips40,
@@ -5663,9 +5663,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetBusDriverTrips(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -5732,7 +5732,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
     /**
      * Auto generated method signature
-     *
      */
     public void main(com.evcas.ddbuswx.common.lxhysys.MyServiceStub.Main main42)
             throws java.rmi.RemoteException {
@@ -5777,8 +5776,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com
      * @param getDriverInfo43
+     * @see com
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetDriverInfoResponse getDriverInfo(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetDriverInfo getDriverInfo43)
@@ -5847,8 +5846,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -5887,8 +5886,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com
      * @param getDriverInfo43
+     * @see com
      */
     public void startgetDriverInfo(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetDriverInfo getDriverInfo43,
@@ -5964,9 +5963,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetDriverInfo(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -6034,8 +6033,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com
      * @param getConsumeRecord45
+     * @see com
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetConsumeRecordResponse getConsumeRecord(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetConsumeRecord getConsumeRecord45)
@@ -6104,8 +6103,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -6144,8 +6143,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com
      * @param getConsumeRecord45
+     * @see com
      */
     public void startgetConsumeRecord(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetConsumeRecord getConsumeRecord45,
@@ -6223,9 +6222,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetConsumeRecord(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -6293,8 +6292,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com
      * @param getBusGpsMile47
+     * @see com
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetBusGpsMileResponse getBusGpsMile(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetBusGpsMile getBusGpsMile47)
@@ -6363,8 +6362,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -6403,8 +6402,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com
      * @param getBusGpsMile47
+     * @see com
      */
     public void startgetBusGpsMile(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.GetBusGpsMile getBusGpsMile47,
@@ -6480,9 +6479,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorgetBusGpsMile(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -6550,8 +6549,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param selectFirstLast49
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectFirstLastResponse selectFirstLast(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectFirstLast selectFirstLast49)
@@ -6620,8 +6619,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -6660,8 +6659,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param selectFirstLast49
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startselectFirstLast(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectFirstLast selectFirstLast49,
@@ -6739,9 +6738,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorselectFirstLast(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -6809,8 +6808,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param selectLineInfo51
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectLineInfoResponse selectLineInfo(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectLineInfo selectLineInfo51)
@@ -6879,8 +6878,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[] { messageClass });
-                        m.invoke(ex, new java.lang.Object[] { messageObject });
+                                new java.lang.Class[]{messageClass});
+                        m.invoke(ex, new java.lang.Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (java.lang.ClassCastException e) {
@@ -6919,8 +6918,8 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see com.evcas.ddbuswx.common.lxhysys
      * @param selectLineInfo51
+     * @see com.evcas.ddbuswx.common.lxhysys
      */
     public void startselectLineInfo(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectLineInfo selectLineInfo51,
@@ -6997,9 +6996,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                 java.lang.Object messageObject = fromOM(faultElt,
                                         messageClass);
                                 java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[] { messageClass });
+                                        new java.lang.Class[]{messageClass});
                                 m.invoke(ex,
-                                        new java.lang.Object[] { messageObject });
+                                        new java.lang.Object[]{messageObject});
 
                                 callback.receiveErrorselectLineInfo(new java.rmi.RemoteException(
                                         ex.getMessage(), ex));
@@ -8147,7 +8146,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
     /* methods to provide back word compatibility */
 
     /**
-     *  get the default envelope
+     * get the default envelope
      */
     private org.apache.axiom.soap.SOAPEnvelope toEnvelope(
             org.apache.axiom.soap.SOAPFactory factory) {
@@ -8400,6 +8399,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -8408,6 +8408,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -8417,7 +8418,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -8544,7 +8544,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -8574,7 +8574,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -8584,7 +8584,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -8691,7 +8691,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -8699,9 +8699,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetBusTimeListResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -8819,6 +8819,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -8827,6 +8828,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -8836,7 +8838,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -8964,7 +8965,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -8994,7 +8995,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -9004,7 +9005,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -9111,7 +9112,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -9119,9 +9120,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetRealNameConsumeInfoResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -9239,6 +9240,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -9247,6 +9249,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -9256,7 +9259,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -9383,7 +9385,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -9413,7 +9415,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -9423,7 +9425,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -9530,7 +9532,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -9538,9 +9540,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetDriverInfoResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -9658,6 +9660,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -9666,6 +9669,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -9675,7 +9679,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -9802,7 +9805,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -9832,7 +9835,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -9842,7 +9845,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -9949,7 +9952,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -9957,9 +9960,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetBusGpsMileResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -10099,6 +10102,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getLineCode() {
@@ -10107,6 +10111,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param LineCode
          */
         public void setLineCode(java.lang.String param) {
@@ -10121,6 +10126,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -10129,6 +10135,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -10143,6 +10150,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -10151,6 +10159,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -10160,7 +10169,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -10319,7 +10327,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -10349,7 +10357,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -10359,7 +10367,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -10466,7 +10474,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -10474,9 +10482,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static SelectFirstLast parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -10710,6 +10718,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getDepCode() {
@@ -10718,6 +10727,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param DepCode
          */
         public void setDepCode(java.lang.String param) {
@@ -10732,6 +10742,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getDepName() {
@@ -10740,6 +10751,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param DepName
          */
         public void setDepName(java.lang.String param) {
@@ -10754,6 +10766,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getLineCode() {
@@ -10762,6 +10775,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param LineCode
          */
         public void setLineCode(java.lang.String param) {
@@ -10776,6 +10790,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getRunDate() {
@@ -10784,6 +10799,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param RunDate
          */
         public void setRunDate(java.lang.String param) {
@@ -10798,6 +10814,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBusCode() {
@@ -10806,6 +10823,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BusCode
          */
         public void setBusCode(java.lang.String param) {
@@ -10820,6 +10838,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -10828,6 +10847,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -10842,6 +10862,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -10850,6 +10871,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -10859,7 +10881,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -11082,7 +11103,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -11112,7 +11133,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -11122,7 +11143,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -11229,7 +11250,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -11237,9 +11258,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetConsumeInfoByCard parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -11573,6 +11594,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getLineCode() {
@@ -11581,6 +11603,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param LineCode
          */
         public void setLineCode(java.lang.String param) {
@@ -11595,6 +11618,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBusCode() {
@@ -11603,6 +11627,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BusCode
          */
         public void setBusCode(java.lang.String param) {
@@ -11617,6 +11642,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getDriverCode() {
@@ -11625,6 +11651,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param DriverCode
          */
         public void setDriverCode(java.lang.String param) {
@@ -11639,6 +11666,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBeginDate() {
@@ -11647,6 +11675,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BeginDate
          */
         public void setBeginDate(java.lang.String param) {
@@ -11661,6 +11690,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getEndDate() {
@@ -11669,6 +11699,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param EndDate
          */
         public void setEndDate(java.lang.String param) {
@@ -11683,6 +11714,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -11691,6 +11723,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -11705,6 +11738,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -11713,6 +11747,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -11722,7 +11757,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -11945,7 +11979,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -11975,7 +12009,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -11985,7 +12019,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -12092,7 +12126,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -12100,9 +12134,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetMileList parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -12370,6 +12404,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -12378,6 +12413,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -12387,7 +12423,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -12514,7 +12549,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -12544,7 +12579,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -12554,7 +12589,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -12661,7 +12696,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -12669,9 +12704,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static SelectFirstLastResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -12811,6 +12846,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getLineCode() {
@@ -12819,6 +12855,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param LineCode
          */
         public void setLineCode(java.lang.String param) {
@@ -12833,6 +12870,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -12841,6 +12879,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -12855,6 +12894,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -12863,6 +12903,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -12872,7 +12913,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -13031,7 +13071,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -13061,7 +13101,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -13071,7 +13111,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -13178,7 +13218,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -13186,9 +13226,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static SelectLineInfo parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -13356,6 +13396,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -13364,6 +13405,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -13373,7 +13415,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -13500,7 +13541,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -13530,7 +13571,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -13540,7 +13581,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -13647,7 +13688,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -13655,9 +13696,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static SelectCarInfoResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -13775,6 +13816,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -13783,6 +13825,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -13792,7 +13835,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -13919,7 +13961,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -13949,7 +13991,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -13959,7 +14001,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -14066,7 +14108,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -14074,9 +14116,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static SelectLineDetailResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -14227,6 +14269,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBeginDate() {
@@ -14235,6 +14278,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BeginDate
          */
         public void setBeginDate(java.lang.String param) {
@@ -14249,6 +14293,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getEndDate() {
@@ -14257,6 +14302,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param EndDate
          */
         public void setEndDate(java.lang.String param) {
@@ -14271,6 +14317,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -14279,6 +14326,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -14293,6 +14341,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -14301,6 +14350,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -14310,7 +14360,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -14485,7 +14534,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -14515,7 +14564,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -14525,7 +14574,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -14632,7 +14681,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -14640,9 +14689,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetBusDriverTrips parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -14857,6 +14906,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getLineCode() {
@@ -14865,6 +14915,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param LineCode
          */
         public void setLineCode(java.lang.String param) {
@@ -14879,6 +14930,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -14887,6 +14939,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -14901,6 +14954,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -14909,6 +14963,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -14918,7 +14973,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -15077,7 +15131,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -15107,7 +15161,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -15117,7 +15171,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -15224,7 +15278,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -15232,9 +15286,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static SelectLineDetail parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -15424,6 +15478,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getRunDate() {
@@ -15432,6 +15487,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param RunDate
          */
         public void setRunDate(java.lang.String param) {
@@ -15446,6 +15502,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -15454,6 +15511,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -15468,6 +15526,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -15476,6 +15535,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -15485,7 +15545,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -15644,7 +15703,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -15674,7 +15733,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -15684,7 +15743,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -15791,7 +15850,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -15799,9 +15858,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetRealNameConsumeInfo parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -16002,6 +16061,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getLineCode() {
@@ -16010,6 +16070,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param LineCode
          */
         public void setLineCode(java.lang.String param) {
@@ -16024,6 +16085,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getRunDate() {
@@ -16032,6 +16094,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param RunDate
          */
         public void setRunDate(java.lang.String param) {
@@ -16046,6 +16109,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -16054,6 +16118,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -16068,6 +16133,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -16076,6 +16142,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -16085,7 +16152,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -16260,7 +16326,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -16290,7 +16356,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -16300,7 +16366,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -16407,7 +16473,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -16415,9 +16481,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetConsumeRecord parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -16610,6 +16676,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -16618,6 +16685,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -16627,7 +16695,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -16755,7 +16822,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -16785,7 +16852,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -16795,7 +16862,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -16902,7 +16969,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -16910,9 +16977,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetConsumeInfoByDateResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -17039,6 +17106,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -17047,6 +17115,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -17056,7 +17125,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -17183,7 +17251,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -17213,7 +17281,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -17223,7 +17291,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -17330,7 +17398,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -17338,9 +17406,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static SelectDepartmentResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -17458,6 +17526,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -17466,6 +17535,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -17475,7 +17545,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -17602,7 +17671,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -17632,7 +17701,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -17642,7 +17711,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -17749,7 +17818,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -17757,9 +17826,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static SelectLineInfoResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -17877,6 +17946,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return boolean
          */
         public boolean get_return() {
@@ -17885,6 +17955,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(boolean param) {
@@ -17895,7 +17966,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -18021,7 +18091,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -18051,7 +18121,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -18061,7 +18131,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -18168,7 +18238,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -18176,9 +18246,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static IsShowResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -18298,6 +18368,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -18306,6 +18377,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -18315,7 +18387,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -18442,7 +18513,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -18472,7 +18543,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -18482,7 +18553,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -18589,7 +18660,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -18597,9 +18668,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetPlanRealListResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -18717,6 +18788,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -18725,6 +18797,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -18734,7 +18807,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -18862,7 +18934,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -18892,7 +18964,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -18902,7 +18974,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -19009,7 +19081,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -19017,9 +19089,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetDriverWorkTimeResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -19181,6 +19253,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getDepCode() {
@@ -19189,6 +19262,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param DepCode
          */
         public void setDepCode(java.lang.String param) {
@@ -19203,6 +19277,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBeginDate() {
@@ -19211,6 +19286,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BeginDate
          */
         public void setBeginDate(java.lang.String param) {
@@ -19225,6 +19301,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getEndDate() {
@@ -19233,6 +19310,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param EndDate
          */
         public void setEndDate(java.lang.String param) {
@@ -19247,6 +19325,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -19255,6 +19334,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -19269,6 +19349,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -19277,6 +19358,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -19286,7 +19368,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -19477,7 +19558,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -19507,7 +19588,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -19517,7 +19598,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -19624,7 +19705,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -19632,9 +19713,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetConsumeInfoByDate parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -19852,6 +19933,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -19860,6 +19942,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -19869,7 +19952,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -19996,7 +20078,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -20026,7 +20108,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -20036,7 +20118,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -20143,7 +20225,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -20151,9 +20233,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetLineFirstLastResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -20271,6 +20353,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -20279,6 +20362,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -20288,7 +20372,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -20415,7 +20498,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -20445,7 +20528,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -20455,7 +20538,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -20562,7 +20645,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -20570,9 +20653,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetScheduleDataResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -20690,6 +20773,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -20698,6 +20782,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -20707,7 +20792,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -20834,7 +20918,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -20864,7 +20948,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -20874,7 +20958,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -20981,7 +21065,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -20989,9 +21073,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetMileListResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -21109,6 +21193,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -21117,6 +21202,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -21126,7 +21212,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -21253,7 +21338,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -21283,7 +21368,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -21293,7 +21378,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -21400,7 +21485,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -21408,9 +21493,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetDriverGpsMileResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -21572,6 +21657,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBeginDate() {
@@ -21580,6 +21666,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BeginDate
          */
         public void setBeginDate(java.lang.String param) {
@@ -21594,6 +21681,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getEndDate() {
@@ -21602,6 +21690,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param EndDate
          */
         public void setEndDate(java.lang.String param) {
@@ -21616,6 +21705,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getDepCode() {
@@ -21624,6 +21714,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param DepCode
          */
         public void setDepCode(java.lang.String param) {
@@ -21638,6 +21729,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -21646,6 +21738,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -21660,6 +21753,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -21668,6 +21762,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -21677,7 +21772,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -21868,7 +21962,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -21898,7 +21992,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -21908,7 +22002,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -22015,7 +22109,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -22023,9 +22117,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetZDLAll parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -22243,6 +22337,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -22251,6 +22346,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -22260,7 +22356,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -22388,7 +22483,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -22418,7 +22513,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -22428,7 +22523,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -22535,7 +22630,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -22543,9 +22638,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static DriverFirstLastListResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -22674,6 +22769,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -22682,6 +22778,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -22696,6 +22793,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -22704,6 +22802,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -22713,7 +22812,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -22856,7 +22954,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -22886,7 +22984,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -22896,7 +22994,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -23003,7 +23101,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -23011,9 +23109,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetDriverInfo parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -23200,6 +23298,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBeginDate() {
@@ -23208,6 +23307,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BeginDate
          */
         public void setBeginDate(java.lang.String param) {
@@ -23222,6 +23322,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getEndDate() {
@@ -23230,6 +23331,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param EndDate
          */
         public void setEndDate(java.lang.String param) {
@@ -23244,6 +23346,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getDepCode() {
@@ -23252,6 +23355,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param DepCode
          */
         public void setDepCode(java.lang.String param) {
@@ -23266,6 +23370,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -23274,6 +23379,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -23288,6 +23394,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -23296,6 +23403,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -23305,7 +23413,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -23496,7 +23603,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -23526,7 +23633,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -23536,7 +23643,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -23643,7 +23750,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -23651,9 +23758,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetScheduleData parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -23871,6 +23978,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -23879,6 +23987,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -23888,7 +23997,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -24015,7 +24123,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -24045,7 +24153,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -24055,7 +24163,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -24162,7 +24270,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -24170,9 +24278,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetFuelListResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -24291,6 +24399,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String[]
          */
         public java.lang.String[] getArgs() {
@@ -24305,6 +24414,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Args
          */
         public void setArgs(java.lang.String[] param) {
@@ -24317,11 +24427,12 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated add method for the array for convenience
+         *
          * @param param java.lang.String
          */
         public void addArgs(java.lang.String param) {
             if (localArgs == null) {
-                localArgs = new java.lang.String[] {  };
+                localArgs = new java.lang.String[]{};
             }
 
             //update the setting tracker
@@ -24333,7 +24444,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -24479,7 +24589,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -24509,7 +24619,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -24519,7 +24629,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -24626,7 +24736,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -24634,9 +24744,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static Main parse(javax.xml.stream.XMLStreamReader reader)
                     throws java.lang.Exception {
@@ -24842,6 +24952,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getQueryDate() {
@@ -24850,6 +24961,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param QueryDate
          */
         public void setQueryDate(java.lang.String param) {
@@ -24864,6 +24976,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getLineCode() {
@@ -24872,6 +24985,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param LineCode
          */
         public void setLineCode(java.lang.String param) {
@@ -24886,6 +25000,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBusCode() {
@@ -24894,6 +25009,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BusCode
          */
         public void setBusCode(java.lang.String param) {
@@ -24908,6 +25024,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -24916,6 +25033,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -24930,6 +25048,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -24938,6 +25057,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -24947,7 +25067,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -25138,7 +25257,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -25168,7 +25287,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -25178,7 +25297,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -25285,7 +25404,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -25293,9 +25412,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetPlanRealList parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -25513,6 +25632,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -25521,6 +25641,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -25530,7 +25651,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -25658,7 +25778,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -25688,7 +25808,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -25698,7 +25818,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -25805,7 +25925,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -25813,9 +25933,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetConsumeInfoByCardResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -25933,6 +26053,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -25941,6 +26062,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -25950,7 +26072,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -26078,7 +26199,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -26108,7 +26229,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -26118,7 +26239,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -26225,7 +26346,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -26233,9 +26354,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetBusDriverTripsResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -26408,6 +26529,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getQueryDate() {
@@ -26416,6 +26538,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param QueryDate
          */
         public void setQueryDate(java.lang.String param) {
@@ -26430,6 +26553,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getLineCode() {
@@ -26438,6 +26562,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param LineCode
          */
         public void setLineCode(java.lang.String param) {
@@ -26452,6 +26577,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBusCode() {
@@ -26460,6 +26586,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BusCode
          */
         public void setBusCode(java.lang.String param) {
@@ -26474,6 +26601,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getDriverCode() {
@@ -26482,6 +26610,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param DriverCode
          */
         public void setDriverCode(java.lang.String param) {
@@ -26496,6 +26625,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -26504,6 +26634,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -26518,6 +26649,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -26526,6 +26658,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -26535,7 +26668,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -26742,7 +26874,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -26772,7 +26904,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -26782,7 +26914,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -26889,7 +27021,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -26897,9 +27029,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetDriverWorkTime parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -27142,6 +27274,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -27150,6 +27283,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -27159,7 +27293,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -27286,7 +27419,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -27316,7 +27449,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -27326,7 +27459,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -27433,7 +27566,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -27441,9 +27574,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetZDLAllResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -27605,6 +27738,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getDepCode() {
@@ -27613,6 +27747,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param DepCode
          */
         public void setDepCode(java.lang.String param) {
@@ -27627,6 +27762,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBeginDate() {
@@ -27635,6 +27771,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BeginDate
          */
         public void setBeginDate(java.lang.String param) {
@@ -27649,6 +27786,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getEndDate() {
@@ -27657,6 +27795,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param EndDate
          */
         public void setEndDate(java.lang.String param) {
@@ -27671,6 +27810,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -27679,6 +27819,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -27693,6 +27834,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -27701,6 +27843,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -27710,7 +27853,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -27901,7 +28043,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -27931,7 +28073,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -27941,7 +28083,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -28048,7 +28190,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -28056,9 +28198,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetFuelList parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -28276,6 +28418,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getMethod() {
@@ -28284,6 +28427,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Method
          */
         public void setMethod(java.lang.String param) {
@@ -28293,7 +28437,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -28420,7 +28563,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -28450,7 +28593,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -28460,7 +28603,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -28567,7 +28710,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -28575,9 +28718,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static IsShow parse(javax.xml.stream.XMLStreamReader reader)
                     throws java.lang.Exception {
@@ -28727,6 +28870,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBeginDate() {
@@ -28735,6 +28879,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BeginDate
          */
         public void setBeginDate(java.lang.String param) {
@@ -28749,6 +28894,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getEndDate() {
@@ -28757,6 +28903,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param EndDate
          */
         public void setEndDate(java.lang.String param) {
@@ -28771,6 +28918,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -28779,6 +28927,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -28793,6 +28942,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -28801,6 +28951,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -28810,7 +28961,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -28985,7 +29135,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -29015,7 +29165,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -29025,7 +29175,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -29132,7 +29282,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -29140,9 +29290,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static DriverFirstLastList parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -29379,6 +29529,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getQueryDate() {
@@ -29387,6 +29538,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param QueryDate
          */
         public void setQueryDate(java.lang.String param) {
@@ -29401,6 +29553,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getLineCode() {
@@ -29409,6 +29562,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param LineCode
          */
         public void setLineCode(java.lang.String param) {
@@ -29423,6 +29577,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBusCode() {
@@ -29431,6 +29586,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BusCode
          */
         public void setBusCode(java.lang.String param) {
@@ -29445,6 +29601,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -29453,6 +29610,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -29467,6 +29625,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -29475,6 +29634,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -29484,7 +29644,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -29675,7 +29834,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -29705,7 +29864,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -29715,7 +29874,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -29822,7 +29981,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -29830,9 +29989,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetBusTimeList parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -30050,6 +30209,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -30058,6 +30218,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -30067,7 +30228,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -30194,7 +30354,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -30224,7 +30384,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -30234,7 +30394,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -30341,7 +30501,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -30349,9 +30509,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static SelectStationResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -30469,6 +30629,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -30477,6 +30638,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -30486,7 +30648,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -30613,7 +30774,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -30643,7 +30804,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -30653,7 +30814,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -30760,7 +30921,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -30768,9 +30929,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetBusMileListResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -30910,6 +31071,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getLineCode() {
@@ -30918,6 +31080,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param LineCode
          */
         public void setLineCode(java.lang.String param) {
@@ -30932,6 +31095,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -30940,6 +31104,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -30954,6 +31119,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -30962,6 +31128,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -30971,7 +31138,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -31130,7 +31296,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -31160,7 +31326,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -31170,7 +31336,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -31277,7 +31443,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -31285,9 +31451,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static SelectStation parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -31477,6 +31643,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBusCode() {
@@ -31485,6 +31652,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BusCode
          */
         public void setBusCode(java.lang.String param) {
@@ -31499,6 +31667,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -31507,6 +31676,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -31521,6 +31691,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -31529,6 +31700,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -31538,7 +31710,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -31697,7 +31868,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -31727,7 +31898,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -31737,7 +31908,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -31844,7 +32015,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -31852,9 +32023,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static SelectCarInfo parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -32066,6 +32237,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getLineCode() {
@@ -32074,6 +32246,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param LineCode
          */
         public void setLineCode(java.lang.String param) {
@@ -32088,6 +32261,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBeginDate() {
@@ -32096,6 +32270,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BeginDate
          */
         public void setBeginDate(java.lang.String param) {
@@ -32110,6 +32285,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getEndDate() {
@@ -32118,6 +32294,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param EndDate
          */
         public void setEndDate(java.lang.String param) {
@@ -32132,6 +32309,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -32140,6 +32318,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -32154,6 +32333,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -32162,6 +32342,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -32171,7 +32352,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -32362,7 +32542,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -32392,7 +32572,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -32402,7 +32582,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -32509,7 +32689,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -32517,9 +32697,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetLineFirstLast parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -32770,6 +32950,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getDepCode() {
@@ -32778,6 +32959,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param DepCode
          */
         public void setDepCode(java.lang.String param) {
@@ -32792,6 +32974,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getDepName() {
@@ -32800,6 +32983,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param DepName
          */
         public void setDepName(java.lang.String param) {
@@ -32814,6 +32998,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -32822,6 +33007,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -32836,6 +33022,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -32844,6 +33031,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -32853,7 +33041,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -33028,7 +33215,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -33058,7 +33245,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -33068,7 +33255,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -33175,7 +33362,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -33183,9 +33370,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static SelectDepartment parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -33422,6 +33609,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getQueryDate() {
@@ -33430,6 +33618,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param QueryDate
          */
         public void setQueryDate(java.lang.String param) {
@@ -33444,6 +33633,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getLineCode() {
@@ -33452,6 +33642,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param LineCode
          */
         public void setLineCode(java.lang.String param) {
@@ -33466,6 +33657,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBusCode() {
@@ -33474,6 +33666,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BusCode
          */
         public void setBusCode(java.lang.String param) {
@@ -33488,6 +33681,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -33496,6 +33690,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -33510,6 +33705,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -33518,6 +33714,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -33527,7 +33724,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -33718,7 +33914,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -33748,7 +33944,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -33758,7 +33954,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -33865,7 +34061,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -33873,9 +34069,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetBusMileList parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -34137,6 +34333,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getLineCode() {
@@ -34145,6 +34342,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param LineCode
          */
         public void setLineCode(java.lang.String param) {
@@ -34159,6 +34357,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBusCode() {
@@ -34167,6 +34366,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BusCode
          */
         public void setBusCode(java.lang.String param) {
@@ -34181,6 +34381,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getQueryDate() {
@@ -34189,6 +34390,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param QueryDate
          */
         public void setQueryDate(java.lang.String param) {
@@ -34203,6 +34405,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -34211,6 +34414,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -34225,6 +34429,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -34233,6 +34438,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -34242,7 +34448,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -34433,7 +34638,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -34463,7 +34668,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -34473,7 +34678,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -34580,7 +34785,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -34588,9 +34793,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetOverSpeedInfo parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -34808,6 +35013,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -34816,6 +35022,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -34825,7 +35032,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -34952,7 +35158,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -34982,7 +35188,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -34992,7 +35198,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -35099,7 +35305,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -35107,9 +35313,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetConsumeRecordResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -35271,6 +35477,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBeginDate() {
@@ -35279,6 +35486,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BeginDate
          */
         public void setBeginDate(java.lang.String param) {
@@ -35293,6 +35501,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getEndDate() {
@@ -35301,6 +35510,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param EndDate
          */
         public void setEndDate(java.lang.String param) {
@@ -35315,6 +35525,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getDriverName() {
@@ -35323,6 +35534,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param DriverName
          */
         public void setDriverName(java.lang.String param) {
@@ -35337,6 +35549,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -35345,6 +35558,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -35359,6 +35573,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -35367,6 +35582,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -35376,7 +35592,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -35567,7 +35782,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -35597,7 +35812,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -35607,7 +35822,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -35714,7 +35929,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -35722,9 +35937,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetDriverGpsMile parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -35942,6 +36157,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String get_return() {
@@ -35950,6 +36166,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param _return
          */
         public void set_return(java.lang.String param) {
@@ -35959,7 +36176,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -36086,7 +36302,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -36116,7 +36332,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -36126,7 +36342,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -36233,7 +36449,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -36241,9 +36457,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetOverSpeedInfoResponse parse(
                     javax.xml.stream.XMLStreamReader reader)
@@ -36416,6 +36632,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getLineCode() {
@@ -36424,6 +36641,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param LineCode
          */
         public void setLineCode(java.lang.String param) {
@@ -36438,6 +36656,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBusCode() {
@@ -36446,6 +36665,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BusCode
          */
         public void setBusCode(java.lang.String param) {
@@ -36460,6 +36680,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getBeginDate() {
@@ -36468,6 +36689,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param BeginDate
          */
         public void setBeginDate(java.lang.String param) {
@@ -36482,6 +36704,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getEndDate() {
@@ -36490,6 +36713,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param EndDate
          */
         public void setEndDate(java.lang.String param) {
@@ -36504,6 +36728,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getUserName() {
@@ -36512,6 +36737,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param UserName
          */
         public void setUserName(java.lang.String param) {
@@ -36526,6 +36752,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return java.lang.String
          */
         public java.lang.String getPassword() {
@@ -36534,6 +36761,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param Password
          */
         public void setPassword(java.lang.String param) {
@@ -36543,7 +36771,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -36750,7 +36977,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                                     java.lang.String attName, java.lang.String attValue,
                                     javax.xml.stream.XMLStreamWriter xmlWriter)
                 throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
                 xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
@@ -36780,7 +37007,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
                 attributeValue = qname.getLocalPart();
             }
 
-            if (namespace.equals("")) {
+            if ("".equals(namespace)) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
                 registerPrefix(xmlWriter, namespace);
@@ -36790,7 +37017,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
         private void writeQName(javax.xml.namespace.QName qname,
                                 javax.xml.stream.XMLStreamWriter xmlWriter)
@@ -36897,7 +37124,7 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
             private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
@@ -36905,9 +37132,9 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static GetBusGpsMile parse(
                     javax.xml.stream.XMLStreamReader reader)

@@ -1,8 +1,11 @@
 package com.evcas.ddbuswx.common.commonEnum;
 
+import lombok.Getter;
+
 /**
  * Created by noxn on 2019/5/9.
  */
+@Getter
 public enum ResFlagEnum {
 
     Normal("1"),Empty("2");
@@ -10,12 +13,6 @@ public enum ResFlagEnum {
     private String flag;
 
     ResFlagEnum(String flag) {
-        this.flag = flag;
-    }
-    public String getFlag() {
-        return flag;
-    }
-    public void setFlag(String flag) {
         this.flag = flag;
     }
 }
