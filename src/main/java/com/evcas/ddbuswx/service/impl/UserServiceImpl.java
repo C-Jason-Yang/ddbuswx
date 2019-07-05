@@ -4,6 +4,7 @@ import com.evcas.ddbuswx.dao.IUserDAO;
 import com.evcas.ddbuswx.model.DwzPageModel;
 import com.evcas.ddbuswx.model.User;
 import com.evcas.ddbuswx.service.IUserService;
+import com.google.common.base.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +21,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public void addUser(User user) {
-        if (user.getUserName() != null && user.getUserName().trim() != "" &&
-                user.getPassword() != null && user.getPassword().trim() != "") {
+        if (!Strings.isNullOrEmpty(user.getUserName()) && !Strings.isNullOrEmpty(user.getPassword())) {
             iUserDAO.addUser(user);
         }
     }

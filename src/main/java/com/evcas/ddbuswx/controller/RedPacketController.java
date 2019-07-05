@@ -9,9 +9,7 @@ import com.evcas.ddbuswx.model.Token;
 import com.evcas.ddbuswx.model.User;
 import com.evcas.ddbuswx.service.ITokenService;
 import com.evcas.ddbuswx.service.IUserService;
-import com.evcas.ddbuswx.service.impl.FileUpLoadService;
 import com.evcas.ddbuswx.service.impl.RedPacketActivityService;
-import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Controller;
@@ -23,8 +21,6 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by noxn on 2018/9/18.

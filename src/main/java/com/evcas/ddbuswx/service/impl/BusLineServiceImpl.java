@@ -2,18 +2,17 @@ package com.evcas.ddbuswx.service.impl;
 
 import com.evcas.ddbuswx.common.BusDirection;
 import com.evcas.ddbuswx.common.utils.BusLineListComparator;
-import com.evcas.ddbuswx.dao.IAreaDAO;
 import com.evcas.ddbuswx.dao.IBusLineDAO;
 import com.evcas.ddbuswx.dao.IBusStationDAO;
 import com.evcas.ddbuswx.dao.IRTBusArriveLeaveDAO;
 import com.evcas.ddbuswx.model.*;
 import com.evcas.ddbuswx.service.IBusLineService;
-import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.TreeSet;
 
 /**
  * Created by noxn on 2018/8/11.
@@ -48,6 +47,7 @@ public class BusLineServiceImpl implements IBusLineService {
         return iBusLineDAO.getBusLineByLineName(lineName, areaCode);
     }
 
+    @SuppressWarnings("Duplicates")
     @Override
     public List<BusLine> queryBusLineByLikeLineName(String lineName, String areaId) {
         List<BusLine> busLineList = iBusLineDAO.queryBusLineByLikeLineName(lineName, areaId);
@@ -78,31 +78,33 @@ public class BusLineServiceImpl implements IBusLineService {
         return busLine;
     }
 
+    @SuppressWarnings("Duplicates")
     @Override
     public List<BusLine> findLineByStationName(String stationName, String areaId) {
         List<BusStation> busStationList = iBusStationDAO.findBusStationByStationName(stationName, "1", areaId);
         List<BusLine> busLineList = new ArrayList<>();
         if (busStationList != null) {
-            for (int i = 0; i < busStationList.size(); i++) {
-                BusLine busLine = iBusLineDAO.queryBusLineByLineCodeAndAreaId(busStationList.get(i).getLineCode(), areaId);
+            for (BusStation busStation : busStationList) {
+                BusLine busLine = iBusLineDAO.queryBusLineByLineCodeAndAreaId(busStation.getLineCode(), areaId);
 
-                List<BusStation> upLinkBusStationList = iBusStationDAO.getBusStationByLineCode(busStationList.get(i).getLineCode(),
+                List<BusStation> upLinkBusStationList = iBusStationDAO.getBusStationByLineCode(busStation.getLineCode(),
                         BusDirection.UpLink.getValue(), areaId);
                 busLine.setUpLinkStartStation(upLinkBusStationList.get(0).getSiteName());
                 busLine.setUpLinkEndStation(upLinkBusStationList.get(upLinkBusStationList.size() - 1).getSiteName());
 //                busLine.setUpBusStationList(upLinkBusStationList);
 
-                List<BusStation> downLinkBusStationList = iBusStationDAO.getBusStationByLineCode(busStationList.get(i).getLineCode(),
+                List<BusStation> downLinkBusStationList = iBusStationDAO.getBusStationByLineCode(busStation.getLineCode(),
                         BusDirection.DownLink.getValue(), areaId);
                 busLine.setDownLinkStartStation(downLinkBusStationList.get(0).getSiteName());
                 busLine.setDownLinkEndStation(downLinkBusStationList.get(downLinkBusStationList.size() - 1).getSiteName());
                 busLineList.add(busLine);
             }
         }
-        Collections.sort(busLineList, new BusLineListComparator());
+        busLineList.sort(new BusLineListComparator());
         return busLineList;
     }
 
+    @SuppressWarnings("Duplicates")
     @Override
     public List<Router> findBusRouters(String startStationName, String endStationName, String areaId, String startLat, String startLon, String endLat, String endLon) {
         List<String> startStationNameList = new ArrayList<>();
@@ -139,48 +141,48 @@ public class BusLineServiceImpl implements IBusLineService {
         }
         List<Router> routerList = new ArrayList<>();
         List<Router> routerList1 = new ArrayList<>();
-        for (int e = 0; e < startStationNameList.size(); e++) {
-            for (int f = 0; f < endStationNameList.size(); f++) {
+        for (String s1 : startStationNameList) {
+            for (String s : endStationNameList) {
                 //查询起始站点
-                List<BusStation> startStationList = iBusStationDAO.findBusStationByStationName(startStationNameList.get(e), areaId);
+                List<BusStation> startStationList = iBusStationDAO.findBusStationByStationName(s1, areaId);
                 //查询结束站点
-                List<BusStation> endStationList = iBusStationDAO.findBusStationByStationName(endStationNameList.get(f), areaId);
+                List<BusStation> endStationList = iBusStationDAO.findBusStationByStationName(s, areaId);
                 //最优结果  不需要换乘
-                for (int a = 0; a < startStationList.size(); a++) {
+                for (BusStation busStation3 : startStationList) {
                     endStationFor:
-                    for (int b = 0; b < endStationList.size(); b++) {
+                    for (BusStation busStation2 : endStationList) {
                         //判断条件 如果通过 则属于直达线路
                         if (
                             //线路是否一致
-                                startStationList.get(a).getLineCode().equals(endStationList.get(b).getLineCode())
+                                busStation3.getLineCode().equals(busStation2.getLineCode())
                                         &&
                                         //上下行是否一致
-                                        startStationList.get(a).getDirection().equals(endStationList.get(b).getDirection())
+                                        busStation3.getDirection().equals(busStation2.getDirection())
                                         &&
                                         //结束站点需要处于起始站点可到达的一侧
-                                        startStationList.get(a).getSitenum() < endStationList.get(b).getSitenum()
+                                        busStation3.getSitenum() < busStation2.getSitenum()
                         ) {
                             Router router = new Router();
                             List<BusRouter> busRouterList = new ArrayList<>();
                             BusRouter busRouter = new BusRouter();
 
-                            busRouter.setLineName(startStationList.get(a).getLineName());
-                            busRouter.setLineCode(startStationList.get(a).getLineCode());
-                            busRouter.setStartStationName(startStationNameList.get(e));
-                            busRouter.setStartLat(String.valueOf(startStationList.get(a).getBdlat()));
-                            busRouter.setStartLon(String.valueOf(startStationList.get(a).getBdlog()));
-                            busRouter.setEndStationName(endStationNameList.get(f));
-                            busRouter.setEndLat(String.valueOf(endStationList.get(b).getBdlat()));
-                            busRouter.setEndLon(String.valueOf(endStationList.get(b).getBdlog()));
-                            busRouter.setViaStationNum(String.valueOf(endStationList.get(b).getSitenum() - startStationList.get(a).getSitenum()));
+                            busRouter.setLineName(busStation3.getLineName());
+                            busRouter.setLineCode(busStation3.getLineCode());
+                            busRouter.setStartStationName(s1);
+                            busRouter.setStartLat(String.valueOf(busStation3.getBdlat()));
+                            busRouter.setStartLon(String.valueOf(busStation3.getBdlog()));
+                            busRouter.setEndStationName(s);
+                            busRouter.setEndLat(String.valueOf(busStation2.getBdlat()));
+                            busRouter.setEndLon(String.valueOf(busStation2.getBdlog()));
+                            busRouter.setViaStationNum(String.valueOf(busStation2.getSitenum() - busStation3.getSitenum()));
 
-                            List<BusStation> tempStartBusStationList = iBusStationDAO.getBusStationByLineCode(startStationList.get(a).getLineCode(),
-                                    String.valueOf(startStationList.get(a).getDirection()), startStationList.get(a).getAreaid());
+                            List<BusStation> tempStartBusStationList = iBusStationDAO.getBusStationByLineCode(busStation3.getLineCode(),
+                                    String.valueOf(busStation3.getDirection()), busStation3.getAreaid());
                             List<BusStation> busRouterBusStation = new ArrayList<>();
-                            for (int i = 0; i < tempStartBusStationList.size(); i++) {
-                                if (tempStartBusStationList.get(i).getSitenum() > startStationList.get(a).getSitenum() &&
-                                        tempStartBusStationList.get(i).getSitenum() < endStationList.get(b).getSitenum()) {
-                                    busRouterBusStation.add(tempStartBusStationList.get(i));
+                            for (BusStation busStation : tempStartBusStationList) {
+                                if (busStation.getSitenum() > busStation3.getSitenum() &&
+                                        busStation.getSitenum() < busStation2.getSitenum()) {
+                                    busRouterBusStation.add(busStation);
                                 }
                             }
                             busRouter.setBusStationList(busRouterBusStation);
@@ -188,91 +190,91 @@ public class BusLineServiceImpl implements IBusLineService {
                             router.setBusRouterList(busRouterList);
                             routerList.add(router);
                         }
-                        if (!startStationList.get(a).getLineCode().equals(endStationList.get(b).getLineCode())) {
+                        if (!busStation3.getLineCode().equals(busStation2.getLineCode())) {
                             //查询当前起始站点的线路下的所有站点 升序
-                            List<BusStation> tempStartBusStationList = iBusStationDAO.getBusStationByLineCode(startStationList.get(a).getLineCode(),
-                                    String.valueOf(startStationList.get(a).getDirection()), startStationList.get(a).getAreaid());
+                            List<BusStation> tempStartBusStationList = iBusStationDAO.getBusStationByLineCode(busStation3.getLineCode(),
+                                    String.valueOf(busStation3.getDirection()), busStation3.getAreaid());
                             //查询当前结束站点的线路下的所有站点 升序
-                            List<BusStation> tempEndBusStationList = iBusStationDAO.getBusStationByLineCode(endStationList.get(b).getLineCode(),
-                                    String.valueOf(endStationList.get(b).getDirection()), endStationList.get(b).getAreaid());
+                            List<BusStation> tempEndBusStationList = iBusStationDAO.getBusStationByLineCode(busStation2.getLineCode(),
+                                    String.valueOf(busStation2.getDirection()), busStation2.getAreaid());
 
-                            for (int d = 0; d < tempStartBusStationList.size(); d++) {
-                                if (endStationList.get(b).getSiteName().equals(tempStartBusStationList.get(d).getSiteName())) {
+                            for (BusStation busStation1 : tempStartBusStationList) {
+                                if (busStation2.getSiteName().equals(busStation1.getSiteName())) {
                                     continue endStationFor;
                                 }
                             }
-                            for (int d = 0; d < tempEndBusStationList.size(); d++) {
-                                if (startStationList.get(a).getSiteName().equals(tempEndBusStationList.get(d).getSiteName())) {
+                            for (BusStation element : tempEndBusStationList) {
+                                if (busStation3.getSiteName().equals(element.getSiteName())) {
                                     continue endStationFor;
                                 }
                             }
                             //循环线路起始站点下游的所有站点
-                            for (int c = 0; c < tempStartBusStationList.size(); c++) {
+                            for (BusStation item : tempStartBusStationList) {
                                 //如果换乘站点站序小于起始站点站序（换乘站点在起始站点的上游）
-                                if (tempStartBusStationList.get(c).getSitenum() <= startStationList.get(a).getSitenum()) {
+                                if (item.getSitenum() <= busStation3.getSitenum()) {
                                     continue;
                                 }
                                 //循环结束站点线路下的所有站点
-                                for (int d = 0; d < tempEndBusStationList.size(); d++) {
+                                for (BusStation value : tempEndBusStationList) {
                                     //如果换乘站点站序小于结束站点站序（换乘站点在结束站点的上游）
-                                    if (tempEndBusStationList.get(d).getSitenum() >= endStationList.get(b).getSitenum()) {
+                                    if (value.getSitenum() >= busStation2.getSitenum()) {
                                         continue;
                                     }
                                     //一次换乘
                                     if (
                                         //站点名称相同
-                                            tempStartBusStationList.get(c).getSiteName().equals(tempEndBusStationList.get(d).getSiteName())
+                                            item.getSiteName().equals(value.getSiteName())
                                                     &&
                                                     //起始站点站序小于换乘站点序号
-                                                    tempStartBusStationList.get(c).getSitenum() > startStationList.get(a).getSitenum()
+                                                    item.getSitenum() > busStation3.getSitenum()
                                                     &&
                                                     //换乘站点站序小于结束站点站序
-                                                    tempEndBusStationList.get(d).getSitenum() < endStationList.get(b).getSitenum()
+                                                    value.getSitenum() < busStation2.getSitenum()
                                     ) {
 
                                         Router router = new Router();
                                         List<BusRouter> busRouterList = new ArrayList<>();
                                         //换乘起始线路
                                         BusRouter startBusRouter = new BusRouter();
-                                        startBusRouter.setLineName(tempStartBusStationList.get(c).getLineName());
-                                        startBusRouter.setLineCode(tempStartBusStationList.get(c).getLineCode());
-                                        startBusRouter.setStartStationName(startStationNameList.get(e));
-                                        startBusRouter.setStartLat(String.valueOf(startStationList.get(a).getBdlat()));
-                                        startBusRouter.setStartLon(String.valueOf(startStationList.get(a).getBdlog()));
-                                        startBusRouter.setEndStationName(tempStartBusStationList.get(c).getSiteName());
-                                        startBusRouter.setEndLat(String.valueOf(tempStartBusStationList.get(c).getBdlat()));
-                                        startBusRouter.setEndLon(String.valueOf(tempStartBusStationList.get(c).getBdlog()));
-                                        startBusRouter.setViaStationNum(String.valueOf(tempStartBusStationList.get(c).getSitenum() - startStationList.get(a).getSitenum()));
+                                        startBusRouter.setLineName(item.getLineName());
+                                        startBusRouter.setLineCode(item.getLineCode());
+                                        startBusRouter.setStartStationName(s1);
+                                        startBusRouter.setStartLat(String.valueOf(busStation3.getBdlat()));
+                                        startBusRouter.setStartLon(String.valueOf(busStation3.getBdlog()));
+                                        startBusRouter.setEndStationName(item.getSiteName());
+                                        startBusRouter.setEndLat(String.valueOf(item.getBdlat()));
+                                        startBusRouter.setEndLon(String.valueOf(item.getBdlog()));
+                                        startBusRouter.setViaStationNum(String.valueOf(item.getSitenum() - busStation3.getSitenum()));
 
-                                        List<BusStation> tempStartLineBusStationList = iBusStationDAO.getBusStationByLineCode(startStationList.get(a).getLineCode(),
-                                                String.valueOf(startStationList.get(a).getDirection()), startStationList.get(a).getAreaid());
+                                        List<BusStation> tempStartLineBusStationList = iBusStationDAO.getBusStationByLineCode(busStation3.getLineCode(),
+                                                String.valueOf(busStation3.getDirection()), busStation3.getAreaid());
                                         List<BusStation> startBusRouterBusStation = new ArrayList<>();
-                                        for (int i = 0; i < tempStartLineBusStationList.size(); i++) {
-                                            if (tempStartLineBusStationList.get(i).getSitenum() > startStationList.get(a).getSitenum() &&
-                                                    tempStartLineBusStationList.get(i).getSitenum() < tempStartBusStationList.get(c).getSitenum()) {
-                                                startBusRouterBusStation.add(tempStartLineBusStationList.get(i));
+                                        for (BusStation station : tempStartLineBusStationList) {
+                                            if (station.getSitenum() > busStation3.getSitenum() &&
+                                                    station.getSitenum() < item.getSitenum()) {
+                                                startBusRouterBusStation.add(station);
                                             }
                                         }
                                         startBusRouter.setBusStationList(startBusRouterBusStation);
 
                                         BusRouter endBusRouter = new BusRouter();
-                                        endBusRouter.setLineName(tempEndBusStationList.get(d).getLineName());
-                                        endBusRouter.setLineCode(tempEndBusStationList.get(d).getLineCode());
-                                        endBusRouter.setStartStationName(tempEndBusStationList.get(d).getSiteName());
-                                        endBusRouter.setStartLat(String.valueOf(tempEndBusStationList.get(d).getBdlat()));
-                                        endBusRouter.setStartLon(String.valueOf(tempEndBusStationList.get(d).getBdlog()));
-                                        endBusRouter.setEndStationName(endStationNameList.get(f));
-                                        endBusRouter.setEndLat(String.valueOf(endStationList.get(b).getBdlat()));
-                                        endBusRouter.setEndLon(String.valueOf(endStationList.get(b).getBdlog()));
-                                        endBusRouter.setViaStationNum(String.valueOf(endStationList.get(b).getSitenum() - tempEndBusStationList.get(d).getSitenum()));
+                                        endBusRouter.setLineName(value.getLineName());
+                                        endBusRouter.setLineCode(value.getLineCode());
+                                        endBusRouter.setStartStationName(value.getSiteName());
+                                        endBusRouter.setStartLat(String.valueOf(value.getBdlat()));
+                                        endBusRouter.setStartLon(String.valueOf(value.getBdlog()));
+                                        endBusRouter.setEndStationName(s);
+                                        endBusRouter.setEndLat(String.valueOf(busStation2.getBdlat()));
+                                        endBusRouter.setEndLon(String.valueOf(busStation2.getBdlog()));
+                                        endBusRouter.setViaStationNum(String.valueOf(busStation2.getSitenum() - value.getSitenum()));
 
-                                        List<BusStation> tempEndLineBusStationList = iBusStationDAO.getBusStationByLineCode(endStationList.get(b).getLineCode(),
-                                                String.valueOf(endStationList.get(b).getDirection()), endStationList.get(b).getAreaid());
+                                        List<BusStation> tempEndLineBusStationList = iBusStationDAO.getBusStationByLineCode(busStation2.getLineCode(),
+                                                String.valueOf(busStation2.getDirection()), busStation2.getAreaid());
                                         List<BusStation> endBusRouterBusStation = new ArrayList<>();
-                                        for (int i = 0; i < tempEndLineBusStationList.size(); i++) {
-                                            if (tempEndLineBusStationList.get(i).getSitenum() > tempEndBusStationList.get(d).getSitenum() &&
-                                                    tempEndLineBusStationList.get(i).getSitenum() < endStationList.get(b).getSitenum()) {
-                                                endBusRouterBusStation.add(tempEndLineBusStationList.get(i));
+                                        for (BusStation busStation : tempEndLineBusStationList) {
+                                            if (busStation.getSitenum() > value.getSitenum() &&
+                                                    busStation.getSitenum() < busStation2.getSitenum()) {
+                                                endBusRouterBusStation.add(busStation);
                                             }
                                         }
                                         endBusRouter.setBusStationList(endBusRouterBusStation);
@@ -301,8 +303,8 @@ public class BusLineServiceImpl implements IBusLineService {
         //排序
         List<Router> tempRouterList = new ArrayList<>();
         TreeSet<String> sortRouterList = new TreeSet<String>();
-        for (int i = 0; i < routerList.size(); i++) {
-            sortRouterList.add(routerList.get(i).getBusRouterList().get(0).getLineName());
+        for (Router value : routerList) {
+            sortRouterList.add(value.getBusRouterList().get(0).getLineName());
         }
         for (; routerList.size() != 0; ) {
             String tempLineName = sortRouterList.first();
@@ -317,8 +319,8 @@ public class BusLineServiceImpl implements IBusLineService {
         }
         List<Router> tempRouterList1 = new ArrayList<>();
         sortRouterList = new TreeSet<String>();
-        for (int i = 0; i < routerList1.size(); i++) {
-            sortRouterList.add(routerList1.get(i).getBusRouterList().get(0).getLineName());
+        for (Router router : routerList1) {
+            sortRouterList.add(router.getBusRouterList().get(0).getLineName());
         }
         for (; routerList1.size() != 0; ) {
             String tempLineName = sortRouterList.first();

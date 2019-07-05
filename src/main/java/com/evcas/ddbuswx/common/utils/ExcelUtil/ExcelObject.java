@@ -5,6 +5,7 @@ import com.evcas.ddbuswx.common.utils.ExcelUtil.constant.AutoCreateTypeEnum;
 import com.evcas.ddbuswx.common.utils.ReflectUtil;
 import com.evcas.ddbuswx.common.utils.RegularUtil;
 import com.evcas.ddbuswx.common.utils.UuidUtil;
+import lombok.Cleanup;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -25,20 +26,15 @@ import java.util.regex.Pattern;
  */
 public class ExcelObject {
 
-    private HSSFWorkbook workbook = null;
+    private HSSFWorkbook workbook;
 
     public Integer currentImportSheetLineNum;
 
     public ExcelObject(String filePath) {
         this.workbook = new HSSFWorkbook();
         File file = new File(filePath);
-        InputStream in = null;
         try {
-            in = new FileInputStream(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        try {
+            @Cleanup InputStream in = new FileInputStream(file);
             //读取Excel文件流中的数据到workbook
             workbook = (HSSFWorkbook) WorkbookFactory.create(in);
         } catch (IOException e) {
@@ -48,6 +44,7 @@ public class ExcelObject {
 
     /**
      * 创建Excel表单
+     *
      * @param sheetName
      */
     public void createSheet(String sheetName) {
@@ -56,6 +53,7 @@ public class ExcelObject {
 
     /**
      * 获取Excel文件流中的数据
+     *
      * @param tClass
      * @param sheetNum
      * @param dataStartRowNum
@@ -67,7 +65,7 @@ public class ExcelObject {
         //获取指定的Excel表单
         HSSFSheet sheet = workbook.getSheetAt(sheetNum);
         //获取Excel表单中 最后一行数据的行号
-        Integer dataEndLRowNum = sheet.getLastRowNum();
+        int dataEndLRowNum = sheet.getLastRowNum();
         currentImportSheetLineNum = dataEndLRowNum + 1;
         //自有成员变量
         Field[] ownMemberVariableFields = tClass.getDeclaredFields();
@@ -81,12 +79,10 @@ public class ExcelObject {
         annotationMapList = getObjectExcelImportFieldAnnotationList(annotationMapList, ownMemberVariableFields);
         //循环超类的成员变量获取成员变量上的ExcelImportField注解
         annotationMapList = getObjectExcelImportFieldAnnotationList(annotationMapList, parentClassMemberVariableFields);
-        Collections.sort(annotationMapList, new Comparator<Map<String, Object>>() {
-            public int compare(Map<String, Object> o1, Map<String, Object> o2) {
-                Integer sort1 = Integer.valueOf(o1.get("sort").toString()) ;
-                Integer sort2 = Integer.valueOf(o2.get("sort").toString()) ; //name1是从你list里面拿出来的第二个name
-                return sort1.compareTo(sort2);
-            }
+        annotationMapList.sort((o1, o2) -> {
+            Integer sort1 = Integer.valueOf(o1.get("sort").toString());
+            Integer sort2 = Integer.valueOf(o2.get("sort").toString()); //name1是从你list里面拿出来的第二个name
+            return sort1.compareTo(sort2);
         });
         //跳过表头，循环Excel表单集合
         line:
@@ -104,8 +100,8 @@ public class ExcelObject {
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
-            for (int a = 0; a < annotationMapList.size(); a++) {
-                Object[] fieldInfo = (Object[]) annotationMapList.get(a).get("field");
+            for (Map<String, Object> stringObjectMap : annotationMapList) {
+                Object[] fieldInfo = (Object[]) stringObjectMap.get("field");
                 ExcelImportField excelImportField = (ExcelImportField) fieldInfo[0];
                 Field field = (Field) fieldInfo[1];
                 Method method = ReflectUtil.obtainSetMethod(field, tClass);
@@ -165,6 +161,7 @@ public class ExcelObject {
 
     /**
      * 返回Excel文件流
+     *
      * @param req
      * @param fileName
      */
@@ -185,6 +182,7 @@ public class ExcelObject {
 
     /**
      * 获取Field数组中有ExcelImportField注解的注解信息和Fidld集合
+     *
      * @param annotationMapList
      * @param fieldArr
      * @return
@@ -193,13 +191,12 @@ public class ExcelObject {
         if (annotationMapList == null) {
             annotationMapList = new ArrayList<>();
         }
-        for (int i = 0; i < fieldArr.length; i++) {
-            Field field = fieldArr[i];
+        for (Field field : fieldArr) {
             ExcelImportField excelImportField = field.getDeclaredAnnotation(ExcelImportField.class);
             if (excelImportField != null) {
                 Map<String, Object> annotationMap = new HashMap<>();
                 annotationMap.put("sort", excelImportField.sort());
-                annotationMap.put("field", new Object[] {excelImportField, field});
+                annotationMap.put("field", new Object[]{excelImportField, field});
                 annotationMapList.add(annotationMap);
             }
         }

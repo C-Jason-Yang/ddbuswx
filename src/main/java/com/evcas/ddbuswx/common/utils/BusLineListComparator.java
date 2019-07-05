@@ -22,8 +22,8 @@ public class BusLineListComparator implements Comparator<BusLine>, Serializable 
         while( i < arr1.length && j < arr2.length)
         {
             if ( Character.isDigit( arr1[i]) && Character.isDigit(arr2[j])) {
-                StringBuffer sb1 = new StringBuffer();
-                StringBuffer sb2 = new StringBuffer();
+                StringBuilder sb1 = new StringBuilder();
+                StringBuilder sb2 = new StringBuilder();
                 while ( i < arr1.length && Character.isDigit( arr1[i]) ) {
                     sb1.append(arr1[i]);
                     i++;

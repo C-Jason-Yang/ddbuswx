@@ -22,8 +22,6 @@ public class BusStationServiceImpl implements IBusStationService {
     @Autowired
     private IBusStationDAO iBusStationDAO;
 
-    @Autowired
-    private IAreaDAO iAreaDAO;
 
     @Override
     public Map<String, List> getBusStationByLineCode(String areaCode, String lineCode) {

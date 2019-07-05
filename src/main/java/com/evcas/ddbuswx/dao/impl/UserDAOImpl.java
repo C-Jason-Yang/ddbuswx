@@ -15,6 +15,7 @@ import java.util.List;
 /**
  * Created by noxn on 2018/3/21.
  */
+@SuppressWarnings("unchecked")
 @Repository
 public class UserDAOImpl implements IUserDAO {
 

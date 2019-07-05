@@ -2,7 +2,6 @@ package com.evcas.ddbuswx.service.impl;
 
 import com.evcas.ddbuswx.dao.IUserDAO;
 import com.evcas.ddbuswx.entity.BusCardBindingLog;
-import com.evcas.ddbuswx.entity.WcUser;
 import com.evcas.ddbuswx.mapper.BusCardBindingLogMapper;
 import com.evcas.ddbuswx.model.DwzPageModel;
 import com.evcas.ddbuswx.model.User;

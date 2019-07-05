@@ -1,8 +1,8 @@
 package com.evcas.ddbuswx.dao.impl;
 
 import com.evcas.ddbuswx.common.SystemParameter;
-import com.evcas.ddbuswx.common.lxhysys.MyServiceStub;
 import com.evcas.ddbuswx.common.lxhysys.LxHyService;
+import com.evcas.ddbuswx.common.lxhysys.MyServiceStub;
 import com.evcas.ddbuswx.dao.IHyLxDAO;
 import org.springframework.stereotype.Repository;
 

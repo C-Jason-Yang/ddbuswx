@@ -6,7 +6,6 @@ import com.evcas.ddbuswx.mapper.BusCardBindingLogMapper;
 import com.evcas.ddbuswx.mapper.WcUserMapper;
 import com.evcas.ddbuswx.model.DwzPageModel;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -24,6 +23,7 @@ public class WcUserService {
     @Autowired
     private BusCardBindingLogMapper busCardBindingLogMapper;
 
+    @SuppressWarnings("unchecked")
     public DwzPageModel page(WcUser wcUserParam, DwzPageModel dwzPageModel) {
         Integer tempTotalCount = wcUserMapper.countTotal(wcUserParam);
         dwzPageModel.setTotalCount(tempTotalCount);

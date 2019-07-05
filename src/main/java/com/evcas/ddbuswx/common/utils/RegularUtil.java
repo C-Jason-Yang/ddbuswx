@@ -12,10 +12,6 @@ public class RegularUtil {
     public static boolean validate(String regx, CharSequence validateValue) {
         Pattern pattern = Pattern.compile(regx);
         Matcher matcher = pattern.matcher(validateValue);
-        if (matcher.matches()) {
-            return true;
-        } else {
-            return false;
-        }
+        return matcher.matches();
     }
 }

@@ -1,7 +1,6 @@
 package com.evcas.ddbuswx;
 
 import com.evcas.ddbuswx.common.init.InitUserDefinedPropertyData;
-import com.evcas.ddbuswx.common.init.MongoInit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -20,8 +19,4 @@ public class DdbuswxApplication {
 		return new InitUserDefinedPropertyData();
 	}
 
-	@Bean
-	public MongoInit mongoInit() {
-		return new MongoInit();
-	}
 }

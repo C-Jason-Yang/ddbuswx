@@ -6,7 +6,7 @@ package com.evcas.ddbuswx.common.hysys;
  *  their own receiveResult and receiveError methods.
  */
 public abstract class MyServiceCallbackHandler {
-    protected Object clientData;
+    private Object clientData;
 
     /**
      * UserController can pass in any object that needs to be accessed once the NonBlocking

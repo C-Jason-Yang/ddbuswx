@@ -39,6 +39,7 @@ import java.util.*;
 /**
  * Created by noxn on 2018/9/19.
  */
+@SuppressWarnings("ALL")
 @Service
 public class RedPacketDetailService {
 

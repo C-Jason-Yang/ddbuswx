@@ -6,12 +6,14 @@ import com.evcas.ddbuswx.model.BusStation;
 import com.evcas.ddbuswx.model.HotSite;
 import com.evcas.ddbuswx.service.IBusStationService;
 import com.evcas.ddbuswx.service.ISiteService;
-import io.swagger.annotations.*;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -19,6 +21,7 @@ import java.util.List;
 /**
  * Created by noxn on 2019/5/9.
  */
+@SuppressWarnings("unchecked")
 @Controller
 @RequestMapping("busStation")
 @Api(value = "站点", tags = "站点接口类")
@@ -29,6 +32,7 @@ public class BusStationController {
     @Autowired
     private ISiteService iSiteService;
 
+    @SuppressWarnings("unchecked")
     @ApiOperation(value="获取附近的站点", notes="根据经纬度获取附近的站点")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "lat", value = "纬度", required = true, dataType = "String"),
@@ -58,8 +62,8 @@ public class BusStationController {
         ResVo res = new ResVo();
         List<HotSite> hotSiteList = iSiteService.findHotSiteListById(areaId);
         if (hotSiteList != null) {
-            for (int i = 0; i < hotSiteList.size(); i++) {
-                hotSiteList.get(i).setAreaId(hotSiteList.get(i).getAreaMark());
+            for (HotSite hotSite : hotSiteList) {
+                hotSite.setAreaId(hotSite.getAreaMark());
             }
         }
         if (hotSiteList != null && hotSiteList.size() > 0) {

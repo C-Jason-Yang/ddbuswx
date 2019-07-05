@@ -97,6 +97,7 @@ public class LoginController {
         return model;
     }
 
+    @SuppressWarnings("Duplicates")
     @RequestMapping(value = "relogin")
     @ResponseBody
     public String relogin(String userName, String password, HttpServletRequest request, HttpServletResponse response) {

@@ -11,7 +11,7 @@ public class DateTimeUtil {
     public static String getCurrentTime(boolean isNeedMs) {
         Date date = new Date();
         String dateStr = "";
-        SimpleDateFormat sdf = null;
+        SimpleDateFormat sdf;
         if (isNeedMs) {
             sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         } else {

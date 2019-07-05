@@ -5,16 +5,10 @@ import com.evcas.ddbuswx.common.commonEnum.ResFlagEnum;
 import com.evcas.ddbuswx.common.utils.JsonTools;
 import com.evcas.ddbuswx.entity.ResVo;
 import com.evcas.ddbuswx.model.LostAndFound;
-import com.evcas.ddbuswx.model.DwzPageModel;
 import com.evcas.ddbuswx.model.Token;
 import com.evcas.ddbuswx.service.ILostAndFoundService;
 import com.evcas.ddbuswx.service.ITokenService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -50,9 +44,9 @@ public class LostAndFoundController {
         Cookie[] cookies = request.getCookies();
         DwzCallBackResult result = new DwzCallBackResult();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
         if (!tokenStr.equals("")) {
@@ -149,7 +143,7 @@ public class LostAndFoundController {
     @ApiIgnore
     public String batchDeleteLostAndFoundById(String listIdJson) {
         DwzCallBackResult result = new DwzCallBackResult();
-        List<String> listId = JsonTools.gson.fromJson(listIdJson, ArrayList.class);
+        ArrayList listId = JsonTools.gson.fromJson(listIdJson, ArrayList.class);
         if (listId != null && listId.size() > 0) {
             iLostAndFoundService.batchDeleteLostAndFoundById(listId);
         }

@@ -6,7 +6,6 @@ import com.evcas.ddbuswx.model.HotSite;
 import com.evcas.ddbuswx.model.Token;
 import com.evcas.ddbuswx.service.ISiteService;
 import com.evcas.ddbuswx.service.ITokenService;
-import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +17,6 @@ import springfox.documentation.annotations.ApiIgnore;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  * Created by noxn on 2018/3/7.
@@ -39,14 +37,14 @@ public class SiteController {
         Cookie[] cookies = request.getCookies();
         ModelAndView model = new ModelAndView();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
 //                List<HotSite> siteList = iSiteService.findHotSiteList(token.getUserId());
                 model.setViewName("hotSiteList");
 //                model.addObject("siteList", siteList);
@@ -63,14 +61,14 @@ public class SiteController {
         Cookie[] cookies = request.getCookies();
         DwzCallBackResult result = new DwzCallBackResult();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
                 iSiteService.addHotSite(hotSite, token.getUserId());
                 result.setStatusCode(200);
                 result.setMessage("添加成功");

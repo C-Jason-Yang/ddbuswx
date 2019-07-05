@@ -1,6 +1,5 @@
 package com.evcas.ddbuswx.dao.impl;
 
-import com.evcas.ddbuswx.common.SystemParameter;
 import com.evcas.ddbuswx.common.rmsys.BusSystemTool;
 import com.evcas.ddbuswx.common.rmsys.ServiceService;
 import com.evcas.ddbuswx.common.utils.Base64Util;

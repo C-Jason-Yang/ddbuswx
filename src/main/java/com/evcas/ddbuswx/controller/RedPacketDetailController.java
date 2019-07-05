@@ -1,6 +1,5 @@
 package com.evcas.ddbuswx.controller;
 
-import com.evcas.ddbuswx.common.DwzCallBackResult;
 import com.evcas.ddbuswx.common.utils.ExcelUtil.ExcelObject;
 import com.evcas.ddbuswx.common.utils.JsonTools;
 import com.evcas.ddbuswx.entity.RedPacketDetail;
@@ -9,15 +8,12 @@ import com.evcas.ddbuswx.model.Token;
 import com.evcas.ddbuswx.service.ITokenService;
 import com.evcas.ddbuswx.service.impl.FileUpLoadService;
 import com.evcas.ddbuswx.service.impl.RedPacketDetailService;
-import io.swagger.annotations.Api;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import springfox.documentation.annotations.ApiIgnore;
 
@@ -59,8 +55,8 @@ public class RedPacketDetailController {
         String redPacketActiviId = redPacketDetailService.batchAddRedPacketDetail(redPacketDetailList);
         BigDecimal totalAmount = new BigDecimal("0.00");
         if (redPacketDetailList != null) {
-            for (int i = 0; i < redPacketDetailList.size(); i++) {
-                BigDecimal tempAmount = new BigDecimal(redPacketDetailList.get(i).getAmount());
+            for (RedPacketDetail redPacketDetail : redPacketDetailList) {
+                BigDecimal tempAmount = new BigDecimal(redPacketDetail.getAmount());
                 tempAmount = tempAmount.setScale(2, BigDecimal.ROUND_HALF_UP);
                 totalAmount = totalAmount.add(tempAmount);
             }
@@ -87,17 +83,17 @@ public class RedPacketDetailController {
         Cookie[] cookies = request.getCookies();
         ModelAndView model = new ModelAndView();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
                 DwzPageModel dwzPageModel = new DwzPageModel();
                 if (pageNum == null) {
-                    pageNum = Long.valueOf(1);
+                    pageNum = 1L;
                 }
                 dwzPageModel.setCurrentPage(pageNum);
 
@@ -117,17 +113,17 @@ public class RedPacketDetailController {
         Cookie[] cookies = request.getCookies();
         ModelAndView model = new ModelAndView();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
                 DwzPageModel dwzPageModel = new DwzPageModel();
                 if (pageNum == null) {
-                    pageNum = Long.valueOf(1);
+                    pageNum = 1L;
                 }
                 dwzPageModel.setCurrentPage(pageNum);
 

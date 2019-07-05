@@ -7,18 +7,15 @@ import com.evcas.ddbuswx.model.DwzPageModel;
 import com.evcas.ddbuswx.model.Token;
 import com.evcas.ddbuswx.service.ITokenService;
 import com.evcas.ddbuswx.service.impl.WcUserService;
-import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
  * Created by noxn on 2018/9/18.
@@ -39,17 +36,17 @@ public class WcUserController {
         Cookie[] cookies = request.getCookies();
         ModelAndView model = new ModelAndView();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
                 DwzPageModel dwzPageModel = new DwzPageModel();
                 if (pageNum == null) {
-                    pageNum = Long.valueOf(1);
+                    pageNum = 1L;
                 }
                 dwzPageModel.setCurrentPage(pageNum);
 
@@ -68,14 +65,14 @@ public class WcUserController {
         Cookie[] cookies = request.getCookies();
         ModelAndView model = new ModelAndView();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
 
                 WcUser wcUser = wcUserService.getWcUserInfoById(id);
                 model.setViewName("wcUser/wcUserInfo");
@@ -93,14 +90,14 @@ public class WcUserController {
         DwzCallBackResult result = new DwzCallBackResult();
         Cookie[] cookies = request.getCookies();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
-        if (tokenStr != "") {
+        if (!tokenStr.equals("")) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null && token.getUserId() != "") {
+            if (token != null && token.getUserId() != null && !token.getUserId().equals("")) {
                 wcUserService.removeBusCardBinding(wcOpenid, token.getUserId());
                 result.setStatusCode(200);
                 return JsonTools.gson.toJson(result);

@@ -10,10 +10,6 @@ import com.evcas.ddbuswx.model.InfoFeedBack;
 import com.evcas.ddbuswx.model.Token;
 import com.evcas.ddbuswx.service.IInfoFeedBackService;
 import com.evcas.ddbuswx.service.ITokenService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -60,9 +56,9 @@ public class InfoFeedBackController {
         Cookie[] cookies = request.getCookies();
         ModelAndView model = new ModelAndView();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
         if (!tokenStr.equals("")) {

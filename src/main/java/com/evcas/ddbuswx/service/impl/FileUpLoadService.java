@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class FileUpLoadService {
 
     public void fileByteArrayUpLoad(byte[] fileByteArray, String fileName) {
-            String fileNameArray [] = fileName.split("\\.");
+        String[] fileNameArray = fileName.split("\\.");
             String fileSuffix = "";
             if (fileNameArray.length > 1) {
                 fileSuffix =fileNameArray[1];
@@ -21,7 +21,7 @@ public class FileUpLoadService {
     }
 
     public String fileBase64UpLoad(String fileBase64code, String fileName) {
-        String fileNameArray [] = fileName.split("\\.");
+        String[] fileNameArray = fileName.split("\\.");
         String fileSuffix = "";
         if (fileNameArray.length > 1) {
             fileSuffix =fileNameArray[1];

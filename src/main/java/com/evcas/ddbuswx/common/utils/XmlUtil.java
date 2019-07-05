@@ -19,6 +19,7 @@ import java.util.Map;
  */
 public class XmlUtil {
 
+    @SuppressWarnings("unchecked")
     public static <T> T xmlListToList(String xmlStr, Class<T> classOfT) {
         try {
             JAXBContext context = JAXBContext.newInstance(classOfT);
@@ -56,8 +57,8 @@ public class XmlUtil {
     }
 
     public static Map<String, String> test(List childrenNode, Map<String, String> result) {
-        for (int i = 0; i < childrenNode.size(); i++) {
-            Element et = (Element) childrenNode.get(i);//循环依次得到子元素
+        for (Object o : childrenNode) {
+            Element et = (Element) o;//循环依次得到子元素
             List tempChildrenNode = et.getChildren();
             if (tempChildrenNode != null && tempChildrenNode.size() > 0) {
                 result = test(tempChildrenNode, result);

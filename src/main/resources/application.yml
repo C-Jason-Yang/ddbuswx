@@ -1,0 +1,41 @@
+#Server System
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8000
+#Mongo
+spring:
+  application:
+    name: tcp_ddbus_wx
+  thymeleaf:
+    suffix: .ftl
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: ddbus
+    url: jdbc:mysql://36.7.87.153:306/ddbus?useSSL=FALSE&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  data:
+    mongodb:
+      port: 27017
+      host: 36.7.87.153
+      database: ddbus
+      username: evcas
+      password: evcas
+  #mybatise
+
+
+mybatis:
+  basepackage: com.evcas.ddbuswx.mapper
+  xmlLocation: classpath:mapper/**.xml
+  mapper-locations: "classpath*:mapper/*.xml"
+  #日志
+logging:
+  level:
+    org:
+      springframework: info
+      spring:
+        springboot:
+          dao: info

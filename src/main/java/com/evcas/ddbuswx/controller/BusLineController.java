@@ -3,7 +3,6 @@ package com.evcas.ddbuswx.controller;
 import com.evcas.ddbuswx.common.commonEnum.ResFlagEnum;
 import com.evcas.ddbuswx.entity.ResVo;
 import com.evcas.ddbuswx.model.BusLine;
-import com.evcas.ddbuswx.model.BusStation;
 import com.evcas.ddbuswx.model.RTBusArriveLeave;
 import com.evcas.ddbuswx.model.Router;
 import com.evcas.ddbuswx.service.IBusLineService;
@@ -18,13 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by noxn on 2019/5/10.
  */
+@SuppressWarnings("unchecked")
 @Controller
 @RequestMapping("busLine")
 @Api(value = "线路", tags = "线路接口类")
@@ -32,8 +30,6 @@ public class BusLineController {
 
     @Autowired
     private IBusLineService iBusLineService;
-    @Autowired
-    private IBusStationService iBusStationService;
 
     @ApiOperation(value="查询线路", notes="根据关键词和区域id查询线路")
     @ApiImplicitParams({

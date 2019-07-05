@@ -5,7 +5,6 @@ import com.evcas.ddbuswx.common.utils.JsonTools;
 import com.evcas.ddbuswx.model.DwzPageModel;
 import com.evcas.ddbuswx.model.User;
 import com.evcas.ddbuswx.service.IUserService;
-import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

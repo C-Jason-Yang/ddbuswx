@@ -36,9 +36,9 @@ public class BusCardBindingLogController {
         Cookie[] cookies = request.getCookies();
         ModelAndView model = new ModelAndView();
         String tokenStr = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("token")) {
-                tokenStr = cookies[i].getValue();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                tokenStr = cookie.getValue();
             }
         }
         if (!tokenStr.equals("")) {

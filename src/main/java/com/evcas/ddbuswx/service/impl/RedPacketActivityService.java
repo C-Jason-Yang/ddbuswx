@@ -43,6 +43,7 @@ import java.util.TreeMap;
 /**
  * Created by noxn on 2018/9/20.
  */
+@SuppressWarnings("unchecked")
 @Service
 public class RedPacketActivityService {
 
@@ -93,9 +94,9 @@ public class RedPacketActivityService {
         List<RedPacketActivity> redPacketActivityList = redPacketActivityMapper.page((dwzPageModel.getCurrentPage() - 1) * dwzPageModel.getNumPerPage(),
                 dwzPageModel.getNumPerPage(), redPacketActivity);
         if (redPacketActivityList != null) {
-            for (int i = 0; i < redPacketActivityList.size(); i++) {
-                User user = iUserDAO.findUserById(redPacketActivityList.get(i).getCreateUserId());
-                redPacketActivityList.get(i).setCreateUserName(user.getUserName());
+            for (RedPacketActivity packetActivity : redPacketActivityList) {
+                User user = iUserDAO.findUserById(packetActivity.getCreateUserId());
+                packetActivity.setCreateUserName(user.getUserName());
             }
         }
         dwzPageModel.setDataList(redPacketActivityList);
@@ -200,24 +201,23 @@ public class RedPacketActivityService {
                     String sign = WeChatUtil.getSignBeForeEncryption(signTreeMap);
                     sign = Md5Util.getMD5(sign);
 
-                    StringBuilder xmlSb = new StringBuilder();
-                    xmlSb.append("<xml>");
-                    xmlSb.append("     <sign>").append(sign).append("</sign>");
-                    xmlSb.append("     <mch_billno>").append(mchBillno).append("</mch_billno>");
-                    xmlSb.append("     <mch_id>1508163181</mch_id>");
-                    xmlSb.append("     <wxappid>").append(SystemParameter.WE_CHAT_DADAO_APPID).append("</wxappid>");
-                    xmlSb.append("     <send_name>").append(actName).append("</send_name>");
-                    xmlSb.append("     <re_openid>").append(wcUser.getWcOpenid()).append("</re_openid>");
-                    xmlSb.append("     <total_amount>").append(tempamount).append("</total_amount>");
-                    xmlSb.append("     <total_num>" + 1 + "</total_num>");
-                    xmlSb.append("     <wishing>鑫大道公交祝您乘车愉快</wishing>");
-                    xmlSb.append("     <client_ip>").append(SystemParameter.WE_CHAT_API_CLIENT_IP).append("</client_ip>");
-                    xmlSb.append("     <act_name>").append(actName).append("</act_name>");
-                    xmlSb.append("     <remark>鑫大道公交</remark>");
-                    xmlSb.append("     <nonce_str>").append(nonceStr).append("</nonce_str>");
+                    String xmlSb = "<xml>" +
+                            "     <sign>" + sign + "</sign>" +
+                            "     <mch_billno>" + mchBillno + "</mch_billno>" +
+                            "     <mch_id>1508163181</mch_id>" +
+                            "     <wxappid>" + SystemParameter.WE_CHAT_DADAO_APPID + "</wxappid>" +
+                            "     <send_name>" + actName + "</send_name>" +
+                            "     <re_openid>" + wcUser.getWcOpenid() + "</re_openid>" +
+                            "     <total_amount>" + tempamount + "</total_amount>" +
+                            "     <total_num>" + 1 + "</total_num>" +
+                            "     <wishing>鑫大道公交祝您乘车愉快</wishing>" +
+                            "     <client_ip>" + SystemParameter.WE_CHAT_API_CLIENT_IP + "</client_ip>" +
+                            "     <act_name>" + actName + "</act_name>" +
+                            "     <remark>鑫大道公交</remark>" +
+                            "     <nonce_str>" + nonceStr + "</nonce_str>" +
 //                    xmlSb.append("     <scene_id>PRODUCT_2</scene_id>");
-                    xmlSb.append("</xml>");
-                    httpPost.setEntity(new StringEntity(xmlSb.toString(), "UTF-8"));
+                            "</xml>";
+                    httpPost.setEntity(new StringEntity(xmlSb, "UTF-8"));
 
                     HttpEntity entity = null;
                     try {

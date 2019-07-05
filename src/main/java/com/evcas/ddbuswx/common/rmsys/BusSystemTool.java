@@ -12,7 +12,7 @@ public class BusSystemTool {
 
     /**
      * GZIP解压
-     * @param str
+     * @param data
      * @return
      * @throws IOException
      */

@@ -3,11 +3,9 @@ package com.evcas.ddbuswx.dao.impl;
 import com.evcas.ddbuswx.dao.IBusStationDAO;
 import com.evcas.ddbuswx.model.BusStation;
 import com.mongodb.BasicDBObject;
-import org.bson.BSON;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.geo.Point;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
 import org.springframework.data.mongodb.core.aggregation.AggregationResults;
@@ -16,7 +14,10 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.regex.Pattern;
 
 /**
@@ -77,15 +78,15 @@ public class BusStationDAOImpl implements IBusStationDAO {
         Set<String> set = new HashSet<>();
         List<BusStation> busStationList = mongoTemplate.find(query, BusStation.class);
         List<BusStation> resultBbusStationList = new ArrayList<>();
-        for (int i = 0; i < busStationList.size(); i++) {
-            if (set.contains(busStationList.get(i).getSiteName())) {
+        for (BusStation busStation : busStationList) {
+            if (set.contains(busStation.getSiteName())) {
                 continue;
             }
             if (resultBbusStationList.size() == 10) {
                 break;
             }
-            resultBbusStationList.add(busStationList.get(i));
-            set.add(busStationList.get(i).getSiteName());
+            resultBbusStationList.add(busStation);
+            set.add(busStation.getSiteName());
         }
         return resultBbusStationList;
     }
@@ -106,9 +107,9 @@ public class BusStationDAOImpl implements IBusStationDAO {
         List<Document> busStationList = outputType.getMappedResults();
         List<BusStation> resultBusStationList = new ArrayList<>();
         if (busStationList != null) {
-            for (int i = 0; i < busStationList.size(); i++) {
+            for (Document document : busStationList) {
                 BusStation busStation = new BusStation();
-                busStation.setSiteName(busStationList.get(i).get("_id").toString());
+                busStation.setSiteName(document.get("_id").toString());
                 resultBusStationList.add(busStation);
             }
         }
