@@ -321,7 +321,6 @@ public class MyServiceStub extends org.apache.axis2.client.Stub {
      * Auto generated method signature
      *
      * @param selectLineDetail0
-     * @see com.evcas.ddbuswx.common.lxhysys.MyService#selectLineDetail
      */
     public com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectLineDetailResponse selectLineDetail(
             com.evcas.ddbuswx.common.lxhysys.MyServiceStub.SelectLineDetail selectLineDetail0)
