@@ -39,6 +39,7 @@ public class SchedulingConfig {
                 if (Integer.parseInt(String.valueOf(cal.getTimeInMillis() / 1000)) - rtBusArriveLeave.getCurrentTime() > 300) {
                     irtBusArriveLeaveDAO.deleteRTBusArriveLeaveByBusTag(rtBusArriveLeave.getAreaid(), rtBusArriveLeave.getFromSys(), rtBusArriveLeave.getBugtag());
                 }
+
             }
         }
         log.info("task ======== filterRTBusArriveLeave  end ========:{}", DateUtil::now);

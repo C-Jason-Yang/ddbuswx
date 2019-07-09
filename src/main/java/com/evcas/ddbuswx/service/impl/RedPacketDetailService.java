@@ -10,6 +10,7 @@ import com.evcas.ddbuswx.mapper.RedPacketDetailMapper;
 import com.evcas.ddbuswx.model.DwzPageModel;
 import com.google.common.collect.Maps;
 import lombok.Cleanup;
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -39,6 +40,7 @@ import java.util.*;
 /**
  * Created by noxn on 2018/9/19.
  */
+@Log4j2
 @SuppressWarnings("ALL")
 @Service
 public class RedPacketDetailService {
@@ -113,7 +115,7 @@ public class RedPacketDetailService {
                     httpclient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
 
                     HttpPost httpPost = new HttpPost(SystemParameter.WE_CHAT_GETHBINFO);
-                    System.out.println("executing request" + httpPost.getRequestLine());
+                    log.info("executing request" + httpPost.getRequestLine());
                     httpPost.addHeader("Connection", "keep-alive");
                     httpPost.addHeader("Accept", "*/*");
                     httpPost.addHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");

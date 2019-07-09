@@ -6,6 +6,7 @@ import com.evcas.ddbuswx.common.utils.Base64Util;
 import com.evcas.ddbuswx.common.utils.JsonTools;
 import com.evcas.ddbuswx.common.utils.StringUtil;
 import com.evcas.ddbuswx.dao.IRmDAO;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
@@ -15,6 +16,7 @@ import java.util.Map;
 /**
  * Created by noxn on 2018/1/10.
  */
+@Log4j2
 @Repository
 public class RmDAOImpl implements IRmDAO {
 
@@ -47,7 +49,7 @@ public class RmDAOImpl implements IRmDAO {
             Map<String, Object> loginResultMap = JsonTools.gson.fromJson(loginResultStr, Map.class);
             Map<String, Object> loginResultParamMap = JsonTools.gson.fromJson(loginResultMap.get("PARAM").toString(), Map.class);
 //            SystemParameter.BUS_SYSTEM_REG_KEY_MAP.put(loginName, loginResultParamMap.get("REGKEY").toString());
-            System.out.println(loginResultParamMap.get("REGKEY").toString());
+            log.info(loginResultParamMap.get("REGKEY").toString());
             if (!StringUtil.isEmpty(String.valueOf(loginResultParamMap.get("REGKEY")))) {
                 return String.valueOf(loginResultParamMap.get("REGKEY"));
             }

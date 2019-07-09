@@ -9,11 +9,13 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.Cleanup;
+import lombok.extern.log4j.Log4j2;
 
 /**
  * @author noxn
  * @date 2018/8/15
  */
+@Log4j2
 public class DiscardServer {
 
     private int port;
@@ -35,7 +37,7 @@ public class DiscardServer {
          */
         @Cleanup("shutdownGracefully") EventLoopGroup bossGroup = new NioEventLoopGroup();
         @Cleanup("shutdownGracefully") EventLoopGroup workerGroup = new NioEventLoopGroup();
-        System.out.println("准备运行端口：" + port);
+        log.info("准备运行端口：" + port);
         /*
          * ServerBootstrap 是一个启动NIO服务的辅助启动类 你可以在这个服务中直接使用Channel
          */

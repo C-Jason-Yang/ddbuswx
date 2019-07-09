@@ -1,12 +1,12 @@
 package com.evcas.ddbuswx.common.utils;
 
 import lombok.Cleanup;
+import lombok.extern.log4j.Log4j2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
@@ -14,6 +14,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * Created by noxn on 2018/9/24.
  */
+@Log4j2
 public class HttpUtil {
 
 
@@ -33,7 +34,7 @@ public class HttpUtil {
             String line;
             StringBuilder sb = new StringBuilder();
             for (line = br.readLine(); line != null; line = br.readLine()) {
-                System.out.println(line);
+                log.info(line);
                 sb.append(line);
             }
             return sb.toString();

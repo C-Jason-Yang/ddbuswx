@@ -17,6 +17,7 @@ import com.evcas.ddbuswx.model.DwzPageModel;
 import com.evcas.ddbuswx.model.User;
 import com.google.common.collect.Maps;
 import lombok.Cleanup;
+import lombok.extern.log4j.Log4j2;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -43,6 +44,7 @@ import java.util.TreeMap;
 /**
  * Created by noxn on 2018/9/20.
  */
+@Log4j2
 @SuppressWarnings("unchecked")
 @Service
 public class RedPacketActivityService {
@@ -171,7 +173,7 @@ public class RedPacketActivityService {
 
                     String actName = redPacketActivity.getActivityName();
                     HttpPost httpPost = new HttpPost(SystemParameter.WE_CHAT_SENDREDPACK);
-                    System.out.println("executing request" + httpPost.getRequestLine());
+                    log.info("executing request" + httpPost.getRequestLine());
                     httpPost.addHeader("Connection", "keep-alive");
                     httpPost.addHeader("Accept", "*/*");
                     httpPost.addHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
@@ -226,15 +228,15 @@ public class RedPacketActivityService {
                             throw new NullPointerException("response is null !");
                         }
                         entity = response.getEntity();
-                        System.out.println("----------------------------------------");
-                        System.out.println(response.getStatusLine());
+                        log.info("----------------------------------------");
+                        log.info(response.getStatusLine());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
 
 
                     if (entity != null) {
-                        System.out.println("Response content length: " + entity.getContentLength());
+                        log.info("Response content length: " + entity.getContentLength());
                         Map<String, String> sendRedPacketResult = Maps.newHashMap();
                         try {
                             @Cleanup    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(entity.getContent()));

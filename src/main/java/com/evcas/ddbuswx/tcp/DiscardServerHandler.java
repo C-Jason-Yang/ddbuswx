@@ -12,14 +12,15 @@ import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.util.CharsetUtil;
 import io.netty.util.ReferenceCountUtil;
 import io.netty.util.concurrent.GlobalEventExecutor;
+import lombok.extern.log4j.Log4j2;
 
 import java.net.InetSocketAddress;
 
 /**
- *
  * @author noxn
  * @date 2018/8/15
  */
+@Log4j2
 public class DiscardServerHandler extends ChannelHandlerAdapter {
 
     private static ChannelGroup ysChannelGroup = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
@@ -36,10 +37,10 @@ public class DiscardServerHandler extends ChannelHandlerAdapter {
         try {
             InetSocketAddress insocket = (InetSocketAddress) ctx.channel().remoteAddress();
             String clientIp = insocket.getAddress().getHostAddress();
-            System.out.println(clientIp);
+            log.info(clientIp);
             ByteBuf in = (ByteBuf) msg;
             // 打印客户端输入，传输过来的的字符
-            System.out.print(in.toString(CharsetUtil.UTF_8));
+            log.info(in.toString(CharsetUtil.UTF_8));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -58,7 +59,7 @@ public class DiscardServerHandler extends ChannelHandlerAdapter {
             buf = Unpooled.buffer(JsonTools.gson.toJson(rtBusArriveLeave).getBytes().length);
             buf.writeBytes(JsonTools.gson.toJson(rtBusArriveLeave).getBytes());
             ysChannelGroup.writeAndFlush(buf);
-            System.out.println(ysChannelGroup.size());
+            log.info(ysChannelGroup.size());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -67,7 +68,7 @@ public class DiscardServerHandler extends ChannelHandlerAdapter {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         String ipAddress = ctx.channel().remoteAddress().toString();
-        System.out.println(ipAddress);
+        log.info(ipAddress);
         Object[] channelArray = ysChannelGroup.toArray();
         for (Object o : channelArray) {
             Channel channel = (Channel) o;

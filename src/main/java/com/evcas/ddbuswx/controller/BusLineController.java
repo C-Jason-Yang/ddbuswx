@@ -11,6 +11,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,7 @@ import java.util.List;
 /**
  * Created by noxn on 2019/5/10.
  */
+@Log4j2
 @SuppressWarnings("unchecked")
 @Controller
 @RequestMapping("busLine")
@@ -31,7 +33,7 @@ public class BusLineController {
     @Autowired
     private IBusLineService iBusLineService;
 
-    @ApiOperation(value="查询线路", notes="根据关键词和区域id查询线路")
+    @ApiOperation(value = "查询线路", notes = "根据关键词和区域id查询线路")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "lineName", value = "关键词", required = true, dataType = "String"),
             @ApiImplicitParam(name = "areaId", value = "区域id", required = true, dataType = "String")
@@ -51,10 +53,10 @@ public class BusLineController {
         return res;
     }
 
-    @ApiOperation(value="查询线路详情", notes="根据线路编码和区域id查询线路详情")
+    @ApiOperation(value = "查询线路详情", notes = "根据线路编码和区域id查询线路详情")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "lineCode", value = "线路编码", required = true, dataType = "String", defaultValue="1", paramType = "query"),
-            @ApiImplicitParam(name = "areaId", value = "区域id", required = true, dataType = "String", defaultValue="341222", paramType = "query")
+            @ApiImplicitParam(name = "lineCode", value = "线路编码", required = true, dataType = "String", defaultValue = "1", paramType = "query"),
+            @ApiImplicitParam(name = "areaId", value = "区域id", required = true, dataType = "String", defaultValue = "341222", paramType = "query")
     })
     @RequestMapping(value = "getLineInfoByLineCode", method = RequestMethod.GET)
     @ResponseBody
@@ -71,7 +73,7 @@ public class BusLineController {
         return res;
     }
 
-    @ApiOperation(value="查询线路列表", notes="根据站点名称和区域id查询经过这个站点的线路")
+    @ApiOperation(value = "查询线路列表", notes = "根据站点名称和区域id查询经过这个站点的线路")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "stationName", value = "站点名称", required = true, dataType = "String"),
             @ApiImplicitParam(name = "areaId", value = "区域id", required = true, dataType = "String")
@@ -90,7 +92,7 @@ public class BusLineController {
         return res;
     }
 
-    @ApiOperation(value="公交换乘查询", notes="根据起始站点和结束站点或者起始点坐标查询公交换乘线路")
+    @ApiOperation(value = "公交换乘查询", notes = "根据起始站点和结束站点或者起始点坐标查询公交换乘线路")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "startStationName", value = "起始站点名称", required = true, dataType = "String"),
             @ApiImplicitParam(name = "endStationName", value = "结束站点名称", required = true, dataType = "String"),
@@ -104,9 +106,9 @@ public class BusLineController {
     @RequestMapping(value = "findBusRouters", method = RequestMethod.GET)
     @ResponseBody
     public ResVo<List<Router>> findBusRouters(String startStationName, String endStationName, String areaId,
-                                String startLat, String startLon, String endLat, String endLon) {
+                                              String startLat, String startLon, String endLat, String endLon) {
         ResVo res = new ResVo();
-        System.out.println("startStationName:" + startStationName + "| endStationName:" + endStationName + "| areaId:" + areaId + "| startLat:" + startLat + "| startLon:" + startLon + "| endLat:" + endLat + "| endLon:" + endLon);
+        log.info("startStationName:" + startStationName + "| endStationName:" + endStationName + "| areaId:" + areaId + "| startLat:" + startLat + "| startLon:" + startLon + "| endLat:" + endLat + "| endLon:" + endLon);
         List<Router> routerList = iBusLineService.findBusRouters(startStationName, endStationName, areaId, startLat, startLon, endLat, endLon);
         if (routerList != null && routerList.size() > 0) {
             res.setFlag(ResFlagEnum.Normal.getFlag());
@@ -117,7 +119,7 @@ public class BusLineController {
         return res;
     }
 
-    @ApiOperation(value="车辆到离站信息", notes="车辆到离站信息信息")
+    @ApiOperation(value = "车辆到离站信息", notes = "车辆到离站信息信息")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "areaId", value = "区域id", required = true, dataType = "String"),
             @ApiImplicitParam(name = "lineCode", value = "线路编码", required = true, dataType = "String"),
