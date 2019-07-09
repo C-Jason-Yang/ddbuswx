@@ -16,7 +16,6 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by noxn on 2018/3/7.
@@ -33,7 +32,7 @@ public class SiteController {
     private ITokenService iTokenService;
 
     @RequestMapping(value = "findAllHotSite")
-    public ModelAndView findAllHotSite(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView findAllHotSite(HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
         ModelAndView model = new ModelAndView();
         String tokenStr = "";
@@ -57,7 +56,7 @@ public class SiteController {
 
     @RequestMapping(value = "addHotSite",method = RequestMethod.POST)
     @ResponseBody
-    public String addHotSite(HotSite hotSite, HttpServletRequest request, HttpServletResponse response) {
+    public String addHotSite(HotSite hotSite, HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
         DwzCallBackResult result = new DwzCallBackResult();
         String tokenStr = "";
@@ -82,7 +81,7 @@ public class SiteController {
 
     @RequestMapping(value = "deleteHotSiteById", method = RequestMethod.POST)
     @ResponseBody
-    public String deleteHotSiteById(String id, HttpServletRequest request, HttpServletResponse response) {
+    public String deleteHotSiteById(String id) {
         iSiteService.deleteHotSiteById(id);
         DwzCallBackResult result = new DwzCallBackResult();
         result.setStatusCode(200);
@@ -91,7 +90,7 @@ public class SiteController {
     }
 
     @RequestMapping(value = "toAddHotSitePage", method = RequestMethod.GET)
-    public ModelAndView toAddHotSitePage(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView toAddHotSitePage() {
         return new ModelAndView("addHotSite");
     }
 }

@@ -18,7 +18,6 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +39,7 @@ public class LostAndFoundController {
     @RequestMapping(value = "addLostAndFound", method = RequestMethod.POST)
     @ResponseBody
     @ApiIgnore
-    public String addLostAndFound(LostAndFound lostAndFound, HttpServletRequest request, HttpServletResponse response) {
+    public String addLostAndFound(LostAndFound lostAndFound, HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
         DwzCallBackResult result = new DwzCallBackResult();
         String tokenStr = "";
@@ -65,7 +64,7 @@ public class LostAndFoundController {
     @RequestMapping(value = "deleteLostAndFoundById", method = RequestMethod.POST)
     @ResponseBody
     @ApiIgnore
-    public String deleteLostAndFoundById(String id, HttpServletRequest request, HttpServletResponse response) {
+    public String deleteLostAndFoundById(String id) {
         iLostAndFoundService.deleteLostAndFoundById(id);
         DwzCallBackResult result = new DwzCallBackResult();
         result.setStatusCode(200);
@@ -115,13 +114,13 @@ public class LostAndFoundController {
 
     @RequestMapping(value = "toAddLostAndFoundPage", method = RequestMethod.GET)
     @ApiIgnore
-    public ModelAndView toAddLostAndFoundPage(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView toAddLostAndFoundPage() {
         return new ModelAndView("lostAndFound/addLostAndFoundPage");
     }
 
     @RequestMapping(value = "toUpdateLostAndFoundPage", method = RequestMethod.GET)
     @ApiIgnore
-    public ModelAndView toUpdateLostAndFoundPage(String id, HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView toUpdateLostAndFoundPage(String id) {
         LostAndFound lostAndFound = iLostAndFoundService.findLostAndFoundById(id);
         ModelAndView model = new ModelAndView("lostAndFound/updateLostAndFoundPage");
         model.addObject("lostAndFound", lostAndFound);
@@ -131,7 +130,7 @@ public class LostAndFoundController {
     @RequestMapping(value = "updateLostAndFoundById", method = RequestMethod.POST)
     @ResponseBody
     @ApiIgnore
-    public String updateLostAndFoundById(LostAndFound lostAndFound, HttpServletRequest request, HttpServletResponse response) {
+    public String updateLostAndFoundById(LostAndFound lostAndFound) {
         iLostAndFoundService.updateLostAndFoundById(lostAndFound);
         DwzCallBackResult result = new DwzCallBackResult();
         result.setStatusCode(200);

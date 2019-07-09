@@ -21,7 +21,6 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +42,7 @@ public class InfoFeedBackController {
     @RequestMapping(value = "deleteInfoFeedBackById", method = RequestMethod.POST)
     @ResponseBody
     @ApiIgnore
-    public String deleteInfoFeedBackById(String id, HttpServletRequest request, HttpServletResponse response) {
+    public String deleteInfoFeedBackById(String id) {
         iInfoFeedBackService.deleteInfoFeedBackById(id);
         DwzCallBackResult result = new DwzCallBackResult();
         result.setStatusCode(200);
@@ -52,7 +51,7 @@ public class InfoFeedBackController {
 
     @RequestMapping(value = "findInfoFeedBackList")
     @ApiIgnore
-    public ModelAndView findInfoFeedBackList(Long pageNum, HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView findInfoFeedBackList(Long pageNum, HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
         ModelAndView model = new ModelAndView();
         String tokenStr = "";
