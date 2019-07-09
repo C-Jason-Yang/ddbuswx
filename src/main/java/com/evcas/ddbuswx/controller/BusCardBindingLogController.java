@@ -5,6 +5,7 @@ import com.evcas.ddbuswx.model.DwzPageModel;
 import com.evcas.ddbuswx.model.Token;
 import com.evcas.ddbuswx.service.ITokenService;
 import com.evcas.ddbuswx.service.impl.BusCardBindingLogService;
+import com.google.common.base.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,13 +38,13 @@ public class BusCardBindingLogController {
         ModelAndView model = new ModelAndView();
         String tokenStr = "";
         for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("token")) {
+            if ("token".equals(cookie.getName())) {
                 tokenStr = cookie.getValue();
             }
         }
-        if (!tokenStr.equals("")) {
+        if (!Strings.isNullOrEmpty(tokenStr)) {
             Token token = iTokenService.findTokenByToken(tokenStr);
-            if (token != null && token.getUserId() != null &&  !"".equals(token.getUserId())) {
+            if (token != null && token.getUserId() != null && !"".equals(token.getUserId())) {
                 DwzPageModel dwzPageModel = new DwzPageModel();
                 if (pageNum == null) {
                     pageNum = 1L;

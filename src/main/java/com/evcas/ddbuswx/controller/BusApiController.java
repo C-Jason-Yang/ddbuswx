@@ -97,7 +97,7 @@ public class BusApiController {
     public String test(@RequestBody RTBusArriveLeave rtBusArriveLeave) {
         System.err.println(rtBusArriveLeave.getAreaid());
 
-        if (rtBusArriveLeave.getAreaid().equals("341226")) {
+        if ("341226".equals(rtBusArriveLeave.getAreaid())) {
             rtBusArriveLeave.setAreaid("YS");
             Area area = iAreaService.getAreaByAreaId(rtBusArriveLeave.getAreaid());
             rtBusArriveLeave.setAreaCode(area.getAreaCode());
@@ -106,7 +106,7 @@ public class BusApiController {
             rtBusArriveLeave.setLine(Integer.valueOf(rmBusLine.getLineCode()));
             DiscardServerHandler.send(rtBusArriveLeave);
         }
-        if (rtBusArriveLeave.getAreaid().equals("341222")) {
+        if ("341222".equals(rtBusArriveLeave.getAreaid())) {
             rtBusArriveLeave.setAreaid("TH");
             Area area = iAreaService.getAreaByAreaId(rtBusArriveLeave.getAreaid());
             rtBusArriveLeave.setAreaCode(area.getAreaCode());
