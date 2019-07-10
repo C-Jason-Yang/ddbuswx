@@ -1,6 +1,8 @@
 package com.evcas.ddbuswx.dao;
 
-import com.evcas.ddbuswx.model.Area;
+import com.evcas.ddbuswx.model.mongo.Area;
+
+import java.util.List;
 
 /**
  * 区域信息
@@ -21,4 +23,6 @@ public interface IAreaDAO {
      * @return
      */
     Area getAreaByAreaId(String areaId);
+
+    void  initArea(List<Area> list);
 }

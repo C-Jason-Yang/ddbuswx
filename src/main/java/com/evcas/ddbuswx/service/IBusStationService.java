@@ -1,6 +1,6 @@
 package com.evcas.ddbuswx.service;
 
-import com.evcas.ddbuswx.model.BusStation;
+import com.evcas.ddbuswx.model.mongo.BusStation;
 
 import java.util.List;
 import java.util.Map;

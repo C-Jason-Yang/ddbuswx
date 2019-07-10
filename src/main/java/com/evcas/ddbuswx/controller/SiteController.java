@@ -2,7 +2,7 @@ package com.evcas.ddbuswx.controller;
 
 import com.evcas.ddbuswx.common.DwzCallBackResult;
 import com.evcas.ddbuswx.common.utils.JsonTools;
-import com.evcas.ddbuswx.model.HotSite;
+import com.evcas.ddbuswx.model.mongo.HotSite;
 import com.evcas.ddbuswx.model.Token;
 import com.evcas.ddbuswx.service.ISiteService;
 import com.evcas.ddbuswx.service.ITokenService;

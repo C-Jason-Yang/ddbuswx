@@ -2,7 +2,7 @@ package com.evcas.ddbuswx.service.impl;
 
 import com.evcas.ddbuswx.dao.IHotSiteDAO;
 import com.evcas.ddbuswx.dao.IUserDAO;
-import com.evcas.ddbuswx.model.HotSite;
+import com.evcas.ddbuswx.model.mongo.HotSite;
 import com.evcas.ddbuswx.model.User;
 import com.evcas.ddbuswx.service.ISiteService;
 import org.springframework.beans.factory.annotation.Autowired;

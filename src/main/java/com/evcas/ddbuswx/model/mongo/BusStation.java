@@ -1,5 +1,7 @@
-package com.evcas.ddbuswx.model;
+package com.evcas.ddbuswx.model.mongo;
 
+import cn.hutool.core.date.DateUtil;
+import com.evcas.ddbuswx.model.SpaceObject;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -7,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexType;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Created by noxn on 2018/1/10.
@@ -16,6 +19,7 @@ import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 @AllArgsConstructor
 @NoArgsConstructor
 @ApiModel(value = "站点")
+@Document(collection = "busStation")
 public class BusStation {
 
     private String siteCode;
@@ -71,6 +75,7 @@ public class BusStation {
     private Integer hySiteNum;
     @GeoSpatialIndexed(type = GeoSpatialIndexType.GEO_2DSPHERE)
     private SpaceObject location;
+    private String createTime = DateUtil.now();
 
     public BusStation(String fromSys) {
         this.fromSys = fromSys;

@@ -1,7 +1,7 @@
 package com.evcas.ddbuswx.service;
 
 import com.evcas.ddbuswx.dao.IThirdPartyAuthDAO;
-import com.evcas.ddbuswx.model.ThirdPartyAuth;
+import com.evcas.ddbuswx.model.mongo.ThirdPartyAuth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +20,8 @@ public class ThirdPartyAuthServiceImpl implements IThirdPartyAuthService {
         if (thirdPartyAuth != null) {
             String areaAuth = thirdPartyAuth.getAreaAuth();
             String[] areaArr = areaAuth.split(",");
-            for (int i = 0; i < areaArr.length; i++) {
-                if (areaArr[i].equals(areaCode)) {
+            for (String s : areaArr) {
+                if (s.equals(areaCode)) {
                     return true;
                 }
             }

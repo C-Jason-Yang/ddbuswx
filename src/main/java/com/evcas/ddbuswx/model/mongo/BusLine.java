@@ -1,10 +1,13 @@
-package com.evcas.ddbuswx.model;
+package com.evcas.ddbuswx.model.mongo;
 
+import cn.hutool.core.date.DateUtil;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
@@ -16,9 +19,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ApiModel(value = "线路")
+@Document(collection = "busLine")
 public class BusLine {
 
-
+    @Id
     private String id;
     private Integer sendType;
     @ApiModelProperty(value = "线路编码", name = "lineCode")
@@ -60,6 +64,7 @@ public class BusLine {
     @ApiModelProperty(value = "下行站点集合", name = "downLinkStartStation")
     private List<BusStation> downBusStationList;
     private String sortLineName;
+    private String createTime = DateUtil.now();
 
     public BusLine(String fromSys) {
         this.fromSys = fromSys;

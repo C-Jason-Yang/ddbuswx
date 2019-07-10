@@ -2,11 +2,10 @@ package com.evcas.ddbuswx.controller;
 
 import com.evcas.ddbuswx.common.commonEnum.ResFlagEnum;
 import com.evcas.ddbuswx.entity.ResVo;
-import com.evcas.ddbuswx.model.BusLine;
+import com.evcas.ddbuswx.model.mongo.BusLine;
 import com.evcas.ddbuswx.model.RTBusArriveLeave;
 import com.evcas.ddbuswx.model.Router;
 import com.evcas.ddbuswx.service.IBusLineService;
-import com.evcas.ddbuswx.service.IBusStationService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

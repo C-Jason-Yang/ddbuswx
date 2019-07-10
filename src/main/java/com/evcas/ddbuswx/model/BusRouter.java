@@ -1,5 +1,6 @@
 package com.evcas.ddbuswx.model;
 
+import com.evcas.ddbuswx.model.mongo.BusStation;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -37,4 +38,5 @@ public class BusRouter {
     private String viaStationNum;
     @ApiModelProperty(value = "站点集合", name = "busStationList")
     private List<BusStation> busStationList;
+
 }

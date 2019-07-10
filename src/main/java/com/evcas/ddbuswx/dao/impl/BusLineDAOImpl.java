@@ -1,7 +1,7 @@
 package com.evcas.ddbuswx.dao.impl;
 
 import com.evcas.ddbuswx.dao.IBusLineDAO;
-import com.evcas.ddbuswx.model.BusLine;
+import com.evcas.ddbuswx.model.mongo.BusLine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -22,7 +22,13 @@ public class BusLineDAOImpl implements IBusLineDAO {
 
     @Override
     public void addBusLineList(List<BusLine> busLineList) {
-        mongoTemplate.insertAll(busLineList);
+        busLineList.forEach(b -> {
+            mongoTemplate.remove(b);
+            mongoTemplate.insert(b);
+        });
+
+
+        //mongoTemplate.insertAll(busLineList);
     }
 
     @Override

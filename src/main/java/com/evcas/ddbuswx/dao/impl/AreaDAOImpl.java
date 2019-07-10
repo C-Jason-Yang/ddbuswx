@@ -1,12 +1,14 @@
 package com.evcas.ddbuswx.dao.impl;
 
 import com.evcas.ddbuswx.dao.IAreaDAO;
-import com.evcas.ddbuswx.model.Area;
+import com.evcas.ddbuswx.model.mongo.Area;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * Created by noxn on 2018/8/11.
@@ -29,5 +31,11 @@ public class AreaDAOImpl implements IAreaDAO {
         Query query = new Query();
         query.addCriteria(Criteria.where("areaOldCode").is(areaId));
         return mongoTemplate.findOne(query, Area.class);
+    }
+
+    @Override
+    public void initArea(List<Area> list) {
+        mongoTemplate.dropCollection(Area.class);
+        mongoTemplate.insertAll(list);
     }
 }

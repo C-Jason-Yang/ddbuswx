@@ -2,8 +2,8 @@ package com.evcas.ddbuswx.controller;
 
 import com.evcas.ddbuswx.common.commonEnum.ResFlagEnum;
 import com.evcas.ddbuswx.entity.ResVo;
-import com.evcas.ddbuswx.model.BusStation;
-import com.evcas.ddbuswx.model.HotSite;
+import com.evcas.ddbuswx.model.mongo.BusStation;
+import com.evcas.ddbuswx.model.mongo.HotSite;
 import com.evcas.ddbuswx.service.IBusStationService;
 import com.evcas.ddbuswx.service.ISiteService;
 import io.swagger.annotations.Api;

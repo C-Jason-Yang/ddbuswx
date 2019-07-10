@@ -1,6 +1,6 @@
 package com.evcas.ddbuswx.service;
 
-import com.evcas.ddbuswx.model.Area;
+import com.evcas.ddbuswx.model.mongo.Area;
 
 /**
  * Created by noxn on 2018/8/31.

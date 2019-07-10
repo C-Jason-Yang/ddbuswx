@@ -7,6 +7,10 @@ import com.evcas.ddbuswx.dao.*;
 import com.evcas.ddbuswx.entity.PlatformAccount;
 import com.evcas.ddbuswx.mapper.PlatformAccountMapper;
 import com.evcas.ddbuswx.model.*;
+import com.evcas.ddbuswx.model.mongo.Bus;
+import com.evcas.ddbuswx.model.mongo.BusLine;
+import com.evcas.ddbuswx.model.mongo.BusShift;
+import com.evcas.ddbuswx.model.mongo.BusStation;
 import com.evcas.ddbuswx.service.IRmService;
 import com.google.common.base.Strings;
 import net.sf.json.JSONArray;
@@ -151,13 +155,6 @@ public class RmServiceImpl implements IRmService {
                 if (stringObjectMap.get("LINECODE").equals("88"))
                     continue;
                 BusLine busLine = new BusLine("RM");
-//                try {
-//                    Area area = iAreaDAO.getAreaByAreaId(areaId);
-//                    busLine.setAreaCode(area.getAreaCode());
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                    System.out.println(areaId);
-//                }
                 busLine.setAreaCode(areaId);
                 busLine.setId(stringObjectMap.get("ID").toString().split("\\.")[0]);
                 busLine.setReMark(String.valueOf(stringObjectMap.get("REMARK")));

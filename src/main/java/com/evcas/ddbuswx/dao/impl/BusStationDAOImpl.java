@@ -1,7 +1,7 @@
 package com.evcas.ddbuswx.dao.impl;
 
 import com.evcas.ddbuswx.dao.IBusStationDAO;
-import com.evcas.ddbuswx.model.BusStation;
+import com.evcas.ddbuswx.model.mongo.BusStation;
 import com.mongodb.BasicDBObject;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;

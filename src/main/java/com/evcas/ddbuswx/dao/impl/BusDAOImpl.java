@@ -1,7 +1,7 @@
 package com.evcas.ddbuswx.dao.impl;
 
 import com.evcas.ddbuswx.dao.IBusDAO;
-import com.evcas.ddbuswx.model.Bus;
+import com.evcas.ddbuswx.model.mongo.Bus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;

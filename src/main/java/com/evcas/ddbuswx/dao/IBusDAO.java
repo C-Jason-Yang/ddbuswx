@@ -1,6 +1,6 @@
 package com.evcas.ddbuswx.dao;
 
-import com.evcas.ddbuswx.model.Bus;
+import com.evcas.ddbuswx.model.mongo.Bus;
 
 import java.util.List;
 

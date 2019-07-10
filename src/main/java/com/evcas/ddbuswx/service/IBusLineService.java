@@ -1,6 +1,6 @@
 package com.evcas.ddbuswx.service;
 
-import com.evcas.ddbuswx.model.BusLine;
+import com.evcas.ddbuswx.model.mongo.BusLine;
 import com.evcas.ddbuswx.model.RTBusArriveLeave;
 import com.evcas.ddbuswx.model.Router;
 

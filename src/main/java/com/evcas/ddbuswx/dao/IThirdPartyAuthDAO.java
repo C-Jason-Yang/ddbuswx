@@ -1,6 +1,6 @@
 package com.evcas.ddbuswx.dao;
 
-import com.evcas.ddbuswx.model.ThirdPartyAuth;
+import com.evcas.ddbuswx.model.mongo.ThirdPartyAuth;
 
 /**
  * 第三方权限

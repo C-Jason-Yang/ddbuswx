@@ -1,6 +1,6 @@
 package com.evcas.ddbuswx.dao;
 
-import com.evcas.ddbuswx.model.BusShift;
+import com.evcas.ddbuswx.model.mongo.BusShift;
 
 import java.util.List;
 

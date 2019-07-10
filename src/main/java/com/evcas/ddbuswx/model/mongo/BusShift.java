@@ -1,8 +1,10 @@
-package com.evcas.ddbuswx.model;
+package com.evcas.ddbuswx.model.mongo;
 
+import cn.hutool.core.date.DateUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Created by noxn on 2018/1/15.
@@ -10,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Document(collection = "busShift")
 public class BusShift {
 
     private String lineId;
@@ -22,5 +25,6 @@ public class BusShift {
     private Integer etime;
     private String vehicleno;
     private String fromSys;
+    private String createTime = DateUtil.now();
 
 }

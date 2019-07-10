@@ -1,7 +1,7 @@
 package com.evcas.ddbuswx.dao.impl;
 
 import com.evcas.ddbuswx.dao.IBusShiftDAO;
-import com.evcas.ddbuswx.model.BusShift;
+import com.evcas.ddbuswx.model.mongo.BusShift;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;

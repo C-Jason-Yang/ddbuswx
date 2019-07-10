@@ -1,6 +1,6 @@
 package com.evcas.ddbuswx.service;
 
-import com.evcas.ddbuswx.model.HotSite;
+import com.evcas.ddbuswx.model.mongo.HotSite;
 
 import java.util.List;
 

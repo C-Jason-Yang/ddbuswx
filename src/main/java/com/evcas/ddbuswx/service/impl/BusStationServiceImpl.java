@@ -1,10 +1,8 @@
 package com.evcas.ddbuswx.service.impl;
 
 import com.evcas.ddbuswx.common.BusDirection;
-import com.evcas.ddbuswx.dao.IAreaDAO;
 import com.evcas.ddbuswx.dao.IBusStationDAO;
-import com.evcas.ddbuswx.model.Area;
-import com.evcas.ddbuswx.model.BusStation;
+import com.evcas.ddbuswx.model.mongo.BusStation;
 import com.evcas.ddbuswx.service.IBusStationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

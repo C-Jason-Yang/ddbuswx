@@ -1,5 +1,6 @@
 package com.evcas.ddbuswx.model;
 
+import com.evcas.ddbuswx.model.mongo.BusStation;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

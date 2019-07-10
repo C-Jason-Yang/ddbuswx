@@ -1,7 +1,7 @@
 package com.evcas.ddbuswx.dao.impl;
 
 import com.evcas.ddbuswx.dao.IThirdPartyAuthDAO;
-import com.evcas.ddbuswx.model.ThirdPartyAuth;
+import com.evcas.ddbuswx.model.mongo.ThirdPartyAuth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;

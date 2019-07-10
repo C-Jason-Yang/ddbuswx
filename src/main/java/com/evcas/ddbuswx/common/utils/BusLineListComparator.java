@@ -1,6 +1,6 @@
 package com.evcas.ddbuswx.common.utils;
 
-import com.evcas.ddbuswx.model.BusLine;
+import com.evcas.ddbuswx.model.mongo.BusLine;
 
 import java.io.Serializable;
 import java.util.Comparator;
