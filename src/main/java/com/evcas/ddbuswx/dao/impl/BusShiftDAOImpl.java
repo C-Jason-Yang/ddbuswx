@@ -27,14 +27,14 @@ public class BusShiftDAOImpl implements IBusShiftDAO {
 
     @Override
     public void deleteBusShift(String areaId, String fromSys) {
-        Query query = new Query(Criteria.where("areaId").is(areaId).and("fromSys").is(fromSys));
+        Query query = new Query(Criteria.where("areaid").is(areaId).and("fromSys").is(fromSys));
         mongoTemplate.remove(query, BusShift.class);
     }
 
     @Override
     public List<BusShift> getBusShiftByLineId(String areaId, String lineId, Integer direction) {
         Query query = new Query();
-        query.addCriteria(Criteria.where("lineId").is(lineId).and("areaId").is(areaId).and("biztype").is(direction));
+        query.addCriteria(Criteria.where("lineId").is(lineId).and("areaid").is(areaId).and("biztype").is(direction));
         query.with(new Sort(Sort.Direction.ASC, "stime"));
         return mongoTemplate.find(query, BusShift.class);
     }

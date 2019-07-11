@@ -26,13 +26,13 @@ public class RTBusArriveLeaveDAOImpl implements IRTBusArriveLeaveDAO {
 
     @Override
     public void deleteRTBusArriveLeaveByBusTag(String areaId, String fromSys, String busTag) {
-        Query query = new Query(Criteria.where("areaId").is(areaId).and("fromSys").is(fromSys).and("bugtag").is(busTag));
+        Query query = new Query(Criteria.where("areaid").is(areaId).and("fromSys").is(fromSys).and("bugtag").is(busTag));
         mongoTemplate.remove(query, "rTBusArriveLeave");
     }
 
     @Override
     public List<RTBusArriveLeave> findRTBusArriveLeaveBy(String areaId, String lineCode, String direction) {
-        Query query = new Query(Criteria.where("line").is(Integer.valueOf(lineCode)).and("areaId").is(areaId).and("biztype").is(Integer.valueOf(direction)));
+        Query query = new Query(Criteria.where("line").is(Integer.valueOf(lineCode)).and("areaid").is(areaId).and("biztype").is(Integer.valueOf(direction)));
         return mongoTemplate.find(query, RTBusArriveLeave.class);
     }
 }

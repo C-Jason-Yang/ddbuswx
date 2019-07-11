@@ -26,7 +26,7 @@ public class BusDAOImpl implements IBusDAO {
 
     @Override
     public void deleteBusInfoByAreaId(String areaId, String fromSys) {
-        Query query = new Query(Criteria.where("areaId").is(areaId).and("fromSys").is(fromSys));
+        Query query = new Query(Criteria.where("areaid").is(areaId).and("fromSys").is(fromSys));
         mongoTemplate.remove(query, Bus.class);
     }
 }

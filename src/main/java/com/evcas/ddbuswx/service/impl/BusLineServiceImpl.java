@@ -59,6 +59,9 @@ public class BusLineServiceImpl implements IBusLineService {
             for (BusLine busLine : busLineList) {
                 List<BusStation> upLinkBusStationList = iBusStationDAO.getBusStationByLineCode(busLine.getLineCode(),
                         BusDirection.UpLink.getValue(), areaId);
+                if (upLinkBusStationList == null) {
+                    continue;
+                }
                 busLine.setUpLinkStartStation(upLinkBusStationList.get(0).getSiteName());
                 busLine.setUpLinkEndStation(upLinkBusStationList.get(upLinkBusStationList.size() - 1).getSiteName());
                 List<BusStation> downLinkBusStationList = iBusStationDAO.getBusStationByLineCode(busLine.getLineCode(),
@@ -93,6 +96,8 @@ public class BusLineServiceImpl implements IBusLineService {
 
                 List<BusStation> upLinkBusStationList = iBusStationDAO.getBusStationByLineCode(busStation.getLineCode(),
                         BusDirection.UpLink.getValue(), areaId);
+
+
                 busLine.setUpLinkStartStation(upLinkBusStationList.get(0).getSiteName());
                 busLine.setUpLinkEndStation(upLinkBusStationList.get(upLinkBusStationList.size() - 1).getSiteName());
 //                busLine.setUpBusStationList(upLinkBusStationList);

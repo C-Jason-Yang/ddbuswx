@@ -33,14 +33,14 @@ public class BusLineDAOImpl implements IBusLineDAO {
 
     @Override
     public void deleteBusLineByAreaId(String areaId, String fromSys) {
-        Query query = new Query(Criteria.where("areaId").is(areaId).and("fromSys").is(fromSys));
+        Query query = new Query(Criteria.where("areaid").is(areaId).and("fromSys").is(fromSys));
         mongoTemplate.remove(query, BusLine.class);
     }
 
     @Override
     public List<BusLine> getBusLineByAreaCode(String areaCode) {
         Query query = new Query();
-        query.addCriteria(Criteria.where("areaId").is(areaCode).and("fromSys").is("RM"));
+        query.addCriteria(Criteria.where("areaid").is(areaCode).and("fromSys").is("RM"));
         return mongoTemplate.find(query, BusLine.class);
     }
 
@@ -61,19 +61,19 @@ public class BusLineDAOImpl implements IBusLineDAO {
     @Override
     public List<BusLine> queryBusLineByLikeLineName(String lineName, String areaId) {
         Query query = new Query();
-        Criteria criteria = Criteria.where("areaId").is(areaId).and("fromSys").is("RM");
+        Criteria criteria = Criteria.where("areaid").is(areaId).and("fromSys").is("RM");
         if (lineName != null) {
             Pattern pattern = Pattern.compile("^.*" + lineName + ".*$", Pattern.CASE_INSENSITIVE);
             criteria.and("lineName").regex(pattern);
         }
         query.addCriteria(criteria);
-        return mongoTemplate.find(query, BusLine.class);
+        return mongoTemplate.find(query, BusLine.class, "busLine");
     }
 
     @Override
     public BusLine queryBusLineByLineCodeAndAreaId(String lineCode, String areaId) {
         Query query = new Query();
-        query.addCriteria(Criteria.where("lineCode").is(lineCode).and("areaId").is(areaId).and("fromSys").is("RM"));
+        query.addCriteria(Criteria.where("lineCode").is(lineCode).and("areaid").is(areaId).and("fromSys").is("RM"));
         return mongoTemplate.findOne(query, BusLine.class);
     }
 }

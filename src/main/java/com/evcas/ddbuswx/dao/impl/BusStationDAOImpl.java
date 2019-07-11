@@ -36,7 +36,7 @@ public class BusStationDAOImpl implements IBusStationDAO {
 
     @Override
     public void deleteBusStationByAreaId(String areaId, String fromSys) {
-        Query query = new Query(Criteria.where("areaId").is(areaId).and("fromSys").is(fromSys));
+        Query query = new Query(Criteria.where("areaid").is(areaId).and("fromSys").is(fromSys));
         mongoTemplate.remove(query, BusStation.class);
     }
 
@@ -44,7 +44,7 @@ public class BusStationDAOImpl implements IBusStationDAO {
     public List<BusStation> getBusStationByLineCode(String lineCode, String direction, String areaCode) {
         try {
             Query query = new Query();
-            query.addCriteria(Criteria.where("lineCode").is(lineCode).and("areaId").is(areaCode)
+            query.addCriteria(Criteria.where("lineCode").is(lineCode).and("areaid").is(areaCode)
                     .and("direction").is(Integer.valueOf(direction)).and("fromSys").is("RM")).with(new Sort(new Sort.Order(Sort.Direction.ASC,"sitenum")));
             List<BusStation> busStationList = mongoTemplate.find(query, BusStation.class);
             return busStationList;
@@ -93,7 +93,7 @@ public class BusStationDAOImpl implements IBusStationDAO {
 
     @Override
     public List<BusStation> queryStationLikeName(String stationName, String areaId) {
-        Criteria criteria = Criteria.where("areaId").is(areaId).and("fromSys").is("RM");
+        Criteria criteria = Criteria.where("areaid").is(areaId).and("fromSys").is("RM");
         if (stationName != null) {
             Pattern pattern = Pattern.compile("^.*" + stationName + ".*$", Pattern.CASE_INSENSITIVE);
             criteria.and("siteName").regex(pattern);
@@ -120,13 +120,13 @@ public class BusStationDAOImpl implements IBusStationDAO {
     @Override
     public List<BusStation> findAllBusStation(String areaId) {
         Query query = new Query();
-        query.addCriteria(Criteria.where("areaId").is(areaId).and("fromSys").is("RM"));
+        query.addCriteria(Criteria.where("areaid").is(areaId).and("fromSys").is("RM"));
         return mongoTemplate.find(query, BusStation.class);
     }
 
     @Override
     public List<BusStation> findBusStationByStationName(String stationName, String direction, String areaId) {
-        Criteria criteria = Criteria.where("areaId").is(areaId).and("direction").is(Integer.valueOf(direction)).and("siteName").is(stationName).and("fromSys").is("RM");
+        Criteria criteria = Criteria.where("areaid").is(areaId).and("direction").is(Integer.valueOf(direction)).and("siteName").is(stationName).and("fromSys").is("RM");
 //        if (stationName != null) {
 //            Pattern pattern = Pattern.compile("^.*" + stationName + ".*$", Pattern.CASE_INSENSITIVE);
 //            criteria.and("siteName").regex(pattern);
@@ -138,7 +138,7 @@ public class BusStationDAOImpl implements IBusStationDAO {
     @Override
     public List<BusStation> findBusStationByStationName(String stationName, String areaId) {
         Query query = new Query();
-        query.addCriteria(Criteria.where("siteName").is(stationName).and("areaId").is(areaId).and("fromSys").is("RM"));
+        query.addCriteria(Criteria.where("siteName").is(stationName).and("areaid").is(areaId).and("fromSys").is("RM"));
         return mongoTemplate.find(query, BusStation.class);
     }
 
