@@ -7,6 +7,7 @@
         <result column="id" property="areaCode"/>
         <result column="area_name" property="areaName"/>
         <result column="area_old_code" property="areaOldCode"/>
+        <result column="area_new_code" property="areaNewCode"/>
     </resultMap>
 
 

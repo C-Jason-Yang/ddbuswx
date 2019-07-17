@@ -1,0 +1,17 @@
+#Mongo
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: ddbus
+    url: jdbc:mysql://120.55.62.88:3306/ddbus?useSSL=FALSE&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  data:
+    mongodb:
+      port: 27017
+      database: ddbus
+      host: 120.55.62.88
+      username: evcas
+      password: evcas
+

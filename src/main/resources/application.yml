@@ -15,22 +15,8 @@ spring:
     name: tcp_ddbus_wx
   thymeleaf:
     suffix: .ftl
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    name: ddbus
-    url: jdbc:mysql://120.55.62.88:3306/ddbus?useSSL=FALSE&serverTimezone=GMT%2B8
-    #url: jdbc:mysql://36.7.87.153:306/ddbus?useSSL=FALSE&serverTimezone=GMT%2B8
-    username: root
-    password: 123456
-
-  data:
-    mongodb:
-      port: 27017
-      database: ddbus
-      host: 120.55.62.88
-      #host: 36.7.87.153
-      username: evcas
-      password: evcas
+  profiles:
+    active: @spring.profiles.active@
 
 
 # MyBatis

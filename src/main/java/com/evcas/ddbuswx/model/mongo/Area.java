@@ -21,6 +21,7 @@ public class Area {
     private String areaName;
     private String areaCode;
     private String areaOldCode;
+    private String areaNewCode;
     private String createTime = DateUtil.now();
 
 }
