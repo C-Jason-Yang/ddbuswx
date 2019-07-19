@@ -59,7 +59,7 @@ public class BusLineServiceImpl implements IBusLineService {
             for (BusLine busLine : busLineList) {
                 List<BusStation> upLinkBusStationList = iBusStationDAO.getBusStationByLineCode(busLine.getLineCode(),
                         BusDirection.UpLink.getValue(), areaId);
-                if (upLinkBusStationList == null) {
+                if (upLinkBusStationList == null || upLinkBusStationList.size() == 0) {
                     continue;
                 }
                 busLine.setUpLinkStartStation(upLinkBusStationList.get(0).getSiteName());
