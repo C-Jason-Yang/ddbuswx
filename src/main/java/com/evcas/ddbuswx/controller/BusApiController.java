@@ -10,6 +10,7 @@ import com.evcas.ddbuswx.model.mongo.BusLine;
 import com.evcas.ddbuswx.model.ThirdPartyReturnModel;
 import com.evcas.ddbuswx.service.*;
 import com.evcas.ddbuswx.tcp.DiscardServerHandler;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,6 +27,7 @@ import java.util.Map;
  * Created by noxn on 2018/8/9.
  */
 @SuppressWarnings("unchecked")
+@Log4j2
 @Controller
 @RequestMapping("busApi")
 @ApiIgnore
@@ -95,7 +97,7 @@ public class BusApiController {
     @RequestMapping(value = "receiveBusInfo", method = RequestMethod.POST)
     @ResponseBody
     public String test(@RequestBody RTBusArriveLeave rtBusArriveLeave) {
-        System.err.println(rtBusArriveLeave.getAreaid());
+        log.info(" RTBusArriveLeave  ================>>>>>>>>" + rtBusArriveLeave.getAreaid());
 
         if ("341226".equals(rtBusArriveLeave.getAreaid())) {
             rtBusArriveLeave.setAreaid("YS");

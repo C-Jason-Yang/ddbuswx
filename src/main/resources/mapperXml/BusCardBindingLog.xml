@@ -24,7 +24,7 @@
                 id ,
             </if>
             <if test="busCardBindingLog.gmtCreate != null">
-                gmt_create ,
+                gmt_create ,w w
             </if>
             <if test="busCardBindingLog.gmtModified != null">
                 gmt_modified ,
