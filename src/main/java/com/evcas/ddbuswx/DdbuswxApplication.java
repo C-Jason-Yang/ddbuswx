@@ -14,9 +14,9 @@ public class DdbuswxApplication {
 		SpringApplication.run(DdbuswxApplication.class, args);
 	}
 
-	@Bean
-	public InitUserDefinedPropertyData simDataInit() {
-		return new InitUserDefinedPropertyData();
-	}
+//	@Bean
+//	public InitUserDefinedPropertyData simDataInit() {
+//		return new InitUserDefinedPropertyData();
+//	}
 
 }

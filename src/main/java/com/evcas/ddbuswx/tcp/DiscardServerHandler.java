@@ -37,10 +37,11 @@ public class DiscardServerHandler extends ChannelHandlerAdapter {
         try {
             InetSocketAddress insocket = (InetSocketAddress) ctx.channel().remoteAddress();
             String clientIp = insocket.getAddress().getHostAddress();
-            log.info(clientIp);
+            log.info("客户端IP ========> {}", clientIp);
             ByteBuf in = (ByteBuf) msg;
             // 打印客户端输入，传输过来的的字符
-            log.info(in.toString(CharsetUtil.UTF_8));
+            log.info("客户端输入，传输过来的的字符 =======> {}", in.toString(CharsetUtil.UTF_8));
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -54,12 +55,13 @@ public class DiscardServerHandler extends ChannelHandlerAdapter {
     }
 
     public static void send(RTBusArriveLeave rtBusArriveLeave) {
+        log.info(" RTBusArriveLeave  ================> {}",rtBusArriveLeave.toString());
         ByteBuf buf;
         try {
             buf = Unpooled.buffer(JsonTools.gson.toJson(rtBusArriveLeave).getBytes().length);
             buf.writeBytes(JsonTools.gson.toJson(rtBusArriveLeave).getBytes());
             ysChannelGroup.writeAndFlush(buf);
-            log.info(ysChannelGroup.size());
+            log.info("ChannelGroup size ========> {} ", ysChannelGroup.size());
         } catch (Exception e) {
             e.printStackTrace();
         }

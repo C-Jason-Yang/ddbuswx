@@ -97,8 +97,6 @@ public class BusApiController {
     @RequestMapping(value = "receiveBusInfo", method = RequestMethod.POST)
     @ResponseBody
     public String test(@RequestBody RTBusArriveLeave rtBusArriveLeave) {
-        log.info(" RTBusArriveLeave  ================>>>>>>>>" + rtBusArriveLeave.getAreaid());
-
         if ("341226".equals(rtBusArriveLeave.getAreaid())) {
             rtBusArriveLeave.setAreaid("YS");
             Area area = iAreaService.getAreaByAreaId(rtBusArriveLeave.getAreaid());

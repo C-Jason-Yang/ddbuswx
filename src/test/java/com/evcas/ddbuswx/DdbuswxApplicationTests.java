@@ -4,9 +4,15 @@ package com.evcas.ddbuswx;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
+import com.google.common.base.Strings;
 import lombok.Data;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.SocketAddress;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -529,7 +535,7 @@ public class DdbuswxApplicationTests {
      *
      * @param list
      */
-    public  List<SiteQueryVo> removeDuplicateWithOrder(List<SiteQueryVo> list) {
+    public List<SiteQueryVo> removeDuplicateWithOrder(List<SiteQueryVo> list) {
         Set set = new HashSet();
         List<SiteQueryVo> newList = new ArrayList();
         for (SiteQueryVo element : list) {
@@ -541,5 +547,53 @@ public class DdbuswxApplicationTests {
         list.addAll(newList);
         return list;
     }
+
+
+       @Test
+    public void tcp() throws Exception {
+        Socket socket = new Socket();
+        SocketAddress socketAddress = new InetSocketAddress("120.55.62.88", 8001);
+//        SocketAddress socketAddress = new InetSocketAddress("192.168.100.220", 8001);
+        socket.connect(socketAddress, 30000);
+        socket.setSoTimeout(30000);
+        while (true) {
+            InputStream in = socket.getInputStream();
+            String respLen = "500";
+            String response = "";
+            byte[] len = new byte[Integer.parseInt(respLen)];
+            in.read(len, 0, Integer.parseInt(respLen));
+            response = new String(len, "gbk");
+            response = response.trim();
+            if (!Strings.isNullOrEmpty(response)) {
+                System.out.println(response);
+            }
+        }
+
+
+    }
+
+    @Test
+    public void tcp2() throws Exception {
+        Socket socket = new Socket();
+//        SocketAddress socketAddress = new InetSocketAddress("120.55.62.88", 8001);
+        SocketAddress socketAddress = new InetSocketAddress("192.168.100.220", 8001);
+        socket.connect(socketAddress, 30000);
+        socket.setSoTimeout(30000);
+        while (true) {
+            InputStream in = socket.getInputStream();
+            String respLen = "500";
+            String response = "";
+            byte[] len = new byte[Integer.parseInt(respLen)];
+            in.read(len, 0, Integer.parseInt(respLen));
+            response = new String(len, "gbk");
+            response = response.trim();
+            if (!Strings.isNullOrEmpty(response)) {
+                System.out.println(response);
+            }
+        }
+
+
+    }
+
 
 }
