@@ -1,11 +1,13 @@
 package com.evcas.ddbuswx.controller;
 
 import com.evcas.ddbuswx.common.commonEnum.ResFlagEnum;
+import com.evcas.ddbuswx.config.cache.SysCache;
 import com.evcas.ddbuswx.entity.ResVo;
 import com.evcas.ddbuswx.model.mongo.BusLine;
 import com.evcas.ddbuswx.model.RTBusArriveLeave;
 import com.evcas.ddbuswx.model.Router;
 import com.evcas.ddbuswx.service.IBusLineService;
+import com.google.common.base.Strings;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -40,8 +42,20 @@ public class BusLineController {
     @RequestMapping(value = "getLineByName", method = RequestMethod.GET)
     @ResponseBody
     public ResVo<List<BusLine>> getLineByName(String lineName, String areaId) {
-        ResVo<List<BusLine>> res = new ResVo<List<BusLine>>();
-        //模糊查询线路
+        return getBusLineList(lineName, areaId);
+    }
+
+
+    private ResVo<List<BusLine>> getBusLineList(String lineName, String areaId) {
+        String key = SysCache.BUS_LINE + areaId;
+        ResVo<List<BusLine>> res;
+        if (Strings.isNullOrEmpty(lineName)) {
+            res = (ResVo<List<BusLine>>) SysCache.getInstance().getCache(key);
+            if (res != null) {
+                return res;
+            }
+        }
+        res = new ResVo<List<BusLine>>();
         List<BusLine> busLineList = iBusLineService.queryBusLineByLikeLineName(lineName, areaId);
         if (busLineList != null && busLineList.size() > 0) {
             res.setFlag(ResFlagEnum.Normal.getFlag());
@@ -49,8 +63,12 @@ public class BusLineController {
             res.setFlag(ResFlagEnum.Empty.getFlag());
         }
         res.setData(busLineList);
+        if (Strings.isNullOrEmpty(lineName)) {
+            SysCache.getInstance().addCache(key, res);
+        }
         return res;
     }
+
 
     @ApiOperation(value = "查询线路详情", notes = "根据线路编码和区域id查询线路详情")
     @ApiImplicitParams({
