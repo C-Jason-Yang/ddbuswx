@@ -16,7 +16,7 @@ spring:
   thymeleaf:
     suffix: .ftl
   profiles:
-    active: @spring.profiles.active@
+    active: dev
 
 
 # MyBatis

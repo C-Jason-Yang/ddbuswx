@@ -36,16 +36,17 @@ public class SchedulingConfig {
             for (RTBusArriveLeave rtBusArriveLeave : rtBusArriveLeaveList) {
                 Calendar cal = Calendar.getInstance();
                 //当数据未更新时间大于5分钟
-                if (Integer.parseInt(String.valueOf(cal.getTimeInMillis() / 1000)) - rtBusArriveLeave.getCurrentTime() > 300) {
-                    irtBusArriveLeaveDAO.deleteRTBusArriveLeaveByBusTag(rtBusArriveLeave.getAreaid(), rtBusArriveLeave.getFromSys(), rtBusArriveLeave.getBugtag());
+                if(rtBusArriveLeave != null){
+                    if (Integer.parseInt(String.valueOf(cal.getTimeInMillis() / 1000)) - rtBusArriveLeave.getCurrentTime() > 300) {
+                        irtBusArriveLeaveDAO.deleteRTBusArriveLeaveByBusTag(rtBusArriveLeave.getAreaid(), rtBusArriveLeave.getFromSys(), rtBusArriveLeave.getBugtag());
+                    }
                 }
-
             }
         }
         log.info("task ======== filterRTBusArriveLeave  end ========:{}", DateUtil::now);
     }
 
-    @Scheduled(cron = "0 0 6 * * ?") // 每6点执行一次
+//    @Scheduled(cron = "0 0 6 * * ?") // 每6点执行一次
     public void initBusData() {
         log.info("task ======== initBusData  begin ========:{}", DateUtil::now);
         iWxBusDataInitService.wxBusDataInit();

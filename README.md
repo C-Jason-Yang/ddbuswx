@@ -1,5 +1,5 @@
 # ddbuswx
-ddbuswx ====> 鑫大道公交服务
+ddbuswx ====> 鑫大道公交服务 APP
 
 
 测试服务器： dev

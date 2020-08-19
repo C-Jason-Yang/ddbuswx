@@ -9,9 +9,9 @@ spring:
     password: 123456
   data:
     mongodb:
-      port: 27017
+      port: 20002
       database: ddbus
-      host: 120.55.62.88
-      username: evcas
-      password: evcas
+      host: 103.14.132.12
+      username: ddbus
+      password: evcas2017
 

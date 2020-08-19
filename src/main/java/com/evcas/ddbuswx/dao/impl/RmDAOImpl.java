@@ -49,7 +49,7 @@ public class RmDAOImpl implements IRmDAO {
             Map<String, Object> loginResultMap = JsonTools.gson.fromJson(loginResultStr, Map.class);
             Map<String, Object> loginResultParamMap = JsonTools.gson.fromJson(loginResultMap.get("PARAM").toString(), Map.class);
 //            SystemParameter.BUS_SYSTEM_REG_KEY_MAP.put(loginName, loginResultParamMap.get("REGKEY").toString());
-            log.info(loginResultParamMap.get("REGKEY").toString());
+//            log.info(loginResultParamMap.get("REGKEY").toString());
             if (!StringUtil.isEmpty(String.valueOf(loginResultParamMap.get("REGKEY")))) {
                 return String.valueOf(loginResultParamMap.get("REGKEY"));
             }

@@ -9,5 +9,5 @@ public interface IRmService {
      * 初始化公交数据
      * @return
      */
-    public void initializeRmBusRoute();
+     void initializeRmBusRoute();
 }

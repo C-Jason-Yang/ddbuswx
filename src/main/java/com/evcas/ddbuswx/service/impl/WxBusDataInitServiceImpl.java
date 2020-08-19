@@ -49,15 +49,13 @@ public class WxBusDataInitServiceImpl implements IWxBusDataInitService {
         log.info("初始化瑞明公交数据 ======> 耗时：{}", t2 - t1);
 
         //初始化恒宇颍上公交数据
-        iHyYsService.initializeHyYsBusSys();
-
-        long t3 = System.currentTimeMillis();
-        log.info("初始化恒宇颍上公交数据 ======> 耗时：{}", t3 - t2);
+//        iHyYsService.initializeHyYsBusSys();
+//        long t3 = System.currentTimeMillis();
+//        log.info("初始化恒宇颍上公交数据 ======> 耗时：{}", t3 - t2);
 
         //初始化恒宇利辛公交数据
-        iHyLxService.initializeHyLxBusSys();
-
-        long t4 = System.currentTimeMillis();
-        log.info("初始化恒宇利辛公交数据 ======> 耗时：{}", t4 - t3);
+//        iHyLxService.initializeHyLxBusSys();
+//        long t4 = System.currentTimeMillis();
+//        log.info("初始化恒宇利辛公交数据 ======> 耗时：{}", t4 - t3);
     }
 }
